@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Raleway|Roboto&display=swap');
+
+$font1: 'Raleway', sans-serif;
+$font2: 'Roboto', sans-serif;
+$font3: 'Open Sans Condensed', sans-serif;
+
+$cor1:  rgba(5, 90, 180, .6);
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0 ;
+    
+}
+
+.main{
+    //border: solid 1px olive;
+    position: relative;
+    width: 800px;
+    min-height: 842px;
+    padding: 0px 10px;
+    display: inherit;
+    flex-direction: column;
+}
+
+
+.container{
+    position: relative;
+    display: inherit;
+
+
+    .img-content, .item{
+        //border: solid 1px olive;
+        display: inherit;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 30px !important;
+        box-sizing: border-box !important;
+    }
+
+    .img-content{
+        img{
+            width: 120px;
+            height:  120px;
+            margin-top: -60px;
+            border-radius: 100%;
+            user-select: none !important;
+            box-shadow: 1px 1px 10px rgba($cor1 , .1);
+            //margin-right: 20px;
+            border:solid 2px $cor1;
+        }
+
+        &::after{
+            content: '';
+            width: 55px !important;
+            border:solid 1px $cor1;
+            z-index: 10;
+            right: 0 !important;
+            top: 60px;
+          
+        }
+    }
+   
+  
+    .item{
+
+        &:first-child{
+           margin-top: 30px;
+        }
+
+        h1 {
+            font-family: $font2;
+            font-size: 24px;
+            letter-spacing: 2px;
+            color:$cor1;
+            text-shadow: 1px 1px 5px rgba(0,0,0, .1);
+        }
+  
+        h2 {
+            font-family: $font1;
+            font-weight: lighter;
+            font-size: 16px;
+            color: rgba(0,0,0, .5);
+        }
+  
+        hr{
+            background-color: $cor1;
+            width: 190%;
+            height: 1px;
+            display: none;
+        }
+
+        h3{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            font-family: $font1;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: rgba(0,0,0, .5);
+            svg{
+                color: $cor1;
+                font-size: 18px;
+                background: #FFFFFF;
+                padding: 10px;
+                border: solid 2px $cor1;
+                border-radius: 100%;
+                width: 20px;
+                height: 20px;
+                z-index: 2;
+            }
+
+            &::before{
+                content: '';
+                width: 25px;
+                border:solid 1px $cor1;
+                z-index: 3;
+            }
+        }
+
+        p{
+            font-family: $font1;
+            margin: 2px 0;
+            font-size: 14px;
+            margin-left: 5px;
+
+        }
+
+        ul{
+            margin-left: 30px;
+            list-style: circle;
+
+            li{
+                font-family: $font3;
+                font-size: 18px;
+                margin-top: 5px !important;
+
+                & > small{
+                    font-size: 14px;
+                    margin-bottom: 20px !important;
+                }
+
+                p{
+                    font-family: $font2; 
+                    font-size: 14px;
+                    margin-top: 5px;
+                    margin-left: 5px;
+
+                    & > small{
+                        font-weight: lighter;
+                        float: left;
+                    }
+                }
+            }
+        }
+    
+    }
+
+
+
+    & > .left,  & > .right{
+        display: flex;
+        flex-direction: column;
+        //padding: 10px;
+
+        .item{
+            flex-direction: column;
+        }
+    }
+
+    & > .left{
+  
+        width: 35%;
+        align-items: flex-end;
+
+        &:first-child{
+            margin-top:90px;
+        }
+    
+
+        .item{
+          align-items: flex-end !important;
+          text-align: center !important;
+
+          h3{
+              flex-direction: row-reverse;
+              svg{
+                  margin-left: 10px;
+              }
+
+              &::before{
+                left: 0;
+            }
+          }
+
+          p{
+            margin-right: 40px;
+          }
+
+        }
+
+  
+    }
+
+
+    & > .right{
+        border-left: solid 2px $cor1;
+        width: 70%;
+
+        h1{
+            margin-left: 30px;
+        }
+
+        h3{
+            flex-direction: row;
+            svg{
+                margin-right: 10px;
+            }
+
+            &::before{
+                right: 0;
+            }
+        }
+
+        p{
+            margin-left: 30px !important;
+        }
+
+        ul{
+            margin-left: 50px !important;
+        }
+
+        
+
+    }
+
+
+}
+
+
