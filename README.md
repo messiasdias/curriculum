@@ -6,3 +6,6 @@ Desenvolvido com Html Css/Sass e Fontawesome.
 
 ![Screenshot](img/screenshot.png?raw=true "Curriculum")
 
+
+![Screenshot](img/screenshot2.png?raw=true "Curriculum")
+
