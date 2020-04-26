@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="css/regular.min.css">
     <link rel="stylesheet" href="css/solid.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 <body>
 
     <div class="main" >
-            <!-- #printbtn-->
-            <div id="printbtn" title="Imprimir" onclick="javascript:window.print()" ><i  class="fas fa-print"></i></div>
+           
     
             <!-- start .left-->
             <div class="left">
@@ -26,22 +27,22 @@
                 <div class="item" >
                     <h3><i class="fas fa-address-book"></i> Contatos</h3>
                        
-                    <p>81 983538086</p>
-                    <p>messiasdias.ti@gmail.com </p>
+                    <p><a target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!"> 81983538086</a></p>
+                    <p><a target="_blank" href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a></p>
 
                 </div>
 
                 <div class="item" >
                         <h3><i class="fas fa-network-wired"></i> Social</h3>
-                        <p>linkedin.com/in/messiasdias </p>
+                        <p><a target="_blank" href="linkedin.com/in/messiasdias"> linkedin.com/in/messiasdias</a> </p>
                 </div>
 
 
 
                 <div class="item" >
                     <h3><i class="fas fa-code-branch"></i> Code Repositórios</h3>
-                    <p>github.com/messiasdias </p>
-                    <p>bitbucket.org/messiasdias</p>
+                    <p><a target="_blank" href="github.com/messiasdias">github.com/messiasdias</a></p>
+                    <p><a target="_blank" href="bitbucket.org/messiasdias">bitbucket.org/messiasdias</a></p>
                 </div>
 
                 <div class="item" >
@@ -134,10 +135,43 @@
     </div>
 
     
+
+
+
+    <!-- #email-->
+    <div id="email" title="Email" class="btn" onclick="window.location.href='mailto:messiasdias.ti@gmail.com';" ><i class="fas fa-envelope"></i></div>
+
+    <!-- #whatsapp-->
+    <a id="whatsapp" title="Whatsapp" class="btn" target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!" ><i class="fab fa-whatsapp"></i></a>
+    
+    <!-- #printbtn-->
+    <div id="print" title="Imprimir" class="btn" onclick="printDoc()" ><i  class="fas fa-print"></i></div>
+
+    
+
+
+
+
+    <!-- start .msg-->
+    <div  id="msg" class="animated fadeInRight  msg" >
+
+        <img src="/img/eu.png" alt="">
+        <span></span>
+        <div  class="content">
+            <i id="close" class="fa fa-times" onclick="toggle()" ></i>
+            <p class="typed"> </p>
+        </div>
+
+    </div>
+    <!-- end .msg-->
+    
    
-    <script src="js/brands.min.js"></script>
-    <script src="js/regular.min.js"></script>
-    <script src="js/solid.min.js"></script>
-    <script src="js/fontawesome.min.js"></script>
+    <script src="/js/brands.min.js"></script>
+    <script src="/js/regular.min.js"></script>
+    <script src="/js/solid.min.js"></script>
+    <script src="/js/fontawesome.min.js"></script>
+    <script src="/js/typed.min.js"></script>
+    <script src="/js/app.js"></script>
+
 </body>
 </html>

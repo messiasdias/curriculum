@@ -200,6 +200,17 @@ $img-before-width:  calc(50% - (160px/2)) ;
         }
     }
 
+    a{
+        color: $black;
+        text-decoration: none;
+
+        &:hover{
+            color: $cor1;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
     ul{
         margin-left: 30px;
         list-style: circle;
@@ -332,33 +343,211 @@ $img-before-width:  calc(50% - (160px/2)) ;
 }
 
 
-#printbtn {
+
+
+
+
+#print , #whatsapp, #email{
     position: fixed;
-    right: 20px;
-    bottom: 20px;
     padding: 10px;
     border-radius: 50%;
     z-index: 10;
     background-color: $white;
     box-shadow: 1px 1px 5px $black2;
     opacity: .6;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-
     svg{
-        font-size: 1.8em;
-        color: $cor1;
+        font-size: 1.3em;
         cursor: pointer;
-    }
-
-    &:hover{
-        opacity: 10;
-        background-color: $cor1;
-        svg{
-            color: $white;
-        }
     }
 
     @media print{
         display: none !important;
     }
 }
+
+
+#print:hover , #whatsapp:hover, #print.active, #whatsapp.active {
+    opacity: 10;
+}
+
+#print{
+
+    right: 20px;
+    bottom: 40px;
+
+    svg{
+        color: $cor1;
+    }
+}
+
+#print:hover , #print.active {
+    background-color: $cor1;
+    svg{
+        color: $white;
+    }
+}
+
+
+#whatsapp{
+    right: 20px;
+    bottom: 100px;
+
+    svg{
+        font-size: 1.8em;
+        color: #28a745;
+    }
+
+}
+
+
+#whatsapp:hover, #whatsapp.active{
+    opacity: 10;
+    background-color: #28a745;
+    svg  {
+        color: $white;
+    }
+}
+
+
+#email{
+    right: 20px;
+    bottom: 160px;
+
+    svg{
+        font-size: 1.8em;
+        color: #4638c2;
+    }
+
+}
+
+
+#email:hover, #email.active{
+    opacity: 10;
+    background-color: #4638c2;
+    svg  {
+        color: $white;
+    }
+}
+
+
+
+.msg{
+    position: fixed;
+    z-index: 8;
+    bottom: 10px;
+    right: 80px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    transition: all ease-in-out .3s;
+    opacity: 100;
+    display: none;
+
+    @media print{
+        display: none !important;
+    }
+
+
+    @media screen and (max-width: 468px ) {
+        flex-direction: column-reverse;
+        bottom: 200px;
+        right: 20px;
+    }
+
+    &:hover{
+        cursor: pointer;
+
+        .content #close{
+            display: block;
+        }
+    }
+
+    img{
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        box-shadow: 1px 1px 5px $black2;
+        border: solid 2px $cor1;
+    }
+
+    span {
+      
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background-color: $cor1;
+        top: 75px;
+        left: 75px;
+        z-index: 1 !important;
+        transform: rotateZ(135deg);
+
+        @media screen and (max-width: 468px ) {
+            top: 130px;
+            left: 150px;
+        }
+    }
+
+    .content{
+        border: solid 2px $cor1;
+        min-width: 260px;
+        max-width: 80%;
+        min-height: 100px;
+        margin: 20px;
+        padding: 10px;
+        box-shadow: 1px 1px 5px $black2;
+        border-radius: 7px;
+        background-color: $white;
+        display: inherit;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10 !important;
+
+       
+
+        #close{
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            color: $black2;
+            border: solid 1px $black2;
+            width: 14px;
+            height: 14px;
+            padding: 2px;
+            border-radius: 100%;
+            z-index: 11;
+
+            &:hover{
+                cursor: pointer;
+                color: $cor1;
+                border-color: $cor1;
+            }
+        }
+
+        p{
+            color: rgba(0,0,0, .7);
+            font-family: $font3;
+            opacity: 10;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        b, a {
+            color: $cor1;
+            text-decoration: none;
+        }
+
+    }
+
+
+
+   
+}
+
