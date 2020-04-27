@@ -88,7 +88,7 @@ body{
     }
 }
 
-//$img-before-width: 60px;
+//$img-before-width
 $img-before-width:  calc(50% - (160px/2)) ;
 
 .img-content2{
@@ -124,7 +124,6 @@ $img-before-width:  calc(50% - (160px/2)) ;
 
 
 .item{
-    //border: solid 1px red;
     &:first-child{
        margin-top: 10px;
     }
