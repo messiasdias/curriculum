@@ -264,7 +264,8 @@ body {
 
 #print {
   right: 20px;
-  bottom: 40px; }
+  bottom: 40px;
+  animation-delay: .6s; }
   #print svg {
     color: rgba(5, 90, 180, 0.6); }
 
@@ -275,7 +276,8 @@ body {
 
 #whatsapp {
   right: 20px;
-  bottom: 100px; }
+  bottom: 100px;
+  animation-delay: .3s; }
   #whatsapp svg {
     font-size: 1.8em;
     color: #28a745; }
@@ -307,8 +309,8 @@ body {
   background-color: transparent;
   display: flex;
   align-items: center;
-  transition: all ease-in-out .3s;
   opacity: 100;
+  animation-delay: .7s;
   display: none; }
   @media print {
     .msg {

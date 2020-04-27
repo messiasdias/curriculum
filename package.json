@@ -1,0 +1,99 @@
+{
+  "name": "curriculum",
+  "version": "1.0.0",
+  "description": "Messias Dias | Curriculum Vitae",
+  "main": "src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/messiasdias/curriculum.git"
+  },
+  "keywords": [
+    "messiasdias",
+    "curriculum",
+    "fontawsome",
+    "animate.css",
+    "html",
+    "css",
+    "sass",
+    "scss",
+    "vuejs",
+    "vue",
+    "vuex",
+    "javascript",
+    "js",
+    "npm",
+    "webpack"
+  ],
+  "author": "Messias Dias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/messiasdias/curriculum/issues"
+  },
+  "homepage": "https://github.com/messiasdias/curriculum",
+  "private": false,
+  "dependencies": {
+    "vue": "2.6.10",
+    "vue-axios": "2.1.5",
+    "vue-router": "3.1.3",
+    "vuex": "3.1.2",
+    "@fortawesome/fontawesome-svg-core": "1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "5.12.0",
+    "@fortawesome/vue-fontawesome": "0.1.9",
+    "animate.css": "3.7.2",
+    "font-awesome": "4.7.0",
+    "jquery": "3.4.1",
+    "typed.js": "^2.0.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "4.0.0",
+    "@vue/cli-plugin-eslint": "4.0.0",
+    "@vue/cli-service": "4.0.0",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "8.0.6",
+    "cache-loader": "4.1.0",
+    "css-loader": "3.4.0",
+    "eslint": "5.16.0",
+    "eslint-plugin-vue": "5.0.0",
+    "node-sass": "4.13.0",
+    "sass-loader": "8.0.0",
+    "style-loader": "1.1.2",
+    "vue-loader": "15.8.3",
+    "vue-style-loader": "4.1.2",
+    "vue-template-compiler": "2.6.10",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "dev": "vue-cli-service serve --port 9090 --watch --public ./ ./src/main.js",
+    "build": "webpack -p ",
+    "lint": "vue-cli-service lint"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "vue/no-use-v-if-with-v-for": "off",
+      "no-console": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
