@@ -9,8 +9,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './'),
-    publicPath: '/',
-    filename: './assets/js/[name].js'
+    publicPath: './',
+    filename: './js/[name].js'
   },
   module: {
     rules: [
@@ -24,7 +24,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: './public/assets/img/[name].[ext]'
+          name: './img/[name].[ext]'
         }
       },
       { test: /\.(png|woff|woff2|eot|ttf|svg)$/,

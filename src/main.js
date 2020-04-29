@@ -1,7 +1,15 @@
 import Vue from "vue"
-import Curriculum from "./components/Curriculum"
+import Vuex from "vuex"
+import FontAwesomeIcon  from "./assets"
+import Curriculum from "./components/Curriculum.vue"
+import Store from "./store"
+
+Vue.component('fontawesome',FontAwesomeIcon)
+Vue.use(Vuex)
+let store = new Vuex.Store(Store)
 
 new Vue({
-    el:"#app",   
+    el:"#app", 
+    store,  
     render: h => h(Curriculum),
 })
