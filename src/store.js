@@ -1,6 +1,8 @@
 import Typed from "typed.js"
+import euImg from './img/eu.png'  
 
 let state = {
+    euImage: euImg,
     btn: false,
     msg : false,
     main : {

@@ -1,0 +1,22 @@
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Raleway|Roboto&display=swap');
+$font1: 'Raleway', sans-serif;
+$font2: 'Roboto', sans-serif;
+$font3: 'Open Sans Condensed', sans-serif;
+
+//colors
+$cor1:  rgba(5, 90, 180, .6);
+$black: #000;
+$black2: rgba($black, .3);
+$white: #FFFFFF;
+$white2: rgba($white, .3);
+
+//butons_map
+$butons_map:
+"print" $cor1 1.3s 160px,
+"whatsapp" #28a745 1.6s 100px,
+"email" #4638c2 1.9s 40px;
+
+
+//break-points
+$mobile: 768px;

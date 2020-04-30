@@ -4,13 +4,14 @@ var webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
+
   entry: { 
     app: './src/main.js',
   },
   output: {
-    path: path.resolve(__dirname, './'),
-    publicPath: './',
-    filename: './js/[name].js'
+    path: path.resolve(__dirname, ''),
+    publicPath: '',
+    filename: './assets/js/[name].js'
   },
   module: {
     rules: [
@@ -24,13 +25,13 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: './img/[name].[ext]'
+          name: 'assets/img/[name].[ext]'
         }
       },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+      { test: /\.(woff|woff2|eot|ttf)$/,
          loader: 'url-loader?limit=100000' ,
          options: {
-          name: './public/assets/css/fonts/[name].[ext]'
+          name: 'assets/css/fonts/[name].[ext]'
         }
       },
       {
@@ -39,7 +40,7 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader','sass-loader']
+        use: ['style-loader', 'css-loader','sass-loader'],  
       },
       {
         test: /\.vue$/,
@@ -49,7 +50,8 @@ module.exports = {
     ]
   },
   plugins:[
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    //new fileloader(),
   ],
   resolve: {
     alias: {
@@ -60,7 +62,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    port: 8080,
+    port: 9090,
     host: '0.0.0.0'
   },
   performance: {

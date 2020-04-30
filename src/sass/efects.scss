@@ -1,0 +1,59 @@
+//animate-scss
+//@import "../../node_modules/animate-scss/animate.scss";
+
+$default_duration: .6s;
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+      @content;
+    }
+    @-moz-keyframes #{$animationName} {
+      @content;
+    }
+    @-o-keyframes #{$animationName} {
+      @content;
+    }
+    @keyframes #{$animationName} {
+      @content;
+    }
+}
+
+
+@mixin setAnimation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+
+@mixin radialGradientTrasition($name, $from, $to){
+    // background-image: radial-gradient( circle,  red 60% , white 40% );
+   
+    @include keyframes(radialTrasition-#{$name}){
+
+        0%  { 
+            background: radial-gradient( circle,  $to 0% , $from 0% );
+            color: $to !important; 
+        }
+        20%  { background: radial-gradient( circle,  $to 20% , $from 20% )}
+        40%  { 
+            background: radial-gradient( circle,  $to 40% , $from 40% );
+            color: $from;
+        }
+        60%  { background: radial-gradient( circle,  $to 60% , $from 60% )}
+        80%  { background: radial-gradient( circle,  $to 80% , $from 80% )}
+        99% { 
+            background: radial-gradient( circle,  $to 100% , $from 100% );
+            color: $from !important;
+        }
+
+        100% {
+            color: initial;
+        }
+    }   
+
+    @include setAnimation('radialTrasition-#{$name} .5s ease-in-out');
+
+} 
+

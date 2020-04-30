@@ -55,7 +55,8 @@
     "css-loader": "3.4.0",
     "eslint": "5.16.0",
     "eslint-plugin-vue": "5.0.0",
-    "node-sass": "4.13.0",
+    "file-loader": "^6.0.0",
+    "node-sass": "^4.14.0",
     "sass-loader": "8.0.0",
     "style-loader": "1.1.2",
     "vue-loader": "15.8.3",
@@ -66,7 +67,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "dev": "vue-cli-service serve --port 9090 --watch  ./src/main.js",
+    "dev": "vue-cli-service serve --port 9090 --watch ./src/main.js",
     "build": "webpack -p ",
     "lint": "vue-cli-service lint"
   },

@@ -10,7 +10,7 @@
             <p class="typed"> </p>
         </div>
         
-        <img src="img/eu.png" alt="">
+        <img v-bind:src="euImage" alt="">
         
     </div>
 </div>
@@ -24,11 +24,13 @@ import {mapState, mapActions } from "vuex"
 
     mounted: function(){
         this.toggleMsg(true)
+        console.log(this.euImage)
     },
 
     computed: {
         ...mapState({
             msg: state => state.msg,
+            euImage: state => state.euImage 
         })
     },
 

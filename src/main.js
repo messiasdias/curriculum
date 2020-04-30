@@ -1,6 +1,8 @@
+import "./sass/main.scss"
+//import "animate-scss"
 import Vue from "vue"
 import Vuex from "vuex"
-import FontAwesomeIcon  from "./assets"
+import FontAwesomeIcon  from "./icons"
 import Curriculum from "./components/Curriculum.vue"
 import Store from "./store"
 
