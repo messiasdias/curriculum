@@ -1,8 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
+import "./sass/main.scss"
+import Vue from "vue"
+import Vuex from "vuex"
+import FontAwesomeIcon  from "./icons"
+import Curriculum from "./components/Curriculum.vue"
+import Store from "./store"
 
-Vue.config.productionTip = false
+Vue.component('fontawesome',FontAwesomeIcon)
+Vue.use(Vuex)
+let store = new Vuex.Store(Store)
 
 new Vue({
-  render: h => h(App),
+    store,  
+    render: h => h(Curriculum),
 }).$mount('#app')
