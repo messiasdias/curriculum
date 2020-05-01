@@ -1,6 +1,13 @@
 # Messias Dias | Curriculum Vitae
 
-Desenvolvido com Html Css/Sass e Fontawesome.
+Desenvolvido com VueJs.
+<hr>
+
+Ferramentas utilizadas:
+* FontAwesome,
+* Animate-scss
+* Jquery
+* Typed.js
 
 [messiasdias.github.io/curriculum](https://messiasdias.github.io/curriculum)
 
