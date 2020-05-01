@@ -1,6 +1,7 @@
 const { VueLoaderPlugin } = require('vue-loader')
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -36,7 +37,8 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        //use: ['style-loader', 'css-loader'],
+        loader: ExtractTextWebpackPlugin.extract('style-loader', 'css-loader')
       },
       {
         test: /\.(scss|sass)$/,
@@ -50,8 +52,8 @@ module.exports = {
     ]
   },
   plugins:[
-    new VueLoaderPlugin(),
-    //new fileloader(),
+    new VueLoaderPlugin({minimize: true}),
+    new ExtractTextWebpackPlugin('assets/css/style.css'),
   ],
   resolve: {
     alias: {
@@ -59,17 +61,12 @@ module.exports = {
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    port: 9090,
-    host: '0.0.0.0'
-  },
+
   performance: {
     hints: false
  },
   
-  devtool: '#eval-source-map'
+  devtool: '#source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {
