@@ -5,6 +5,7 @@
 
 @import "../../node_modules/animate-scss/properties";
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomIn";
+@import "../../node_modules/animate-scss/_zooming-entrances/zoomInUp";
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInLeft";
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInRight";
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInDown";
@@ -64,7 +65,7 @@ body{
     padding: 0 !important;
     
 
-    @media screen and  (max-width: #{$mobile} ) {
+    @media screen and  (max-width: #{$medium} ) {
         flex-direction: column-reverse;
     }
 
@@ -87,18 +88,20 @@ body{
 }
 
 .img-content, .img-content2{
-    @include zoomIn(
-        $duration: .1s,
-        $count: 1,
-        $delay: .3s,
-        $function: ease-in-out, 
-        $fill: both
-    );
+    @media screen {
+        @include zoomIn(
+            $duration: .1s,
+            $count: 1,
+            $delay: .3s,
+            $function: ease-in-out, 
+            $fill: both
+        );
+    }
 }
 
 .img-content{
 
-    @media screen and  (max-width: #{$mobile} ) {
+    @media screen and  (max-width: #{$medium} ) {
         display: none;
     }
 
@@ -107,7 +110,7 @@ body{
         height:  120px;
         margin-top: -60px;
         @extend .circle;
-        @media screen and (max-width: #{$mobile} ) {
+        @media screen and (max-width: #{$medium} ) {
             display: none;
         }
     }
@@ -131,7 +134,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     height: 100px;
 
 
-    @media screen and  (max-width: #{$mobile} ) {
+    @media screen and  (max-width: #{$medium} ) {
         display: block;
         transform: translateY(-92px);
     }
@@ -140,7 +143,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         @extend .circle;
         display: none;
         
-        @media screen and (max-width: #{$mobile} ) {
+        @media screen and (max-width: #{$medium} ) {
             display: block;
             width: 160px;
             height:  160px;
@@ -173,7 +176,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         text-shadow: 1px 1px 5px rgba(0,0,0, .1);
         
 
-        @media screen and  (max-width: #{$mobile} ) { 
+        @media screen and  (max-width: #{$medium} ) { 
             font-size: 1.8em;
             text-align: center !important;
         }
@@ -189,7 +192,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         font-weight: lighter;
         font-size: 1.8em;
         color: rgba(0,0,0, .5);
-        @media screen and  (max-width: #{$mobile} ) { 
+        @media screen and  (max-width: #{$medium} ) { 
             font-size: 1.6em;
         }
     }
@@ -232,7 +235,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         font-size: 14px !important;
         margin-left: 5px !important;
         max-width: 80%;
-        @media screen and  (max-width: #{$mobile} ) { 
+        @media screen and  (max-width: #{$medium} ) { 
             font-size: .9em !important;
         }
     }
@@ -275,8 +278,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
 
 @for $num from 2 through 10 {
 
-    //$dly: calc( calc(#{$num} - 1) * .01s);
-    $dly: 0;
+    $dly: calc( calc(#{$num} - 1) * .2s);
     $drt: .3s;
 
     .right > .item:nth-child(#{$num}) {
@@ -316,7 +318,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         $fill: both
     );
 
-    @media screen and  (max-width: #{$mobile} ) { 
+    @media screen and  (max-width: #{$medium} ) { 
         width: 90%  !important;
     }
 
@@ -330,7 +332,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     width: 35%;
     align-items: flex-end;
 
-    @media screen and  (max-width: #{$mobile} ) { 
+    @media screen and  (max-width: #{$medium} ) { 
         border-right: solid 2px $cor1;
         border-top: solid 1px $cor1;
         border-bottom: solid 2px $cor1 !important;
@@ -362,7 +364,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
       }
     }
 
-    @media screen and  (max-width: #{$mobile} ) { 
+    @media screen and  (max-width: #{$medium} ) { 
         &::before{
             content: '';
             position: absolute;
@@ -385,7 +387,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     border-left: solid 2px $cor1;
     width: 70%;
 
-    @media screen and  (max-width: #{$mobile} ) { 
+    @media screen and  (max-width: #{$medium} ) { 
         padding-bottom: 20px;
         border-bottom: solid 1px $cor1;
         border-radius: 0px 0px 0px 20px;
@@ -421,10 +423,38 @@ $img-before-width:  calc(50% - (160px/2)) ;
 
 
 
+.btn{
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    position: fixed;
+    z-index: 11;
+    padding: 10px;
+    right: 0;
+    bottom: 0;
+
+    & > #close{
+        display: none;
+    }
+
+    @media screen and (max-width: $medium  ) {
+        & > * {
+            display: none !important;
+        }
+
+        & > #close{
+            display: block !important;
+        }
+    }
+}
+
 
 .btn > * {
-    position: fixed;
+    position: relative;
     padding: 10px;
+    margin: 7px;
     border-radius: 50%;
     z-index: 10;
     box-shadow: -1px -1px 5px rgba($black2, $alpha: .2);
@@ -449,12 +479,11 @@ $img-before-width:  calc(50% - (160px/2)) ;
 @each $name, $clr, $dly , $btm in $butons_map {
 
 .btn > ##{$name} {
-    right: 20px;
-    bottom: $btm;
-    z-index: 11;
+    z-index: 12;
     background: $white;
     border-right: solid 1px rgba($clr, .4);
     border-bottom: solid 1px rgba($clr, .4);
+
 
     & > svg,  & > i{
         color: $clr;
@@ -525,7 +554,6 @@ $img-before-width:  calc(50% - (160px/2)) ;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 100;
     background-color: $white2;
     padding: 20px;
 
@@ -536,7 +564,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         position: absolute;
         top: 0;
         left: 0;
-        background-color: $white2;
+        background-color: $white;
         z-index: -1;
         filter: blur(1000px);
         opacity: .7;
@@ -556,7 +584,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     }
 
 
-    @media screen and (max-width: 468px ) {
+    @media screen and (max-width: $small ) {
         flex-direction: column-reverse;
         bottom: 200px;
         right: 20px;
@@ -565,7 +593,6 @@ $img-before-width:  calc(50% - (160px/2)) ;
 
 
     .content{
-        //border: solid 1px red;
         position: relative;
         display: flex;
         z-index: 10;
@@ -573,8 +600,11 @@ $img-before-width:  calc(50% - (160px/2)) ;
         justify-content: center;
         align-items: center;
         flex-direction: row-reverse;
-        @media screen and (max-width: 468px ) {
+
+        @media screen and (max-width: $medium ) {
          flex-direction: column;
+         box-sizing: border-box !important;
+         max-width: 80% !important;
         }
 
         #close {
@@ -595,6 +625,12 @@ $img-before-width:  calc(50% - (160px/2)) ;
                 color: $cor1;
                 border-color: $cor1;
             }
+
+            @media screen and (max-width: $small ) {
+                top: -10px;
+                right: -10px;
+            }
+
         }
 
 
@@ -607,7 +643,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
             min-height: 100px;
             margin: 20px;
             padding: 10px;
-            box-shadow: 1px 1px 2px $black2;
+            box-shadow: 1px 1px 10px $black2;
             border-radius: 7px;
             background: $white;
             display: flex;
@@ -615,6 +651,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
             justify-content: center;
             align-items: center;
             opacity: 10;
+            background-color: $white;
 
             p{
                 color: rgba(0,0,0, .7);
@@ -641,14 +678,15 @@ $img-before-width:  calc(50% - (160px/2)) ;
             left: 75px;
             transform: rotateZ(135deg);
     
-            @media screen and (max-width: 468px ) {
+            @media screen and (max-width: $small ) {
                 top: 130px;
-                left: 150px;
+                left: calc(50% - 10px);
             }
+
         }
 
         span, .box{
-            @include zoomInDown(
+            @include zoomIn(
                 $duration: .3s,
                 $count: 1,
                 $delay: 2.5s,
@@ -657,7 +695,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
             );
         }
 
-        img{ //display: none !important;
+        img{ 
             position: relative;
             width: 60px;
             height: 60px;
@@ -666,8 +704,9 @@ $img-before-width:  calc(50% - (160px/2)) ;
             border: solid 2px $cor1;
             background-color: $cor1;
             opacity: 20;
-            @include zoomIn(
-                $duration: .1s,
+
+            @include zoomInUp(
+                $duration: .6s,
                 $count: 1,
                 $delay: 2.3s,
                 $function: ease-in-out, 
@@ -689,11 +728,20 @@ $img-before-width:  calc(50% - (160px/2)) ;
     }
 
 
-
-
-
-
-   
-   
+     
 }
 
+
+
+.typed{
+
+    min-width: 10px;
+    min-height: 10px;
+    font-size: small !important;
+
+    
+    &::nth-child(1){
+        color: red !important;
+    };
+
+}

@@ -1,9 +1,11 @@
 <template>
 <div id="app" >
-   <div class="main">
+
+    <div class="main"  :style="'opacity:'+  msg ? '.01' : '10' + '; !important'" >
         <Left/>
         <Right/>
-   </div>
+    </div>
+
     <Buttons/>
     <Msg/>
 </div>    
@@ -13,14 +15,22 @@ import Left from "./layout/left.vue"
 import Right from "./layout/right.vue"
 import Buttons from "./layout/buttons.vue"
 import Msg from "./layout/msg.vue"
+import {mapState} from "vuex"
 
  export default{
-     name : "Curriculum",
-     components :{
+    name : "Curriculum",
+
+    computed: {
+        ...mapState({
+            msg: state => state.msg,
+        })
+    },
+
+    components :{
          Left,
          Right,
          Buttons,
          Msg,
-     }
+     },
  }   
 </script>

@@ -2,12 +2,12 @@
  <!-- start .msg-->
 <div v-if="msg" class="msg"  >
 
-    <div class="content" >
+    <div draggable class="content" >
         <fontawesome icon="times" id="close" @click="toggleMsg()"  />
         <span class=""></span> 
         
         <div  class="box">
-            <p class="typed"> </p>
+            <p  id="typed">...</p>
         </div>
         
         <img v-bind:src="euImage" alt="">
@@ -24,7 +24,6 @@ import {mapState, mapActions } from "vuex"
 
     mounted: function(){
         this.toggleMsg(true)
-        console.log(this.euImage)
     },
 
     computed: {

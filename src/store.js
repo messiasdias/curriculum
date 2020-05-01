@@ -1,5 +1,6 @@
-import Typed from "typed.js"
+import Typed from 'typed.js'
 import euImg from './images/eu.png'  
+import $ from 'jquery'
 
 let state = {
     euImage: euImg,
@@ -21,6 +22,8 @@ let state = {
                 "Muito <b>Obrigado</b> por está aqui!",
     ],
 
+    typedString: '',
+
 
 }
 
@@ -36,9 +39,18 @@ let mutations = {
             state.msg =  true
             state.main.opacity = "0.1"
         }
-        console.log('state.msg', state.msg)
     },
 
+
+    btn : function (state){
+        if( state.btn ) {
+            state.btn = false
+        }else{
+            state.btn = true
+        }
+
+        console.log('state.btn', state.btn)
+    },
 
 
 }
@@ -52,26 +64,60 @@ let actions = {
             context.commit("msg", false)
         }else{
             context.commit("msg", true)
-            //context.dispath('typedRun')
+            setTimeout( function(){ context.dispatch('typedRun2') }, 5000)
         }
     },
 
     printDoc: function(context){
-        context.dispath('toggleMsg', false)
+        context.dispatch('toggleMsg', false)
         window.print();
     },
 
     typedRun : function(context) {
 
-        new Typed('.typed', {
-            strings: context.state.typedStrings,
-            typeSpeed: 80,
-            backSpeed: 40,
-            loop: true,
-            showCursor: false,
-        })
+        if(context.state.msg){
+            let typed =  new Typed('#typed', {
+                strings: context.state.typedStrings,
+                typeSpeed: 80,
+                backSpeed: 40,
+                loop: true,
+                showCursor: false,
+            })
+
+            console.log(typed)
+        }
+
+    },
+
+
+    typedRun2 : function(context) {
+        
+        if(context.state.msg){
+            console.log('Start runTyped2() ...')
+            let i=0 
+            let keys = Object.keys(context.state.typedStrings)
+            let typedStrings = context.state.typedStrings
+           
+            $('#typed').html('')
+            console.log($('#typed'), keys.length, typedStrings.length )
+
+            while( i < keys.length ) {
+              //  $('#typed').html(strings[i])
+              setTimeout( function(){
+                console.log('element:',  i, typedStrings[i] )
+              }, 3000)
+
+              i++
+            }
+
+        }else{
+            console.log('$state.msg is False!')
+        }
 
     }
+
+
+
 }
 
 
