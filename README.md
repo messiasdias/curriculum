@@ -1,4 +1,16 @@
-# curriculum-vue
+# Messias Dias | Curriculum Vitae
+
+Desenvolvido com Html Css/Sass e Fontawesome.
+
+[messiasdias.github.io/curriculum](https://messiasdias.github.io/curriculum)
+
+![Screenshot](screenshots/screenshot.png?raw=true "Curriculum")
+
+
+![Screenshot](screenshots/screenshot2.png?raw=true "Curriculum")
+
+
+<hr>
 
 ## Project setup
 ```
