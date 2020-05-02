@@ -10,6 +10,7 @@
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInRight";
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInDown";
 @import "../../node_modules/animate-scss/_bouncing-entrances/bounceInLeft";
+@import "../../node_modules/animate-scss/_bouncing-entrances/bounceInUp";
 @import "../../node_modules/animate-scss/_fading-entrances/fadeIn";
 
 //variables
@@ -273,6 +274,14 @@ $img-before-width:  calc(50% - (160px/2)) ;
         }
     }
 
+
+    &:hover{
+
+        & h3 > svg{
+           @include rotate('ease-in-out .6s');
+        }
+    }
+
 }
 
 
@@ -326,6 +335,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         flex-direction: column;
     }
 }
+
 
 .left{
 
@@ -423,32 +433,63 @@ $img-before-width:  calc(50% - (160px/2)) ;
 
 
 
-.btn{
+
+
+.btn {
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
     max-width: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    position: fixed;
     z-index: 11;
     padding: 10px;
-    right: 0;
-    bottom: 0;
 
-    & > #close{
-        display: none;
+    @media screen and (max-width: $small  ) {
+        flex-direction: row-reverse;
+        justify-content: center;
+        background-color: $white;
+        min-width: 95vw ;
+        max-width: 100vw ;
+        box-shadow: 1px -1px 5px $black2;
+        max-height: 50px;
+
+        @include zoomInUp(
+            $duration: .1s,
+            $count: 1,
+            $delay: .1s ,
+            $function: ease-in-out, 
+            $fill: both
+        );
     }
 
-    @media screen and (max-width: $medium  ) {
-        & > * {
-            display: none !important;
+    &-relative{
+        @extend .btn;
+
+        @media screen and (max-width: $small  ) {
+            position: relative !important;
+            box-shadow: none !important;
+            min-width: 90%;
+            max-width: 90%;
+            padding: 20px 0px;
+            margin: 0 auto !important;
+            border-top: solid 1px $cor1;
+            border-left: solid 2px $cor1;
+            border-bottom: solid 2px $cor1;
+            border-radius: 20px 0px 0px 20px;
+            transform: translateX(-10px) translateY(-1px);
+            background-color: $white !important;
         }
 
-        & > #close{
-            display: block !important;
-        }
-    }
+    }   
+
 }
+
+
+
 
 
 .btn > * {
@@ -476,7 +517,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
 }
 
 
-@each $name, $clr, $dly , $btm in $butons_map {
+@each $name, $clr, $dly in $butons_map {
 
 .btn > ##{$name} {
     z-index: 12;
@@ -488,14 +529,27 @@ $img-before-width:  calc(50% - (160px/2)) ;
     & > svg,  & > i{
         color: $clr;
 
-        & , &:hover{
-            @include bounceInLeft(
+        @media screen and (min-width: $small + 1px  ) {
+        @include bounceInLeft(
                 $duration: .3s,
                 $count: 1,
                 $delay: $dly ,
                 $function: ease-in-out, 
                 $fill: both
             );
+        }
+
+        &:hover{
+
+            @media screen and (max-width: $small  ) {
+                @include bounceInUp(
+                    $duration: .3s,
+                    $count: 1,
+                    $delay: $dly ,
+                    $function: ease-in-out, 
+                    $fill: both
+                );
+            }
         }
     }
 
@@ -538,7 +592,6 @@ $img-before-width:  calc(50% - (160px/2)) ;
 .btn > ##{$name}.active {
     background-color: $clr;
 }
-
 
 }
 
@@ -639,7 +692,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
             position: relative;
             border: solid 2px $cor1;
             min-width: 260px;
-            max-width: 80%;
+            max-width: 260px;
             min-height: 100px;
             margin: 20px;
             padding: 10px;
@@ -653,18 +706,47 @@ $img-before-width:  calc(50% - (160px/2)) ;
             opacity: 10;
             background-color: $white;
 
-            p{
+            p{  
                 color: rgba(0,0,0, .7);
                 font-family: $font3;
                 opacity: 10;
                 font-weight: bold;
-                font-size: 18px;
+                font-size: 14px;
+                margin: 0px auto !important;
+                max-width: 80% !important;
+                text-align: center;
+                font-weight: lighter;
+
             }
 
             b, a {
                 color: $cor1;
                 text-decoration: none;
             }
+
+            svg, i {
+                margin: 10px auto;
+                padding: 5px;
+                font-size: 28px;
+                border-radius: 100%;
+                color:  $cor1;
+
+                @include zoomInLeft (
+                    $duration: .3s,
+                    $count: 1,
+                    $delay: .3s ,
+                    $function: ease-in-out, 
+                    $fill: both
+                );
+
+                @each $name, $clr, $dly in $butons_map {
+                    & #{$name} {
+                        transition-delay: $dly;
+                        color: $clr !important;  
+                    }
+                }
+            }
+
 
         }
 
@@ -733,15 +815,3 @@ $img-before-width:  calc(50% - (160px/2)) ;
 
 
 
-.typed{
-
-    min-width: 10px;
-    min-height: 10px;
-    font-size: small !important;
-
-    
-    &::nth-child(1){
-        color: red !important;
-    };
-
-}

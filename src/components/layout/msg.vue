@@ -7,7 +7,8 @@
         <span class=""></span> 
         
         <div  class="box">
-            <p  id="typed">...</p>
+            <fontawesome v-if="typed.position"  :icon="[typed.iconPrefix, typed.iconName]" :id="typed.iconName" />
+            <p id="typed" class=".typed" >...</p>
         </div>
         
         <img v-bind:src="euImage" alt="">
@@ -29,7 +30,8 @@ import {mapState, mapActions } from "vuex"
     computed: {
         ...mapState({
             msg: state => state.msg,
-            euImage: state => state.euImage 
+            euImage: state => state.euImage,
+            typed: state => state.typed  
         })
     },
 
@@ -38,6 +40,8 @@ import {mapState, mapActions } from "vuex"
         ...mapActions ({
             toggleMsg: 'toggleMsg',
         }),
+
+        
 
     },
     //end methods

@@ -18,12 +18,7 @@
         <!-- fab fa-whatsapp -->
         <fontawesome :icon="['fab', 'whatsapp']"  />
     </a>
-
-     <!-- #close-->
-    <div  id="close" title="" @click="btnMut()" >
-        <fontawesome icon="times" />
-    </div>
-    
+  
   
 </div>
 <!-- end .btns-->

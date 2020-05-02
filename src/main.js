@@ -4,6 +4,7 @@ import Vuex from "vuex"
 import FontAwesomeIcon  from "./icons"
 import Curriculum from "./components/Curriculum.vue"
 import Store from "./store"
+import "./dom"
 
 Vue.component('fontawesome',FontAwesomeIcon)
 Vue.use(Vuex)

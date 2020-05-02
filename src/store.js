@@ -1,6 +1,5 @@
 import Typed from 'typed.js'
 import euImg from './images/eu.png'  
-import $ from 'jquery'
 
 let state = {
     euImage: euImg,
@@ -10,19 +9,33 @@ let state = {
         opacity : "0.1",
     },
 
-    typedStrings: [ "" ,
-                "<b>Olá!,</b>  Sou <b>Messias Dias</b>", 
-                "Que bom ter você aqui! ",
-                "Esse é o meu Curriculum.",
-                'Para imprimir ou salvar como PDF <br> clique no icone <b><i  class="fas fa-print"></i></b>; ',
-                'Se preferir um contato direto: <br>Via  Wathsapp, clique no icone <b><i class="fab fa-whatsapp"></i></b>;',
-                'Via email clique aqui  <br> <a href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a><br> ou no icone <b><i class="fas fa-envelope"></i></b>.',
-                "Espero atender os requisitos <br> necessários pra a vaga ou projeto  <b>:)</b>",
-                "E Mais uma vez...",
-                "Muito <b>Obrigado</b> por está aqui!",
-    ],
+    typed: {
+        current: false,
+        position: false,
 
-    typedString: '',
+
+        strings: [ "" ,
+        "Olá!, Sou <b>Messias Dias</b>.", 
+        "Que bom ter você aqui! ",
+        "Esse é o meu Curriculum.",
+        "...Clique nos Icones correspondentes Abaixo: ",
+        'Para imprimir ou salvar como PDF; ',
+        'Se preferir contato  via  Wathsapp;',
+        'Enviar email para <a href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a>',
+        "Espero atender os requisitos <br> necessários pra a vaga ou projeto.",
+        "E Mais uma vez...",
+        "Muito <b>Obrigado</b> por está aqui!",
+        ],
+
+        iconName: false,
+        iconPrefix: false,
+        icons: {
+            5: 'fas:print',
+            6: 'fab:whatsapp',
+            7: 'fas:envelope',
+            8: 'fas:heart'
+        }
+    },
 
 
 }
@@ -48,8 +61,6 @@ let mutations = {
         }else{
             state.btn = true
         }
-
-        console.log('state.btn', state.btn)
     },
 
 
@@ -64,7 +75,7 @@ let actions = {
             context.commit("msg", false)
         }else{
             context.commit("msg", true)
-            setTimeout( function(){ context.dispatch('typedRun2') }, 5000)
+            setTimeout( function(){ context.dispatch('typedRun') }, 5000)
         }
     },
 
@@ -76,45 +87,52 @@ let actions = {
     typedRun : function(context) {
 
         if(context.state.msg){
-            let typed =  new Typed('#typed', {
-                strings: context.state.typedStrings,
+            
+            context.state.typed.current =  new Typed('#typed', {
+                strings: context.state.typed.strings,
                 typeSpeed: 80,
                 backSpeed: 40,
                 loop: true,
                 showCursor: false,
+                contentType: 'html'
             })
+            
+            let interval = setInterval( function(){
+                if(context.state.msg){
+                    context.dispatch('typedSetIcon', context.state.typed.current.arrayPos )
+                }else{
+                    clearInterval(interval)
+                    context.dispatch('typedSetIcon', false )
+                }
+            }, 100 )
 
-            console.log(typed)
         }
 
     },
 
 
-    typedRun2 : function(context) {
-        
-        if(context.state.msg){
-            console.log('Start runTyped2() ...')
-            let i=0 
-            let keys = Object.keys(context.state.typedStrings)
-            let typedStrings = context.state.typedStrings
-           
-            $('#typed').html('')
-            console.log($('#typed'), keys.length, typedStrings.length )
+    typedSetIcon(context, position = false ) {
 
-            while( i < keys.length ) {
-              //  $('#typed').html(strings[i])
-              setTimeout( function(){
-                console.log('element:',  i, typedStrings[i] )
-              }, 3000)
-
-              i++
+        if( context.state.typed.icons[position]  ){
+            context.state.typed.position = position
+            context.state.iconPrefix = 'fas'
+    
+            if( context.state.typed.icons[position].split(':').length === 2 ){
+                context.state.typed.iconPrefix = context.state.typed.icons[position].split(':')[0]
+                context.state.typed.iconName = context.state.typed.icons[position].split(':')[1]
+            }else{
+                context.state.typed.iconName = context.state.typed.icons[position]
             }
-
+  
         }else{
-            console.log('$state.msg is False!')
+            context.state.typed.position = false
+            context.state.iconPrefix = false
+            context.state.iconName = false
         }
 
-    }
+    },
+
+
 
 
 

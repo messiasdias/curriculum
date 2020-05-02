@@ -13,6 +13,7 @@ import {
     faBriefcase,
     faDollarSign,
     faBullseye,
+    faHeart,
 
 } 
 from '@fortawesome/free-solid-svg-icons'
@@ -32,6 +33,8 @@ library.add(
     faBriefcase,
     faDollarSign,
     faBullseye,
+    faHeart
+    
 )
 
 
