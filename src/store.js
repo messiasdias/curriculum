@@ -3,28 +3,26 @@ import euImg from './images/eu.png'
 
 let state = {
     euImage: euImg,
-    btn: false,
     msg : false,
-    main : {
-        opacity : "0.1",
-    },
+    cookieMsg: localStorage.getItem('msg') ? true : false,
 
     typed: {
         current: false,
         position: false,
 
 
-        strings: [ "" ,
-        "Olá!, Sou <b>Messias Dias</b>.", 
-        "Que bom ter você aqui! ",
-        "Esse é o meu Curriculum.",
-        "...Clique nos Icones correspondentes Abaixo: ",
-        'Para imprimir ou salvar como PDF; ',
-        'Se preferir contato  via  Wathsapp;',
-        'Enviar email para <a href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a>',
-        "Espero atender os requisitos <br> necessários pra a vaga ou projeto.",
-        "E Mais uma vez...",
-        "Muito <b>Obrigado</b> por está aqui!",
+        strings: [
+            "" ,
+            "Olá!, Sou <b>Messias Dias</b>.", 
+            "Que bom ter você aqui! ",
+            "Esse é o meu Curriculum.",
+            "... Clique nos Botões correspondentes Abaixo para: ",
+            'Imprimir ou salvar como PDF; ',
+            'Contato  via  Wathsapp;',
+            'Enviar email para <a href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a>',
+            "Espero atender os requisitos <br> necessários pra a vaga ou projeto.",
+            "E Mais uma vez...",
+            "Muito <b>Obrigado</b> por está aqui!",
         ],
 
         iconName: false,
@@ -33,7 +31,8 @@ let state = {
             5: 'fas:print',
             6: 'fab:whatsapp',
             7: 'fas:envelope',
-            8: 'fas:heart'
+            8: 'fas:tasks',
+            10: 'fas:heart'
         }
     },
 
@@ -44,38 +43,34 @@ let mutations = {
 
     msg : function (state, open=false ){
         if(  state.msg | (open == false) ) {
-            state.btn = false
             state.msg =  false
-            state.main.opacity = "1.0"
         }else{
-            state.btn = true
             state.msg =  true
-            state.main.opacity = "0.1"
         }
     },
 
-
-    btn : function (state){
-        if( state.btn ) {
-            state.btn = false
-        }else{
-            state.btn = true
-        }
-    },
-
+    cookieMsg: function(state, cookie = true){
+        localStorage.setItem('msg', cookie) 
+    }
 
 }
 
 
 let actions = {
 
-
     toggleMsg: function(context){
         if( context.state.msg ){
             context.commit("msg", false)
+
+            if(!context.state.cookieMsg){
+                context.commit("cookieMsg")
+            }
+
         }else{
-            context.commit("msg", true)
-            setTimeout( function(){ context.dispatch('typedRun') }, 5000)
+            if(!context.state.cookieMsg){
+                context.commit("msg", true)
+                setTimeout( function(){ context.dispatch('typedRun') }, 5000)
+            }
         }
     },
 

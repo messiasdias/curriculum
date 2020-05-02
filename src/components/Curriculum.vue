@@ -1,7 +1,7 @@
 <template>
 <div id="app" >
 
-    <div class="main"  :style="'opacity:'+  msg ? '.01' : '10' + '; !important'" >
+    <div class="main">
         <Left/>
         <Right/>
     </div>

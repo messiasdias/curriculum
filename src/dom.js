@@ -12,7 +12,11 @@ $(document).ready(()=>{
 
 $(document).scroll(function(){
 
-    //console.log( $(this).scrollTop(), $('.right').height()-1 )
+    if( ( $(this).scrollTop() >= 200 ) && ( window.innerWidth <= 468 ) ){
+        $('.img-content-fixed').show()
+    }else{
+        $('.img-content-fixed').hide()
+    }
 
     if($(this).scrollTop() >= ($('.right').height() - 50)  ){
         $('.btn').addClass('btn-relative')

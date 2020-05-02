@@ -2,10 +2,10 @@
 <!-- start .left-->
 <div class="left">
     
-    <div class="img-content">  <img :src="euImage"> </div>
+    <div class="img-content"><img :src="euImage"></div>
                
     <div class="item" >
-        <h3> <fontawesome class="icon" icon="address-book" /> Contatos</h3>
+        <h3><fontawesome class="icon" icon="address-book" /> Contatos</h3>
         <p><a target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!"> 81983538086</a></p>
         <p><a target="_blank" href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a></p>
     </div>
@@ -22,10 +22,10 @@
     </div>
 
     <div class="item" >
-        <h3><fontawesome class="icon" icon="info" />  Informações Relevantes</h3>
+        <h3><fontawesome class="icon" icon="info" /> Informações Relevantes</h3>
         <p>Inglês Técnico - Básico</p> 
-        <p>Habilitação AB</p>
-        <p>Disponibilidade para Viagens</p>    
+        <p>Disponibilidade para Viagens</p> 
+        <p>Habilitação AB</p>   
     </div>    
 
 </div>

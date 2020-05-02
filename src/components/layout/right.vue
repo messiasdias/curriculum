@@ -2,8 +2,10 @@
 
 <!-- start .right-->
 <div class="right">
-
-    <div class="img-content2"><img :src="euImage"></div>
+    
+    <div class="img-content-fixed"><img :src="euImage"></div>
+    <div class="img-content"><img :src="euImage"></div>
+   
 
     <div class="item">
         <h1>Messias Wagner da Silva Dias</h1> 
@@ -12,8 +14,8 @@
 
     <div class="item" >
             <h3><fontawesome icon="graduation-cap" /> Formação</h3>
-            <p>Tecnólogo em Rede de Computadores 2013-2014 (Interrompido)</p>
-            <p>Técnico em Informática para a Internet 2015-2016</p>
+            <p>Tecnólogo em Rede de Computadores | <small>2013-2014 (Interrompido)</small></p>
+            <p>Técnico em Informática para a Internet | <small>2015-2016</small></p>
     </div>
 
     <div class="item" >
@@ -21,7 +23,7 @@
 
         <ul>
             <li>Font-End
-                <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materilize, JavaScript e Frameworks como VueJs, React, React-Native e AngularJS</p>
+                <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, React-Native e AngularJS</p>
             </li>
             <li>Back-End
                 <p>PHP ,Framework Laravel e Cms Wordpress</p>
