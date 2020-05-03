@@ -3,9 +3,9 @@
 <!-- start .right-->
 <div class="right">
     
-    <div class="img-content-fixed"><img alt="Foto Messias"  :src="euImage"></div>
     <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
-   
+
+
 
     <div class="item">
         <h1>Messias Wagner da Silva Dias</h1> 

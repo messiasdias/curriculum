@@ -14,8 +14,10 @@ import {
     faDollarSign,
     faBullseye,
     faHeart,
-    faTasks
-
+    faTasks,
+    faMobileAlt,
+    faAt,
+    faLink,
 } 
 from '@fortawesome/free-solid-svg-icons'
 
@@ -35,7 +37,10 @@ library.add(
     faDollarSign,
     faBullseye,
     faHeart,
-    faTasks
+    faTasks,
+    faMobileAlt,
+    faAt,
+    faLink,
 )
 
 

@@ -6,19 +6,19 @@
                
     <div class="item" >
         <h3><fontawesome class="icon" icon="address-book" /> Contatos</h3>
-        <p><a rel="noopener"  target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!"> 81983538086</a></p>
-        <p><a rel="noopener"  target="_blank" href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a></p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!">(81) 983538086  <fontawesome icon="mobile-alt" /> </a></p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com <fontawesome icon="at" /></a></p>
     </div>
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="network-wired" /> Social</h3>
-        <p><a rel="noopener"  target="_blank" href="https://linkedin.com/in/messiasdias"> linkedin.com/in/messiasdias</a> </p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://linkedin.com/in/messiasdias"> linkedin.com/in/messiasdias  <fontawesome icon="link" /></a> </p>
     </div>
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="code-branch" /> Code Repositórios</h3>
-        <p><a rel="noopener"  target="_blank" href="https://github.com/messiasdias">github.com/messiasdias</a></p>
-        <p><a rel="noopener"  target="_blank" href="https://bitbucket.org/messiasdias">bitbucket.org/messiasdias</a></p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/messiasdias">github.com/messiasdias <fontawesome icon="link" /></a></p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://bitbucket.org/messiasdias">bitbucket.org/messiasdias <fontawesome icon="link" /></a></p>
     </div>
 
     <div class="item" >

@@ -13,9 +13,9 @@ $(document).ready(()=>{
 $(document).scroll(function(){
 
     if( ( $(this).scrollTop() >= 200 ) && ( window.innerWidth <= 768 ) ){
-        $('.img-content-fixed').show()
+        $('#avatar').show()
     }else{
-        $('.img-content-fixed').hide()
+        $('#avatar').hide()
     }
 
     if($(this).scrollTop() >= ($('.right').height() - 100)  ){

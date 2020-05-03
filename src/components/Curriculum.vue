@@ -1,6 +1,7 @@
 <template>
 <div id="app" >
-
+    <img id="avatar" alt="Foto Messias"  :src="euImage">
+    
     <div class="main">
         <Left/>
         <Right/>
@@ -23,7 +24,7 @@ import {mapState} from "vuex"
     computed: {
         ...mapState({
             msg: state => state.msg,
-            logoImg: state => state.logoImg,
+            euImage: state => state.euImage,
         })
     },
 
@@ -63,7 +64,7 @@ import {mapState} from "vuex"
 
             {
                 'name': 'viewport',
-                'content': 'width=device-width,initial-scale=1.0'
+                'content': 'width=device-width,initial-scale=1'
             },
 
             {
