@@ -1,6 +1,3 @@
-//animate-scss
-//@import "../../node_modules/animate-scss/animate.scss";
-
 $default_duration: .6s;
 
 @mixin keyframes($animationName) {
@@ -19,16 +16,22 @@ $default_duration: .6s;
 }
 
 
-@mixin setAnimation($str) {
+@mixin setAnimation($str, $delay: '.3s') {
     -webkit-animation: #{$str};
     -moz-animation: #{$str};
     -o-animation: #{$str};
     animation: #{$str};
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
 }
 
 
 @mixin radialGradientTrasition($name, $from, $to){
-   
+    
+  
+
     @include keyframes(radialTrasition-#{$name}){
 
         0%  { 
@@ -53,7 +56,7 @@ $default_duration: .6s;
     }   
 
 
-    @include setAnimation('radialTrasition-#{$name} .3s cubic-bezier(0.6, -0.28, 0.735, 0.045)');
+    @include setAnimation('radialTrasition-#{$name} .5s cubic-bezier(0.6, -0.28, 0.735, 0.045)');
 
 } 
 
@@ -62,7 +65,7 @@ $default_duration: .6s;
 
 @mixin boderRotateEfect($name, $from, $to){
 
-  $pxs: 2px;
+  $pxs: 1px;
   @include keyframes(boderRotateEfect-#{$name}){
 
       0%  { 
@@ -88,18 +91,32 @@ $default_duration: .6s;
         border-right: solid  $pxs $to;
       }
 
-      100%  { 
+      75%  { 
+        border-top: solid  $pxs $from;
+        border-left: solid  $pxs $from;
+        border-bottom: solid  $pxs $to;
+        border-right: solid  $pxs $to;
+      }
+
+      85%  { 
         border-top: solid  $pxs $to;
         border-left: solid  $pxs $from;
         border-bottom: solid  $pxs $from;
-        border-right: solid  $pxs $from;
-      }
+        border-right: solid  $pxs $to;
+      } 
 
-    
+      100%  { 
+        border-top: solid  $pxs $to;
+        border-left: solid  $pxs $to;
+        border-bottom: solid  $pxs $from;
+        border-right: solid  $pxs $from;
+      } 
+
+
      
   }   
 
-  @include setAnimation('boderRotateEfect-#{$name} 1.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite ');
+  @include setAnimation('boderRotateEfect-#{$name} 1.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite ', 0);
 
 } 
 

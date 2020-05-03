@@ -18,9 +18,18 @@ let dom = {
 
     avatar: function  () {
 
-        if( ( $(document).scrollTop() >= 100 ) && ( window.innerWidth <= breakpoints.medium ) ){
-            $('#avatar').html( $('.right>.img-content').html() )
-            $('#avatar').show()
+        if( window.innerWidth <= breakpoints.medium ) { 
+
+            if(  ( $(document).scrollTop() > 200 )  &&
+                ( $(document).scrollTop() < ($('.right').height() ) )  ){
+                
+                $('#avatar').html( $('.right>.img-content').html() )
+                $('#avatar').show('fast')
+
+            }else{
+                $('#avatar').hide()
+            }
+
         }else{
             $('#avatar').hide()
         }
@@ -51,6 +60,7 @@ $(document).ready(()=>{
 $(document).scroll( function(){
     dom.avatar();
     dom.btn()
+    console.log( $('.right').height() , $(document).scrollTop() )
 })
 
 //export
