@@ -14,7 +14,7 @@
     </div>
 
     <!-- #whatsapp-->
-    <a :v-if="btn"  class=""  id="whatsapp" title="Whatsapp" target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!" >
+    <a :v-if="btn"  class=""  id="whatsapp" title="Whatsapp" rel="noopener" target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!" >
         <!-- fab fa-whatsapp -->
         <fontawesome :icon="['fab', 'whatsapp']"  />
     </a>

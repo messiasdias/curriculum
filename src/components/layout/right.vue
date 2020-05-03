@@ -3,8 +3,8 @@
 <!-- start .right-->
 <div class="right">
     
-    <div class="img-content-fixed"><img :src="euImage"></div>
-    <div class="img-content"><img :src="euImage"></div>
+    <div class="img-content-fixed"><img alt="Foto Messias"  :src="euImage"></div>
+    <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
    
 
     <div class="item">

@@ -1,5 +1,5 @@
 import Typed from 'typed.js'
-import euImg from './images/eu.png'  
+import euImg from './assets/eu.png' 
 
 let state = {
     euImage: euImg,

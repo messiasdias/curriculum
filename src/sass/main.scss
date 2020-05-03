@@ -20,6 +20,7 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 .custom-shadow {
@@ -49,6 +50,9 @@ body{
     padding: 20px !important;
     margin: 0 !important;
     overflow-x: none  !important;
+    @media print {
+        background: none !important;
+    }
 }
 
 
@@ -90,7 +94,7 @@ body{
     position: sticky !important;
     top: 20px !important;
     right: -10px !important;
-    z-index: 20 !important;
+    z-index: 12 !important;
     margin: 0 !important;
     width: 40px !important;
     height: 40px !important;
@@ -107,6 +111,23 @@ body{
         );
     }
 
+    @media print { display: none !important;}
+
+    &::before{
+        content: '';
+        width: 100px;
+        height: 20px;
+        z-index: 12;
+        border-bottom: solid 2px $cor1;
+        border-left: solid 2px $cor1;
+        border-radius: 0px 0px 0px 10px;
+        position: absolute;
+        bottom:-22px;
+        left: calc(50%)
+
+    }
+
+
     & > img{
         @extend .circle;
         position: relative !important ;
@@ -114,7 +135,7 @@ body{
         height: 40px !important;
     }
     
-    @media print { display: none !important;}
+   
 }
 
 
@@ -195,7 +216,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         border: solid 1px $cor1;
         z-index: 3;
         top: calc(92%);
-        @media screen and (min-width: #{$small}){ display: none !important;}
+        @media screen and (min-width: #{$medium}){ display: none !important;}
     }
 
     @media print { display: none !important;}
@@ -217,11 +238,12 @@ $img-before-width:  calc(50% - (160px/2)) ;
         width: 80% ;
         font-family: $font2;
         font-size: 2em;
+        font-weight: bolder;
         letter-spacing: 2px;
-        color:$cor1;
-        text-shadow: 1px 1px 5px rgba(0,0,0, .1);
+        color: $cor1;
+        text-shadow: 1px 1px 1px rgba(0,0,0, .1);
+        opacity: 10;
         
-
         @media screen and  (max-width: #{$medium} ) { 
             font-size: 1.8em;
             text-align: center !important;
@@ -447,7 +469,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
         border-bottom: solid 1px $cor1;
         border-radius: 0px 0px 0px 20px;
         transform: translateY(2px) translateX(-8px);
-        margin-top: 120px;
+        margin-top: 100px;
         padding-top: 0 !important;
     }
 
@@ -459,6 +481,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     h1{
         margin-left: 30px;
     }
+    
     h3{
         flex-direction: row;
         svg {
@@ -493,7 +516,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     z-index: 11;
     padding: 10px;
 
-    @media screen and (max-width: $small  ) {
+    @media screen and (max-width: $medium  ) {
         flex-direction: row-reverse;
         justify-content: center;
         background-color: $white;
@@ -514,7 +537,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     &-relative{
         @extend .btn;
 
-        @media screen and (max-width: $small  ) {
+        @media screen and (max-width: $medium  ) {
             position: relative !important;
             box-shadow: none !important;
             min-width: 90%;
@@ -574,7 +597,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
     & > svg,  & > i{
         color: $clr;
 
-        @media screen and (min-width: $small + 1px  ) {
+        @media screen and (min-width: $medium + 1px  ) {
             @include bounceInLeft(
                 $duration: .3s,
                 $count: 1,
@@ -584,7 +607,7 @@ $img-before-width:  calc(50% - (160px/2)) ;
             );
         }
 
-        @media screen and (max-width: $small  ) {
+        @media screen and (max-width: $medium  ) {
             @include bounceInUp(
                 $duration: .3s,
                 $count: 1,

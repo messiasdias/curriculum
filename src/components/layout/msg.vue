@@ -3,7 +3,7 @@
 <div v-if="msg" class="msg"  >
 
     <div draggable class="content" >
-        <fontawesome icon="times" id="close" @click="toggleMsg()"  />
+        <fontawesome icon="times" alt="Close" id="close" @click="toggleMsg()"  />
         <span class=""></span> 
         
         <div  class="box">
