@@ -28,7 +28,6 @@ $default_duration: .6s;
 
 
 @mixin radialGradientTrasition($name, $from, $to){
-    // background-image: radial-gradient( circle,  red 60% , white 40% );
    
     @include keyframes(radialTrasition-#{$name}){
 
@@ -53,9 +52,57 @@ $default_duration: .6s;
         }
     }   
 
-    @include setAnimation('radialTrasition-#{$name} .5s ease-in-out');
+
+    @include setAnimation('radialTrasition-#{$name} .3s cubic-bezier(0.6, -0.28, 0.735, 0.045)');
 
 } 
+
+
+
+
+@mixin boderRotateEfect($name, $from, $to){
+
+  $pxs: 2px;
+  @include keyframes(boderRotateEfect-#{$name}){
+
+      0%  { 
+        border-top: solid  $pxs $to;
+        border-left: solid  $pxs $to;
+        border-bottom: solid  $pxs $from;
+        border-right: solid  $pxs $from;
+      }
+
+
+      25%  { 
+        border-top: solid  $pxs $from;
+        border-left: solid  $pxs $to;
+        border-bottom: solid  $pxs $to;
+        border-right: solid  $pxs $from;
+      }
+
+
+      50%  { 
+        border-top: solid  $pxs $from;
+        border-left: solid  $pxs $from;
+        border-bottom: solid  $pxs $to;
+        border-right: solid  $pxs $to;
+      }
+
+      100%  { 
+        border-top: solid  $pxs $to;
+        border-left: solid  $pxs $from;
+        border-bottom: solid  $pxs $from;
+        border-right: solid  $pxs $from;
+      }
+
+    
+     
+  }   
+
+  @include setAnimation('boderRotateEfect-#{$name} 1.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite ');
+
+} 
+
 
 
 

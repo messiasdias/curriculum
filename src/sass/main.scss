@@ -10,6 +10,7 @@
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInRight";
 @import "../../node_modules/animate-scss/_zooming-entrances/zoomInDown";
 @import "../../node_modules/animate-scss/_bouncing-entrances/bounceInLeft";
+@import "../../node_modules/animate-scss/_bouncing-entrances/bounceInRight";
 @import "../../node_modules/animate-scss/_bouncing-entrances/bounceInUp";
 @import "../../node_modules/animate-scss/_fading-entrances/fadeIn";
 
@@ -152,6 +153,7 @@ body{
         letter-spacing: 2px;
         margin-bottom: 10px;
         color: rgba(0,0,0, .5);
+        opacity: 10;
 
         svg {
             color: $cor1;
@@ -181,6 +183,7 @@ body{
         font-size: 14px !important;
         margin-left: 5px !important;
         max-width: 80%;
+        opacity: 10 !important;
     
 
         &.link{
@@ -559,9 +562,8 @@ $img-before-width:  calc(50% - (160px/2) ) ;
 
 
 #avatar{
-
+   
     display: none;
-    @extend .circle;
     display: block;
     position: fixed !important;
     top: 20px !important;
@@ -572,10 +574,18 @@ $img-before-width:  calc(50% - (160px/2) ) ;
     height: 40px !important;
     align-self: flex-end;
     transform: translateX(10px);
+    background-color: $white;
+
+    img{
+        @extend .circle;
+        position: fixed !important;
+        right: 0 !important;
+        top:0;
+    }
 
     @media screen {
-        @include zoomIn(
-            $duration: .1s,
+        @include zoomInRight(
+            $duration: .6s,
             $count: 1,
             $delay: .3s,
             $function: ease-in-out, 
@@ -589,14 +599,14 @@ $img-before-width:  calc(50% - (160px/2) ) ;
         content: '';
         width: 100px;
         height: 20px;
-        z-index: 12;
+        z-index: -1;
         border-bottom: solid 2px $cor1;
         border-left: solid 2px $cor1;
         border-radius: 0px 0px 0px 10px;
         position: absolute;
         bottom:-22px;
-        left: calc(50%)
-
+        left: calc(50%);
+        background: $white;
     }
 
 
@@ -716,15 +726,15 @@ $img-before-width:  calc(50% - (160px/2) ) ;
 .btn > ##{$name} {
     z-index: 12;
     background: $white;
-    border-right: solid 1px rgba($clr, .4);
-    border-bottom: solid 1px rgba($clr, .4);
+    border: solid 1px transparent !important;
+    @include boderRotateEfect($name, $black2, $clr);
 
 
     & > svg,  & > i{
         color: $clr;
 
         @media screen and (min-width: $medium + 1px  ) {
-            @include bounceInLeft(
+            @include bounceInRight (
                 $duration: .3s,
                 $count: 1,
                 $delay: $dly ,

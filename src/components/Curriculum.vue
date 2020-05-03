@@ -1,6 +1,6 @@
 <template>
 <div id="app" >
-    <img id="avatar" alt="Foto Messias"  :src="euImage">
+    <div id="avatar" > </div>
     
     <div class="main">
         <Left/>
