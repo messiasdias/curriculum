@@ -43,32 +43,38 @@ html{
     scroll-behavior: smooth;
     transition:  scroll-behavior cubic-bezier(0.6, -0.28, 0.735, 0.045) .8s; 
     @include scrollbar( rgba($cor1, .3) , $cor1, $black2, 7px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+
 }
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100vw;
+    width: 100vw;
+    min-height: 100vh;
     margin: 0 !important;
+    padding: 0 !important;
     overflow-x: none  !important;
-    padding-bottom: 20px;
-
+    
+    @media screen and  (min-width: 781px ) {background: #eee;}
 
     @media screen and  (min-width: #{$large} ) {
         width: 100vw;
-        background: #eee;
         overflow-x: none  !important;
-        padding: 40px 0px;
+        padding: 40px 0px !important;
     }
 
-    @media screen and  (max-width: #{$large} ) {
-        //overflow-x: hidden !important;
+    @media screen and  (min-height: #{ $large } ) {
+        padding: 40px 0px !important;
+        align-items: center !important;
     }
 
-    @media print {
-        background: none !important;
-    }
+    @media print {background: none !important;}
 }
 
 
@@ -82,19 +88,19 @@ body{
     background: $white !important;
 
 
-    @media screen and  (min-height: #{$large} ) {
+    @media screen and  (min-height: #{$medium} ) {
         min-height: 1100px;
     }
 
 
-    @media screen and  (min-width: #{$large} ) {
+    @media screen and  (min-width: #{$medium + 1px} ) {
         width: 842px !important;
         padding: 40px 0px;
         border: solid 1px rgba($black2, .2);
         box-shadow: -2px 2px 5px $black2;
     }
 
-    @media screen and  (max-width: #{$large}  ) {
+    @media screen and  (max-width: #{$medium}  ) {
         max-width: 95vw;
         padding: 20px 0px 0px 0px;
     }
@@ -364,9 +370,12 @@ body{
 
 
 .left{
-
-    width: 38%;
     align-items: flex-end;
+    width: 70%;
+
+    @media screen and  (min-width: #{$large + 1px} ) { 
+        width: 38%;
+    }
 
     @media screen and  (max-width: #{$medium} ) { 
         border-right: solid 2px $cor1;
@@ -375,7 +384,7 @@ body{
         border-radius: 0px 20px 20px 0px;
         transform: translateX(8px);
         &:nth-child(2){
-            padding-top: 50px;
+            padding-top: 10px;
         }
     }
 
@@ -432,7 +441,10 @@ body{
 
     position: relative;
     border-left: solid 2px $cor1;
-    width: 62%;
+
+    @media screen and  (min-width: #{$large + 1px} ) { 
+        width: 62%;
+    }
 
     @media screen and  (max-width: #{$medium} ) { 
         padding-bottom: 20px;
@@ -445,7 +457,7 @@ body{
     }
 
     .item {
-        @media screen and  (max-width: #{$large} ) { 
+        @media screen and  (max-width: #{$medium} ) { 
             transform: translateY(-90px);
         }
     }
@@ -536,11 +548,10 @@ $img-before-width:  calc(50% - (160px/2) ) ;
     }
 
     & > img{
-        @media screen and (min-width: #{$medium} ) {
-            display: none;
-        }
+
+        display: none;
         
-        @media screen and (max-width: #{$medium} ) {
+        @media screen and (max-width: $medium  ) {
             display: block;
             width: 160px;
             height:  160px;
@@ -558,7 +569,7 @@ $img-before-width:  calc(50% - (160px/2) ) ;
         right: 10px;
         background: $white;
         transform: translateX(11px);
-        @media screen and (min-width: #{$medium}){ display: none !important;}
+        @media screen and (min-width: 920px ){ display: none !important;}
     }
 
     @media print { display: none !important;}
@@ -651,72 +662,64 @@ $img-before-width:  calc(50% - (160px/2) ) ;
     
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    z-index: 11;
-    padding: 10px;
+    justify-content: center;
+    padding: 20px 0px;
 
 
-    &-fixed-lg {
-        @media screen and (min-width: $large  ) {
-            position: fixed;
-            right: 0px;
-            bottom: 0px;
-            max-width: 100px;
-        }
+    &-fixed-md, &-fixed-lg{
+        position: fixed !important;
+        z-index: 11;
     }
 
 
-    &-fixed-md {
+    &-fixed-md, &-relative{
+        flex-direction: row-reverse !important;
+    }
 
-        @media screen and (max-width: $large  ) {
-            flex-direction: row-reverse;
-            justify-content: center;
-            background-color: $white;
-            position: fixed;
-            right: 0px;
-            bottom: 0px;
-            width: 100vw ;
-            box-shadow: 1px -1px 5px $black2;
-            max-height: 50px;
+    &-fixed-lg {
+        flex-direction: column !important;
+        justify-content: space-around;
+        right: 20px;
+        //bottom: 0px;
+        top: calc( 50% - (225px/2) )  !important;
+        max-width: 100px;
+        background: transparent;
 
-      
-            @include zoomInUp(
-                $duration: .1s,
-                $count: 1,
-                $delay: .1s ,
-                $function: ease-in-out, 
-                $fill: both
-            );
+        @media screen and  (min-height: #{ $large } ) {
+            bottom: initial !important;
+            top: calc( 50% - (225px/2) )  !important;
         }
+    }
 
+    &-fixed-md {
+        background: $white;
+        right: 0px;
+        bottom: 0px;
+        width: 100vw ;
+        box-shadow: 1px -1px 5px $black2;
+        max-height: 50px;
+
+        @include zoomInUp(
+            $duration: .1s,
+            $count: 1,
+            $delay: .1s ,
+            $function: ease-in-out, 
+            $fill: both
+        );
     }
 
     &-relative{
-        //@extend .btn;
-
-        @media screen and  (min-height: #{$large} ) {
-            border: solid 1px red;
-            margin-bottom: 50px;
-        }
-
-        @media screen and (max-width: $medium  ) {
-            flex-direction: row-reverse;
-            justify-content:  center;
-            position: relative !important;
-            box-shadow: none !important;
-            min-width: 90%;
-            max-width: 90%;
-            padding: 20px 0px;
-            margin: 0 auto !important;
-            border-top: solid 1px $cor1;
-            border-left: solid 2px $cor1;
-            border-bottom: solid 2px $cor1;
-            border-radius: 20px 0px 0px 20px;
-            transform: translateX(-10px) translateY(-1.2px);
-            background-color: $white !important;
-        }
-
+        position: relative !important;
+        min-width: 90%;
+        max-width: 90%;
+        padding: 20px 0px;
+        margin: 0 auto !important;
+        border-top: solid 1px $cor1;
+        border-left: solid 2px $cor1;
+        border-bottom: solid 2px $cor1;
+        border-radius: 20px 0px 0px 20px;
+        transform: translateX(-10px) translateY(-1.2px);
+        background-color: $white !important;
     }   
 
 }
