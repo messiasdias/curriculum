@@ -1,6 +1,6 @@
 <template>
 <!-- start .btns-->
-<div class="btn">
+<div class="btn btn-fixed-lg">
 
       <!-- #printbtn-->
     <div :v-if="btn" class="" id="print" title="Imprimir" @click="printDoc()" >

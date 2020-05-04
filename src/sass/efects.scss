@@ -30,8 +30,6 @@ $default_duration: .6s;
 
 @mixin radialGradientTrasition($name, $from, $to){
     
-  
-
     @include keyframes(radialTrasition-#{$name}){
 
         0%  { 
@@ -55,7 +53,6 @@ $default_duration: .6s;
         }
     }   
 
-
     @include setAnimation('radialTrasition-#{$name} .5s cubic-bezier(0.6, -0.28, 0.735, 0.045)');
 
 } 
@@ -68,7 +65,11 @@ $default_duration: .6s;
   $pxs: 1px;
   @include keyframes(boderRotateEfect-#{$name}){
 
-      0%  { 
+      0% {
+        border: solid  $pxs $to;  
+      }
+
+      25%  { 
         border-top: solid  $pxs $to;
         border-left: solid  $pxs $to;
         border-bottom: solid  $pxs $from;
@@ -76,20 +77,13 @@ $default_duration: .6s;
       }
 
 
-      25%  { 
+      50%  { 
         border-top: solid  $pxs $from;
         border-left: solid  $pxs $to;
         border-bottom: solid  $pxs $to;
         border-right: solid  $pxs $from;
       }
 
-
-      50%  { 
-        border-top: solid  $pxs $from;
-        border-left: solid  $pxs $from;
-        border-bottom: solid  $pxs $to;
-        border-right: solid  $pxs $to;
-      }
 
       75%  { 
         border-top: solid  $pxs $from;
@@ -98,29 +92,18 @@ $default_duration: .6s;
         border-right: solid  $pxs $to;
       }
 
-      85%  { 
+      100%  { 
         border-top: solid  $pxs $to;
         border-left: solid  $pxs $from;
         border-bottom: solid  $pxs $from;
         border-right: solid  $pxs $to;
-      } 
-
-      100%  { 
-        border-top: solid  $pxs $to;
-        border-left: solid  $pxs $to;
-        border-bottom: solid  $pxs $from;
-        border-right: solid  $pxs $from;
-      } 
-
-
+      }
      
   }   
 
-  @include setAnimation('boderRotateEfect-#{$name} 1.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite ', 0);
+  @include setAnimation('boderRotateEfect-#{$name} .8s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite ', 0);
 
 } 
-
-
 
 
 @mixin rotate($str){
@@ -130,4 +113,35 @@ $default_duration: .6s;
     100% { transform: rotate(0deg) scale(1); }
   }
   @include setAnimation(rotate #{$str});
+}
+
+
+
+
+@mixin scrollbar( $tumb1, $tumb2, $trak, $width:5px ) {
+
+  &::-webkit-scrollbar {
+    width: $width ;
+    max-height: 10px !important;
+  }
+
+  &::-webkit-scrollbar-track {
+      background: $trak !important;
+      border-radius: 0px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background:$tumb1 !important;
+      border-radius: 5px !important;
+      transition-delay: .3s;
+      transition: all ease-in-out .8s !important;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+      transition-delay: .3s !important;
+      transition: all ease-in-out .8s !important;
+      background:$tumb2 !important;
+      cursor: pointer !important;
+    }
+
 }

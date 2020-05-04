@@ -40,6 +40,9 @@
 
 html{
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition:  scroll-behavior cubic-bezier(0.6, -0.28, 0.735, 0.045) .8s; 
+    @include scrollbar( rgba($cor1, .3) , $cor1, $black2, 7px);
 }
 
 body{
@@ -77,6 +80,12 @@ body{
     position: relative;
     box-sizing: border-box;
     background: $white !important;
+
+
+    @media screen and  (min-height: #{$large} ) {
+        min-height: 1100px;
+    }
+
 
     @media screen and  (min-width: #{$large} ) {
         width: 842px !important;
@@ -370,6 +379,7 @@ body{
         }
     }
 
+
     &:first-child{
         padding-top: 50px;
     }
@@ -563,7 +573,6 @@ $img-before-width:  calc(50% - (160px/2) ) ;
 #avatar{
    
     display: none;
-    display: block;
     position: fixed !important;
     top: 20px !important;
     right: 30px !important;
@@ -605,19 +614,8 @@ $img-before-width:  calc(50% - (160px/2) ) ;
         position: absolute;
         bottom:-22px;
         left: calc(50%);
-        //background: $white;
     }
 
-    &::after{
-        //content: '';
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(to left, $white 0%, $white) ;
-        top: -20px;
-        right: -20px;
-        z-index: -11;
-    }
 
 
     & > img{
@@ -650,11 +648,7 @@ $img-before-width:  calc(50% - (160px/2) ) ;
 
 
 .btn {
-
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    max-width: 100px;
+    
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -662,28 +656,53 @@ $img-before-width:  calc(50% - (160px/2) ) ;
     z-index: 11;
     padding: 10px;
 
-    @media screen and (max-width: $medium  ) {
-        flex-direction: row-reverse;
-        justify-content: center;
-        background-color: $white;
-        min-width: 95vw ;
-        max-width: 100vw ;
-        box-shadow: 1px -1px 5px $black2;
-        max-height: 50px;
 
-        @include zoomInUp(
-            $duration: .1s,
-            $count: 1,
-            $delay: .1s ,
-            $function: ease-in-out, 
-            $fill: both
-        );
+    &-fixed-lg {
+        @media screen and (min-width: $large  ) {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            max-width: 100px;
+        }
+    }
+
+
+    &-fixed-md {
+
+        @media screen and (max-width: $large  ) {
+            flex-direction: row-reverse;
+            justify-content: center;
+            background-color: $white;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            width: 100vw ;
+            box-shadow: 1px -1px 5px $black2;
+            max-height: 50px;
+
+      
+            @include zoomInUp(
+                $duration: .1s,
+                $count: 1,
+                $delay: .1s ,
+                $function: ease-in-out, 
+                $fill: both
+            );
+        }
+
     }
 
     &-relative{
-        @extend .btn;
+        //@extend .btn;
+
+        @media screen and  (min-height: #{$large} ) {
+            border: solid 1px red;
+            margin-bottom: 50px;
+        }
 
         @media screen and (max-width: $medium  ) {
+            flex-direction: row-reverse;
+            justify-content:  center;
             position: relative !important;
             box-shadow: none !important;
             min-width: 90%;
