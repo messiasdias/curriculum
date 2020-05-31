@@ -17,7 +17,7 @@ let state = {
             "Que bom ter você aqui! ",
             "Esse é o meu Curriculum.",
             "... Clique nos Botões correspondentes Abaixo para: ",
-            'Imprimir ou salvar como PDF; ',
+            'Imprimir ou Salvar como PDF; ',
             'Contato  via  Wathsapp;',
             'Enviar email para <a href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a>',
             "Espero atender os requisitos <br> necessários pra a vaga ou projeto.",
