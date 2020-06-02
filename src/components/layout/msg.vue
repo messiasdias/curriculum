@@ -1,6 +1,6 @@
 <template>
  <!-- start .msg-->
-<div v-if="msg" class="msg"  >
+<div v-if="msg" class="msg" >
 
     <div draggable class="content" >
         <fontawesome icon="times" alt="Close" id="close" @click="toggleMsg()"  />

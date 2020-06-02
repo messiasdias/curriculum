@@ -29,14 +29,6 @@ let dom = {
         return window.innerWidth >= breakpoints.large
     },
 
-    image : function (){
-        if( dom.isMedium() | dom.isLarge() ){
-            $('.left>.img-content').html( $('.right>.img-content').html() )
-        }
-
-        this.avatar()
-    },
-
     avatar: function  () {
         if( dom.isSmall() ) { 
             if( dom.scroolIsBig(200) && dom.scroolIsSml($('.right').height()) ){
@@ -96,21 +88,21 @@ $(document).ready( function() {
 
     dom.avatar()
     dom.btn()
-    dom.image()
+    dom.avatar()
 })
 
 //On Scroll
 $(document).scroll( function(){
     dom.avatar()
     dom.btn()
-    dom.image()
+    dom.avatar()
 })
 
 //On Resize
 $(window).resize( function(){
     dom.avatar()
     dom.btn()
-    dom.image()
+    dom.avatar()
 })
 
 
