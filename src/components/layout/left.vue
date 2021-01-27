@@ -24,8 +24,7 @@
     <div class="item" >
         <h3><fontawesome class="icon" icon="info" /> Informações Relevantes</h3>
         <p>Inglês Técnico - Básico</p> 
-        <p>Disponibilidade para Viagens</p> 
-        <p>Habilitação AB</p>   
+        <p>Trabalho Remoto</p>  
     </div>    
 
 </div>

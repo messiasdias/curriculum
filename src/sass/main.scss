@@ -184,7 +184,7 @@ body{
         flex-direction: row;
         align-items: center;
         font-family: $font1;
-        font-size:  1.2em;
+        font-size:  1em;
         letter-spacing: 2px;
         margin-bottom: 10px;
         color: rgba(0,0,0, .5);
@@ -194,10 +194,11 @@ body{
             color: $cor1;
             font-size: 18px;
             background: $white;
-            padding: 10px;
+            padding: 10px !important;
             border: solid 2px $cor1;
             border-radius: 100%;
             width: 20px !important;
+            min-width: 20px !important;
             height: 20px !important;
             z-index: 2;
         }
@@ -288,13 +289,13 @@ body{
         list-style: circle;
         li{
             font-family: $font1;
-            font-size: 1em;
+            font-size: .9em;
             margin-top: 5px !important;
             font-weight: normal;
+            max-width: 80%;
 
             & > small{
-                font-size: .7em;
-                font-weight: bolder;
+                font-size: .8em;
                 margin-bottom: 10px !important;
             }
             p{

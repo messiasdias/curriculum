@@ -23,7 +23,7 @@
 
         <ul>
             <li>Font-End
-                <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, React-Native e AngularJS</p>
+                <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS</p>
             </li>
             <li>Back-End
                 <p>PHP ,Framework Laravel e Cms Wordpress</p>
@@ -43,16 +43,16 @@
 
     <div class="item" >
         <h3><fontawesome icon="briefcase" /> Experiências Anteriores</h3>
-
         <ul>
+            <li>FUTURA DES. DE PROGRAMAS EIRELI - Desenvolvedor Front-End | <small>Jun/2020 - Jan/2021 </small>
+                <p>Desenvolvimento de interfaces web com Vue.js e Materialize</p>
+            </li>
             <li>SETEV - Analista de Suporte JR | <small>Fev/2018 - Set/2019 </small>
                 <p>Administração de Servidores Linux Ubuntu/Debian</p> 
                 <p>NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento</p>
                 <p>NovoSGA - Desenvolvimento Front-End de Painel de Atendimento exclusivo</p>
             </li>
-               
-        </ul>
-                           
+        </ul>                 
     </div>
 
     <div class="item" >
