@@ -29,7 +29,7 @@
     </div>
 
     <div class="item" >
-        <h3><fontawesome class="icon" icon="code-branch" />Projetos Open-Source</h3>
+        <h3><fontawesome class="icon" icon="code-branch" />Projetos Open-Source por diversão :)</h3>
         <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">Basicis Framework - Projeto<fontawesome icon="link" /></a></p>
         <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/core">Basicis - Core Lib<fontawesome icon="link" /></a></p>
         <p class="link-print" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">https://github.com/basicis/basicis <fontawesome icon="link" /></a></p>
