@@ -24,8 +24,17 @@
     <div class="item" >
         <h3><fontawesome class="icon" icon="info" /> Informações Relevantes</h3>
         <p>Inglês Técnico - Básico</p> 
-        <p>Trabalho Remoto</p>  
-    </div>    
+        <p>Trabalho Remoto</p>
+        <p>PJ/MEI</p>
+    </div>
+
+    <div class="item" >
+        <h3><fontawesome class="icon" icon="code-branch" />Projetos Open-Source</h3>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">Basicis Framework - Projeto<fontawesome icon="link" /></a></p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://bitbucket.org/basicis/core">Basicis - Core Lib<fontawesome icon="link" /></a></p>
+        <p class="link-print" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">https://github.com/basicis/basicis <fontawesome icon="link" /></a></p>
+        <p class="link-print" ><a rel="noopener"  target="_blank" href="https://bitbucket.org/basicis/core">https://bitbucket.org/basicis/core <fontawesome icon="link" /></a></p>
+    </div> 
 
 </div>
 <!-- end .left-->

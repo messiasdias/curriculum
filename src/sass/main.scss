@@ -21,7 +21,6 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
 
 
@@ -95,7 +94,6 @@ body{
     margin: 0;
 }
 
-
 .main{
     display: flex;
     align-items: center;
@@ -133,10 +131,7 @@ body{
     }
 }
 
-
-
 .item{
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -184,7 +179,7 @@ body{
         flex-direction: row;
         align-items: center;
         font-family: $font1;
-        font-size:  1em;
+        font-size: .8rem;
         letter-spacing: 2px;
         margin-bottom: 10px;
         color: rgba(0,0,0, .5);
@@ -192,14 +187,14 @@ body{
 
         svg {
             color: $cor1;
-            font-size: 18px;
+            font-size: 20px;
             background: $white;
             padding: 10px !important;
             border: solid 2px $cor1;
             border-radius: 100%;
-            width: 20px !important;
-            min-width: 20px !important;
-            height: 20px !important;
+            width: 16px !important;
+            min-width: 16px !important;
+            height: 16px !important;
             z-index: 2;
         }
 
@@ -216,7 +211,7 @@ body{
         color: $black;
         font-family: $font1;
         margin: 2px 0;
-        font-size: 14px !important;
+        font-size: .8rem !important;
         margin-left: 5px !important;
         max-width: 80%;
         opacity: 10 !important;
@@ -228,7 +223,10 @@ body{
             align-items: flex-end;
             width: 90%;
             margin: 5px;
-            @media print{  margin-right: 0px; }
+            @media print{
+                margin-right: 0px;
+                display: none;
+            }
 
             & > a{
                 position: relative !important;
@@ -260,10 +258,13 @@ body{
             }
         }
 
-
-        
-
-
+        &.link-print{
+            @extend .link;
+            @media screen {display: none;}
+            @media print{
+                display: block !important;
+            }
+        }
     }
 
     a{  
@@ -289,7 +290,7 @@ body{
         list-style: circle;
         li{
             font-family: $font1;
-            font-size: .9em;
+            font-size: .8em;
             margin-top: 5px !important;
             font-weight: normal;
             max-width: 80%;
@@ -299,7 +300,8 @@ body{
                 margin-bottom: 10px !important;
             }
             p{
-                font-family: $font2; 
+                font-family: $font2;
+                margin: 5px 0px;
                 & > small{
                     font-weight: lighter;
                     float: left;
@@ -435,7 +437,7 @@ body{
         h3{   
             text-align: right !important;
             flex-direction: row-reverse;
-            max-width: 200px;
+            max-width: 90%;
 
             svg {
                 margin-left: 20px;
