@@ -5,12 +5,9 @@
     
     <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
 
-
-
     <div class="item">
         <h1>Messias Wagner da Silva Dias</h1> 
     </div>
-
 
     <div class="item" >
             <h3><fontawesome icon="graduation-cap" /> Formação</h3>
@@ -38,8 +35,6 @@
         </ul>
                            
     </div>
-
-
 
     <div class="item" >
         <h3><fontawesome icon="briefcase" /> Experiências Anteriores</h3>
