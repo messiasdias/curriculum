@@ -26,10 +26,10 @@
                 <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS</p>
             </li>
             <li>Back-End
-                <p>PHP ,Framework Laravel e Cms Wordpress</p>
+                <p>PHP com Framework Laravel, Slim, Symfony e CMS Wordpress</p>
             </li>
             <li>Banco de Dados 
-                    <p>Mysql e MariaDB</p>
+                <p>Mysql e MariaDB</p>
             </li>
             <li>Ferramentas
                 <p>Git, Npm, Composer, Linux Ubuntu/Debian</p>
@@ -60,17 +60,13 @@
             <p>A combinar, Compativel com o Cargo e Mercado.</p>
     </div> 
 
-
     <div class="item" >
-            <h3><fontawesome icon="bullseye" /> Objetivo</h3>
-            <p>
-                Tenho como objetivo dar meus primeiros passos,
-                e desempenhar com o máximo de qualidade, profissionalismo e comprometimento o cargo Desenvolvedor Web. <br>
-            </p>
+        <h3><fontawesome icon="bullseye" /> Objetivo</h3>
+        <p>
+            Tenho como objetivo desempenhar com o máximo de qualidade, profissionalismo e comprometimento o cargo Desenvolvedor Web. <br>
+        </p>
     </div>
-
-                        
-               
+       
 </div>
 <!-- end .right-->
 
