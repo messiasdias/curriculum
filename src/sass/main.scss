@@ -225,7 +225,6 @@ body{
             margin: 5px;
             @media print{
                 margin-right: 0px;
-                display: none;
             }
 
             & > a{
@@ -256,6 +255,19 @@ body{
     
                 }
             }
+
+            small{
+                background-color: rgba($cor1, .7);
+                color: white;
+                position: absolute;
+                bottom: -20px;
+                right: 20px;
+                font-size: .55rem;
+                padding: 3px 5px;
+                border-radius: 5px;
+                @media screen and  (max-width: #{$medium} ) { bottom: -2px;}
+                @media print{display: none;}
+            }
         }
 
         &.link-print{
@@ -264,6 +276,11 @@ body{
             @media print{
                 display: block !important;
             }
+        }
+
+        &.link-noprint{
+            @extend .link;
+            @media print{display: none;}
         }
     }
 

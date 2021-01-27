@@ -13,13 +13,13 @@
     <div class="item" >
         <h3><fontawesome class="icon" icon="network-wired" /> Social</h3>
         <p class="link" ><a rel="noopener"  target="_blank" href="https://linkedin.com/in/messiasdias"> linkedin.com/in/messiasdias  <fontawesome icon="link" /></a> </p>
-        <p class="link" ><a rel="noopener"  target="_blank" href="https://www.facebook.com/messiasw.dias/"> facebook.com/messiasw.dias  <fontawesome icon="link" /></a> </p>
+        <p class="link" ><a rel="noopener" title="Perfil Pessoal para contato" target="_blank" href="https://www.facebook.com/messiasw.dias/"> facebook.com/messiasw.dias <small>Pessoal para contato</small> <fontawesome icon="link" /></a> </p>
     </div>
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="code-branch" /> Code Repositórios</h3>
         <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/messiasdias">github.com/messiasdias <fontawesome icon="link" /></a></p>
-        <p class="link" ><a rel="noopener" title="Perfil Pessoal para contanto"  target="_blank" href="https://bitbucket.org/messiasdias">bitbucket.org/messiasdias <fontawesome icon="link" /></a></p>
+        <p class="link" ><a rel="noopener"  target="_blank" href="https://bitbucket.org/messiasdias">bitbucket.org/messiasdias <fontawesome icon="link" /></a></p>
     </div>
 
     <div class="item" >
@@ -31,8 +31,8 @@
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="code-branch" />Projetos Open-Source por diversão :)</h3>
-        <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">Basicis Framework - Projeto<fontawesome icon="link" /></a></p>
-        <p class="link" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/core">Basicis - Core Lib<fontawesome icon="link" /></a></p>
+        <p class="link link-noprint" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">Basicis Framework - Projeto<fontawesome icon="link" /></a></p>
+        <p class="link link-noprint" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/core">Basicis - Core Lib<fontawesome icon="link" /></a></p>
         <p class="link-print" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">https://github.com/basicis/basicis <fontawesome icon="link" /></a></p>
         <p class="link-print" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/core">https://bitbucket.org/basicis/core <fontawesome icon="link" /></a></p>
     </div> 

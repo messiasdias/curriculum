@@ -30,10 +30,12 @@ let dom = {
     },
 
     avatar: function  () {
-        if( dom.isSmall() ) { 
+        if(dom.isSmall()) { 
             if( dom.scroolIsBig(200) && dom.scroolIsSml($('.right').height()) ){
-                $('#avatar').html( $('.right>.img-content').html() )
-                $('#avatar').show('fast')
+                if (!$('#avatar').is(":visible")) {
+                    $('#avatar').html($('.right>.img-content').html())
+                    $('#avatar').show()
+                }
             }else{
                 $('#avatar').hide()
             }
@@ -41,7 +43,6 @@ let dom = {
             $('#avatar').hide()
         }
     },
-
 
     btn: function(){
 
@@ -85,8 +86,6 @@ $(document).ready( function() {
     setTimeout( function(){
        $(this).scrollTop(0)
     }, 10)
-
-    dom.avatar()
     dom.btn()
     dom.avatar()
 })
@@ -95,14 +94,12 @@ $(document).ready( function() {
 $(document).scroll( function(){
     dom.avatar()
     dom.btn()
-    dom.avatar()
 })
 
 //On Resize
 $(window).resize( function(){
     dom.avatar()
     dom.btn()
-    dom.avatar()
 })
 
 
