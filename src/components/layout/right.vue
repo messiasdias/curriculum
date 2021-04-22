@@ -1,8 +1,6 @@
 <template>
-
 <!-- start .right-->
 <div class="right">
-    
     <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
 
     <div class="item">
@@ -10,14 +8,13 @@
     </div>
 
     <div class="item" >
-            <h3><fontawesome icon="graduation-cap" /> Formação</h3>
-            <p>Tecnólogo em Rede de Computadores | <small>2013-2014 (Interrompido)</small></p>
-            <p>Técnico em Informática para a Internet | <small>2015-2016</small></p>
+        <h3><fontawesome icon="graduation-cap" /> Formação</h3>
+        <p>Tecnólogo em Rede de Computadores | <small>2013-2014 (Interrompido)</small></p>
+        <p>Técnico em Informática para a Internet | <small>2015-2016</small></p>
     </div>
 
     <div class="item" >
         <h3><fontawesome :icon="['fab', 'leanpub']"  /> Conhecimentos</h3>
-
         <ul>
             <li>Font-End
                 <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS</p>
@@ -31,28 +28,24 @@
             <li>Ferramentas
                 <p>Git, Npm, Composer, Linux Ubuntu/Debian</p>
             </li>
+        </ul>              
+    </div>
 
+    <div class="item" >
+        <h3 class="no-print"><fontawesome icon="briefcase" /> Experiências Anteriores</h3>
+        <ul class="experiencias">
+            <li v-for="(xp, i) in experiencias" :key="i" :class="{'no-print': i > 0}" > 
+                <h4>{{xp.empresa.toUpperCase()}}</h4>
+                <h5>{{xp.cargo}} | <small>{{xp.periodo}}</small> </h5>
+                <p v-for="(descricao, d) in xp.descricao" :key="d">{{descricao}}</p>
+            </li>
         </ul>
-                           
+        <small class="no-screen">Para mais acesse:<br/> <b>messiasdias.github.io/curriculum</b></small>            
     </div>
 
     <div class="item" >
-        <h3><fontawesome icon="briefcase" /> Experiências Anteriores</h3>
-        <ul>
-            <li>FUTURA DES. DE PROGRAMAS EIRELI - Desenvolvedor Front-End | <small>Jun/2020 - Jan/2021 </small>
-                <p>Desenvolvimento de interfaces web com Vue.js e Materialize</p>
-            </li>
-            <li>SETEV - Analista de Suporte JR | <small>Fev/2018 - Set/2019 </small>
-                <p>Administração de Servidores Linux Ubuntu/Debian</p> 
-                <p>NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento</p>
-                <p>NovoSGA - Desenvolvimento Front-End de Painel de Atendimento exclusivo</p>
-            </li>
-        </ul>                 
-    </div>
-
-    <div class="item" >
-            <h3><fontawesome icon="dollar-sign" /> Pretenção Salarial</h3>
-            <p>A combinar, Compativel com o Cargo e Mercado.</p>
+        <h3><fontawesome icon="dollar-sign" /> Pretenção Salarial</h3>
+        <p>A combinar, Compativel com o Cargo e Mercado.</p>
     </div> 
 
     <div class="item" >
@@ -61,19 +54,18 @@
             Tenho como objetivo desempenhar com o máximo de qualidade, profissionalismo e comprometimento o cargo Desenvolvedor Web. <br>
         </p>
     </div>
-       
 </div>
 <!-- end .right-->
-
 </template>
 <script>
 import {mapState} from 'vuex'
  export default{
      name : "Right",
      computed: {
-         ...mapState({
-             euImage: state => state.euImage 
-         })
+        ...mapState({
+            euImage: state => state.euImage,
+            experiencias: state => state.experiencias
+        })
      }
  }   
 </script>

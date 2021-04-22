@@ -11,9 +11,9 @@ Ferramentas utilizadas:
 
 [messiasdias.github.io/curriculum](https://messiasdias.github.io/curriculum)
 
-![Screenshot](screenshots/screenshot.png?raw=true "Curriculum")
+![Screenshot](screenshots/curriculum.gif?raw=true "Curriculum")
 
-![Screenshot](screenshots/screenshot2.png?raw=true "Curriculum")
+![Screenshot](screenshots/curriculum-mobile.gif?raw=true "Curriculum")
 
 
 

@@ -1,12 +1,10 @@
 <template>
 <div id="app" >
     <div id="avatar" > </div>
-    
     <div class="main">
         <Left/>
         <Right/>
     </div>
-
     <Buttons/>
     <Msg/>
 </div>    
@@ -33,15 +31,12 @@ import {mapState} from "vuex"
          Msg,
     },
     metaInfo: {
-
         title: 'Messias Dias',
         titleTemplate: '%s | Curriculum Vitae',
-        
         htmlAttrs: {
             lang: 'pt-Br',
             amp: true
         },
-      
         meta: [
             { charset: 'utf-8' },
             {

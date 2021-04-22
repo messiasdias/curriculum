@@ -5,12 +5,9 @@ let state = {
     euImage: euImg,
     msg : false,
     cookieMsg: localStorage.getItem('msg') ? true : false,
-
     typed: {
         current: false,
         position: false,
-
-
         strings: [
             "" ,
             "Olá!, Sou <b>Messias Dias</b>.", 
@@ -35,12 +32,49 @@ let state = {
             10: 'fas:heart'
         }
     },
-
-
+    experiencias: [
+        /*
+        {
+            empresa: 'Vertice Digital',
+            cargo: 'Desenvolvedor FullStack JR',
+            periodo: 'Jan/2021 - Abr/2021',
+            descricao: [
+              'Desenvolvimento de interfaces web com Vue.js',
+              'Manuteção em aplicações híbridas Laravel e Slim Framework (PHP)'
+            ]
+        },
+        */
+        {
+          empresa: 'Vértice Digital',
+          cargo: 'Desenvolvedor FullStack JR',
+          periodo: 'Jan/2021 - Abr/2021',
+          descricao: [
+            'Desenvolvimento de interfaces web com Vue.js',
+            'Manuteção em aplicações híbridas Laravel e Slim Framework (PHP)'
+          ]
+        },
+        {
+          empresa: 'FUTURA DES. DE PROGRAMAS EIRELI',
+          cargo: 'Desenvolvedor Front-End JR',
+          periodo: 'Jun/2020 - Jan/2021',
+          descricao: [
+            'Desenvolvimento de interfaces web com Vue.js e Materialize'
+          ]
+        },
+        {
+          empresa: 'SETEV',
+          cargo: 'Analista de Suporte JR',
+          periodo: 'Fev/2018 - Set/2019',
+          descricao: [
+            'Administração de Servidores Linux Ubuntu/Debian',
+            'NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento',
+            'NovoSGA - Desenvolvimento Front-End de Painel de Atendimento exclusivo'
+          ]
+        }
+    ]
 }
 
 let mutations = {
-
     msg : function (state, open=false ){
         if(  state.msg | (open == false) ) {
             state.msg =  false
@@ -57,7 +91,6 @@ let mutations = {
 
 
 let actions = {
-
     toggleMsg: function(context){
         if( context.state.msg ){
             context.commit("msg", false)
@@ -80,9 +113,7 @@ let actions = {
     },
 
     typedRun : function(context) {
-
         if(context.state.msg){
-            
             context.state.typed.current =  new Typed('#typed', {
                 strings: context.state.typed.strings,
                 typeSpeed: 80,
@@ -105,7 +136,6 @@ let actions = {
 
     },
 
-
     typedSetIcon(context, position = false ) {
 
         if( context.state.typed.icons[position]  ){
@@ -124,15 +154,8 @@ let actions = {
             context.state.iconPrefix = false
             context.state.iconName = false
         }
-
     },
-
-
-
-
-
 }
-
 
 
 export default  {
