@@ -45,6 +45,16 @@ let state = {
         },
         */
         {
+            empresa: 'KEVI | Retenção de Cliente',
+            cargo: 'Desenvolvedor FullStack JR',
+            periodo: 'Mai/2021 - Atualmente',
+            descricao: [
+              'Desenvolvimento de interfaces web com Vue.js',
+              'Manuteção em aplicações híbridas Slim Framework e Proprietário (PHP)',
+              'Testes JS com Jest e PHP com Php Unit'
+            ]
+        },
+        {
           empresa: 'Vértice Digital',
           cargo: 'Desenvolvedor FullStack JR',
           periodo: 'Jan/2021 - Abr/2021',
