@@ -1,17 +1,21 @@
+import "./dom/dom"
 import "./sass/main.scss"
 import Vue from "vue"
 import Vuex from "vuex"
 import VueMeta from 'vue-meta'
+import {mask as VueMask} from 'vue-the-mask'
 import FontAwesomeIcon  from "./dom/icons"
 import Curriculum from "./components/Curriculum.vue"
-import Store from "./store"
-import "./dom/dom"
+import store from "./store"
+import router from './router'
 
-Vue.component('fontawesome',FontAwesomeIcon)
 Vue.use(VueMeta)
 Vue.use(Vuex)
+Vue.component('fontawesome', FontAwesomeIcon)
 
 new Vue({
-    store: new Vuex.Store(Store),  
+    router,
+    store,
+    directives: {VueMask}, 
     render: h => h(Curriculum),
 }).$mount('#app')

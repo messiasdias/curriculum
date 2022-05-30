@@ -25,10 +25,10 @@ import {mapState} from "vuex"
         })
     },
     components :{
-         Left,
-         Right,
-         Buttons,
-         Msg,
+        Left,
+        Right,
+        Buttons,
+        Msg,
     },
     metaInfo: {
         title: 'Messias Dias',

@@ -1,7 +1,6 @@
 <template>
 <!-- start .left-->
 <div class="left">
-    
     <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
                
     <div class="item" >
@@ -37,7 +36,6 @@
         <p class="link-print" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/basicis">https://github.com/basicis/basicis <fontawesome icon="link" /></a></p>
         <p class="link-print" ><a rel="noopener"  target="_blank" href="https://github.com/basicis/core">https://bitbucket.org/basicis/core <fontawesome icon="link" /></a></p>
     </div> 
-
 </div>
 <!-- end .left-->
 </template>
@@ -45,11 +43,11 @@
 import {mapState} from 'vuex'
 
  export default{
-     name : "Left",
-     computed: {
-         ...mapState({
-             euImage: state => state.euImage 
-         })
-     }
+    name : "Left",
+    computed: {
+       ...mapState({
+           euImage: state => state.euImage 
+       })
+    }
  }   
 </script>

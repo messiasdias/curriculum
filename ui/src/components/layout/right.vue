@@ -60,12 +60,12 @@
 <script>
 import {mapState} from 'vuex'
  export default{
-     name : "Right",
-     computed: {
-        ...mapState({
-            euImage: state => state.euImage,
-            experiencias: state => state.experiencias
-        })
-     }
+    name : "Right",
+    computed: {
+       ...mapState({
+           euImage: state => state.euImage,
+           experiencias: state => state.experiencias
+       })
+    },
  }   
 </script>

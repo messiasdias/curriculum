@@ -1,8 +1,7 @@
 <template>
 <!-- start .btns-->
 <div class="btn btn-fixed-lg">
-
-      <!-- #printbtn-->
+     <!-- #printbtn-->
     <div :v-if="btn" class="" id="print" title="Imprimir" @click="printDoc()" >
          <!-- fas fa-print -->
         <fontawesome icon="print" />
@@ -18,30 +17,25 @@
         <!-- fab fa-whatsapp -->
         <fontawesome :icon="['fab', 'whatsapp']"  />
     </a>
-  
-  
 </div>
 <!-- end .btns-->
 </template>
 <script>
 import {mapState, mapMutations, mapActions} from "vuex"
  export default{
-     name : "Buttons",
+    name : "Buttons",
     computed: {
         ...mapState({
             msg: state => state.msg,
             btn: state => state.btn,
         })
     },
-
     methods:{
-
         ...mapMutations({
-            btnMut: 'btn',
+            btnMut: 'curriculum/btn',
         }),
-
         ...mapActions({
-            printDoc: 'printDoc',
+            printDoc: 'curriculum/printDoc',
         })
     }
  }   
