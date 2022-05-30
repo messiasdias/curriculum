@@ -1,0 +1,58 @@
+version: "2"
+services:
+  # Curriculum UI web service
+  web_ui:
+    container_name: curriculum_web_ui
+    privileged: true
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.ui
+    ports:
+    - "8080:8080"
+    expose: 
+      - '8080'
+    volumes:
+      - ./ui:/app
+    links:
+      - web_api
+    command: "npm run serve"
+
+  # Curriculum API web service
+  web_api:
+    container_name: curriculum_web_api
+    privileged: true
+    build: 
+      context: .
+      dockerfile: ./Dockerfile.api
+    ports:
+    - "8081:80"
+    - "8082:443"
+    expose: 
+      - '80'
+      - '443'
+    volumes:
+      - ./api:/var/www/html/
+      - ./__log:/var/log/apache2/api/
+      - ./__setup/default.conf:/etc/apache2/sites-available/000-default.conf
+    links:
+      - data_base
+
+  # Curriculum Database service
+  data_base:
+    container_name: curriculum_data_base
+    image: mariadb
+    ports:
+      - "33068:3306"
+    expose: 
+      - '3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=curriculum
+    volumes:
+      - ./__setup/my.cnf:/etc/my.cnf
+      - curriculum:/var/lib/mysql
+    restart: always
+
+volumes:
+  curriculum:
+    external: true  

@@ -1,0 +1,33 @@
+FROM node:lts-alpine AS npm_build
+
+# make the 'app' folder the current working directory
+WORKDIR /api
+COPY ./api/. .
+
+# install project dependencies and build app
+RUN npm install && npm run dev
+
+FROM php:7.4-apache
+USER root
+WORKDIR /var/www/html/
+
+COPY --from=npm_build --chown=root:root api/. .
+RUN ls -la
+
+# RUN usermod -a root -G www-data
+# RUN usermod -a www-data -G root
+
+# Install extensions for php
+RUN docker-php-ext-install mysqli 
+RUN docker-php-ext-enable mysqli
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-enable pdo_mysql
+
+# Assign permissions of the working directory to the www-data user
+# RUN chown -R root:www-data \
+#     /var/www/html/storage \
+#     /var/www/html/bootstrap/cache
+
+RUN a2enmod rewrite
+RUN apachectl restart
+RUN echo "Web API build Successfully!"
