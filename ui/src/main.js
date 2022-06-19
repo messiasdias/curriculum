@@ -10,9 +10,8 @@ import "./dom"
 Vue.component('fontawesome',FontAwesomeIcon)
 Vue.use(VueMeta)
 Vue.use(Vuex)
-let store = new Vuex.Store(Store)
 
 new Vue({
-    store,  
+    store: new Vuex.Store(Store),  
     render: h => h(Curriculum),
 }).$mount('#app')
