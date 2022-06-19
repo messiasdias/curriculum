@@ -26,10 +26,10 @@ services:
       dockerfile: ./Dockerfile.api
     ports:
     - "8081:80"
-    - "8082:443"
+    #- "8082:443"
     expose: 
       - '80'
-      - '443'
+      #- '443'
     volumes:
       - ./api:/var/www/html/
       - ./__log:/var/log/apache2/api/
