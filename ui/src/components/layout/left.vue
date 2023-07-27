@@ -13,8 +13,9 @@
     <div class="item" >
         <h3><fontawesome class="icon" icon="network-wired" /> Social</h3>
         <p class="link" ><a rel="noopener"  target="_blank" href="https://linkedin.com/in/messiasdias"> linkedin.com/in/messiasdias  <fontawesome icon="link" /></a> </p>
-        <p class="link" ><a rel="noopener" title="Perfil Pessoal para contato" target="_blank" href="https://www.facebook.com/messiasw.dias/"> facebook.com/messiasw.dias <small>Pessoal para contato</small> <fontawesome icon="link" /></a> </p>
-    </div>
+        <p class="link" ><a rel="noopener" title="Canal para upload de videos do dia a dia de desenvolvimento" target="_blank" href="https://www.youtube.com/@messiasdiasti/videos"> youtube.com/@messiasdiasti <fontawesome icon="link" /></a> </p>
+        <p class="link" ><a rel="noopener" title="Perfil Pessoal para contato" target="_blank" href="https://www.facebook.com/eumessiasdias/"> facebook.com/eumessiasdias <small>Pessoal para contato</small> <fontawesome icon="link" /></a> </p>
+</div>
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="code-branch" /> Code Repositórios</h3>
