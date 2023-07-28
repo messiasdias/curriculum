@@ -4,8 +4,8 @@
     "theme_color": "#055ab4",
     "background_color": "#FFFFFF",
     "display": "standalone",
-    "scope": "/curriculum",
-    "start_url": "/",
+    "scope": "/curriculum/",
+    "start_url": "/curriculum/",
     "icons": [
       {
         "src": "img/icons/icon-72x72.png",
