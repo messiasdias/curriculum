@@ -6,17 +6,25 @@ export default [
         periodo: 'Jan/2021 - Abr/2021',
         descricao: [
           'Desenvolvimento de interfaces web com Vue.js',
-          'Manuteção em aplicações híbridas Laravel e Slim Framework (PHP)'
+          'Manutenção em aplicações híbridas Laravel e Slim Framework (PHP)'
         ]
     },
     */
+    {
+      empresa: 'TI CODER LTDA',
+      cargo: 'Desenvolvedor FullStack JR',
+      periodo: 'Mai/2023 - Out/2023',
+      descricao: [
+        'Desenvolvimento de funcionalidades e Manutenção em aplicações Laravel e Vue.js'
+      ]
+    },
     {
         empresa: 'CG Profissionais em RH LTDA',
         cargo: 'Desenvolvedor FullStack JR',
         periodo: 'Jan/2023 - Mai/2023',
         descricao: [
           'Manutenção de interfaces web com Angular',
-          'Manuteção em aplicações híbridas Laravel e Codeigniter'
+          'Manutenção em aplicações híbridas Laravel e Codeigniter'
         ]
     },
     {
@@ -25,7 +33,7 @@ export default [
         periodo: 'Mai/2021 - Jan/2023',
         descricao: [
           'Desenvolvimento de interfaces web com Vue.js',
-          'Manuteção em aplicações híbridas Slim Framework e Proprietário',
+          'Manutenção em aplicações híbridas Slim Framework e Proprietário',
           'Testes JS com Jest e PHP com Php Unit'
         ]
     },
@@ -35,7 +43,7 @@ export default [
       periodo: 'Jan/2021 - Abr/2021',
       descricao: [
         'Desenvolvimento de interfaces web com Vue.js',
-        'Manuteção em aplicações híbridas Laravel e Slim Framework'
+        'Manutenção em aplicações híbridas Laravel e Slim Framework'
       ]
     },
     {
