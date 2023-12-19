@@ -1,8 +1,8 @@
 name: Build and Deploy on GitHub Pages
 on:
-  push:
-    branches:
-      - master
+  pull_request_review:
+    types:
+      - submitted
 jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
@@ -17,13 +17,13 @@ jobs:
         with:
           node-version: '13.13.0' 
 
-      - name: Install and Build 🔧
+      - name: Install JS dependencies and Build 🔧
         run: |
           cd ui
           npm install
           npm run build 
       
-      - name: Deploy 🚀
+      - name: Deploy on messiasdias.github.io/curriculum 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
