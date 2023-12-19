@@ -1,8 +1,9 @@
 name: Build and Deploy on GitHub Pages
-on:
-  pull_request_review:
-    types:
-      - submitted
+on: 
+  push:
+    branches:
+      - master
+permissions: write-all
 jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
