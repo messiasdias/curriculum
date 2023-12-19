@@ -9,8 +9,9 @@
 
     <div class="item" >
         <h3><fontawesome icon="graduation-cap" /> Formação</h3>
-        <p>Tecnólogo em Rede de Computadores | <small>2013-2014 (Interrompido)</small></p>
-        <p>Técnico em Informática para a Internet | <small>2015-2016</small></p>
+        <p>Análise e Desenvolvimento de Softwares - Universo | <small>2021-2023 (Interrompido)</small></p>
+        <p>Tecnólogo em Rede de Computadores - IFPE | <small>2013-2014 (Interrompido)</small></p>
+        <p>Técnico em Informática para a Internet - Faculdade Joaqui Nabuco | <small>2015-2016</small></p>
     </div>
 
     <div class="item" >
