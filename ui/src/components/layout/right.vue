@@ -17,7 +17,7 @@
     <div class="item" >
         <h3><fontawesome :icon="['fab', 'leanpub']"  /> Conhecimentos</h3>
         <ul>
-            <li>Font-End
+            <li>Front-End
                 <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS</p>
             </li>
             <li>Back-End
