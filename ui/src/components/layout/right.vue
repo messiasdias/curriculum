@@ -21,7 +21,7 @@
                 <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS</p>
             </li>
             <li>Back-End
-                <p>PHP com Framework Laravel, Slim, Symfony e CMS Wordpress</p>
+                <p>PHP com Framework Laravel, Slim, Symfony e CMS Wordpress, Python com Django e Node.js com Express</p>
             </li>
             <li>Banco de Dados 
                 <p>Mysql e MariaDB</p>
