@@ -1,0 +1,14 @@
+[
+    {
+        "id": 2,
+        "provider": "github",
+        "username": "messiasdias",
+        "descricao": null
+    },
+    {
+        "id": 1,
+        "provider": "bitbucket",
+        "username": "messiasdias",
+        "descricao": null
+    }
+]

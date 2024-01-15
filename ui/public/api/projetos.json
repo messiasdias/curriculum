@@ -1,0 +1,14 @@
+[
+    {
+        "id": 2,
+        "nome": "Basicis Framework - Projeto",
+        "descricao": null,
+        "link": "https://github.com/basicis/basicis"
+    },
+    {
+        "id": 1,
+        "nome": "Basicis - Core Lib",
+        "descricao": null,
+        "link": "https://github.com/basicis/core"
+    }
+]

@@ -4,30 +4,24 @@
     <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
 
     <div class="item">
-        <h1>Messias Wagner da Silva Dias</h1> 
+        <h1>{{metadados.nome_completo}}</h1> 
     </div>
 
     <div class="item" >
         <h3><fontawesome icon="graduation-cap" /> Formação</h3>
-        <p>Análise e Desenvolvimento de Softwares - Universo | <small>2021-2023 (Interrompido)</small></p>
-        <p>Tecnólogo em Rede de Computadores - IFPE | <small>2013-2014 (Interrompido)</small></p>
-        <p>Técnico em Informática para a Internet - Faculdade Joaqui Nabuco | <small>2015-2016</small></p>
+        <p v-for="(formacao, id) in formacoes" :key="id" >
+            {{formacao.nivel_de_ensino}} em {{formacao.curso}} - {{formacao.instituicao}} | 
+            <small> {{formacao.periodo_inicio}}-{{formacao.periodo_final}} 
+            <template v-if="formacao.situacao">({{formacao.situacao}})</template></small>
+        </p>
     </div>
 
     <div class="item" >
-        <h3><fontawesome :icon="['fab', 'leanpub']"  /> Conhecimentos</h3>
+        <h3><fontawesome :icon="['fab', 'leanpub']"/>Conhecimentos</h3>
         <ul>
-            <li>Front-End
-                <p>HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS</p>
-            </li>
-            <li>Back-End
-                <p>PHP com Framework Laravel, Slim, Symfony e CMS Wordpress, Python com Django e Node.js com Express</p>
-            </li>
-            <li>Banco de Dados 
-                <p>Mysql e MariaDB</p>
-            </li>
-            <li>Ferramentas
-                <p>Git, Npm, Composer, Linux Ubuntu/Debian</p>
+            <li v-for="(conhecimento, id) in conhecimentos" :key="id">
+                {{conhecimento.titulo}}
+                <p>{{conhecimento.descricao}}</p>
             </li>
         </ul>              
     </div>
@@ -41,19 +35,17 @@
                 <p v-for="(descricao, d) in xp.descricao" :key="d">{{descricao}}</p>
             </li>
         </ul>
-        <small class="no-screen">Para mais acesse:<br/> <b>messiasdias.github.io/curriculum</b></small>            
+        <small class="no-screen">Para mais acesse:<br/> <b>{{baseUrl}}</b></small>            
     </div>
 
     <div class="item" >
-        <h3><fontawesome icon="dollar-sign" /> Pretenção Salarial</h3>
-        <p>A combinar, Compativel com o Cargo e Mercado.</p>
+        <h3><fontawesome icon="dollar-sign" />Pretenção Salarial</h3>
+        <p>{{metadados.pretencao_salarial}}</p>
     </div> 
 
     <div class="item" >
-        <h3><fontawesome icon="bullseye" /> Objetivo</h3>
-        <p>
-            Tenho como objetivo desempenhar com o máximo de qualidade, profissionalismo e comprometimento o cargo Desenvolvedor Web. <br>
-        </p>
+        <h3><fontawesome icon="bullseye" />Objetivo</h3>
+        <p>{{metadados.objetivo}}</p>
     </div>
 </div>
 <!-- end .right-->
@@ -65,8 +57,12 @@ import {mapState} from 'vuex'
      computed: {
         ...mapState({
             euImage: state => state.euImage,
-            experiencias: state => state.experiencias
-        })
+            experiencias: state => state.experiencias,
+            formacoes: state => state.formacoes,
+            conhecimentos: state => state.conhecimentos,
+            metadados: state => state.metadados
+        }),
+        baseUrl: () => process.env.VUE_APP_BASE_URL.replace('http://', '').replace('https://', '') || ""
      }
  }   
 </script>

@@ -1,6 +1,7 @@
 import Typed from 'typed.js'
-import euImg from './assets/eu.png' 
-import experiencias from './services/experiencias'
+import Axios from 'axios'
+import euImg from './assets/eu.png'
+const apiBaseUrl = process.env.VUE_APP_API_BASE_URL
 
 let state = {
     euImage: euImg,
@@ -32,22 +33,52 @@ let state = {
             9: 'fas:heart'
         }
     },
-    experiencias: experiencias
+    experiencias: [],
+    formacoes: [],
+    conhecimentos: [],
+    redes_sociais: [],
+    repositorios: [],
+    projetos: [],
+    informacoes_extra: [],
+    metadados: {},
+    wp_link: null,
 }
 
 let mutations = {
-    msg : function (state, open=false ){
-        if(  state.msg | (open == false) ) {
-            state.msg =  false
-            return
-        }
-        state.msg =  true
+    msg : function (state, open = false ){
+        if( state.msg | (open == false) ) return state.msg = false
+        state.msg = true
     },
-
-    cookieMsg: function(state, cookie = true){
-        localStorage.setItem('msg', cookie) 
+    cookieMsg: function(state, msg = true){
+        localStorage.setItem('msg', msg) 
+    },
+    experiencias: (state, experiencias = []) => {
+        state.experiencias = experiencias
+    },
+    formacoes: (state, formacoes = []) => {
+        state.formacoes = formacoes
+    },
+    conhecimentos: (state, conhecimentos = []) => {
+        state.conhecimentos = conhecimentos
+    },
+    redes_sociais: (state, redes_sociais = []) => {
+        state.redes_sociais = redes_sociais
+    },
+    repositorios: (state, repositorios = []) => {
+        state.repositorios = repositorios
+    },
+    projetos: (state, projetos = []) => {
+        state.projetos = projetos
+    },
+    informacoes_extra: (state, informacoes_extra = []) => {
+        state.informacoes_extra = informacoes_extra
+    },
+    metadados: (state, metadados = []) => {
+        state.metadados = metadados
+    },
+    wp_link: (state) => {
+        state.wp_link = `https://api.whatsapp.com/send?phone=${state.metadados.wp_phone}&text=${encodeURI(state.metadados.wp_message)}`
     }
-
 }
 
 
@@ -71,6 +102,8 @@ let actions = {
         context.dispatch('toggleMsg', false)
         window.print();
     },
+
+    mailTo: ({state}) => window.location.href = `mailto:${state.metadados.email}`,
 
     typedRun : function(context) {
         if(context.state.msg){
@@ -112,8 +145,62 @@ let actions = {
         context.state.iconPrefix = false
         context.state.iconName = false
     },
-}
 
+    experiencias: (context) => {
+        Axios.get(`${apiBaseUrl}/experiencias.json`)
+            .then(({data}) => context.commit('experiencias', data))
+            .catch(() => context.commit('experiencias'))
+    },
+    formacoes: (context) => {
+        Axios.get(`${apiBaseUrl}/formacoes.json`)
+            .then(({data}) => context.commit('formacoes', data))
+            .catch(() => context.commit('formacoes'))
+    },
+    conhecimentos: (context) => {
+        Axios.get(`${apiBaseUrl}/conhecimentos.json`)
+            .then(({data}) => context.commit('conhecimentos', data))
+            .catch(() => context.commit('conhecimentos'))
+    },
+    redes_sociais: (context) => {
+        Axios.get(`${apiBaseUrl}/redes_sociais.json`)
+            .then(({data}) => context.commit('redes_sociais', data))
+            .catch(() => context.commit('redes_sociais'))
+    },
+    repositorios: (context) => {
+        Axios.get(`${apiBaseUrl}/repositorios.json`)
+            .then(({data}) => context.commit('repositorios', data))
+            .catch(() => context.commit('repositorios'))
+    },
+    projetos: (context) => {
+        Axios.get(`${apiBaseUrl}/projetos.json`)
+            .then(({data}) => context.commit('projetos', data))
+            .catch(() => context.commit('projetos'))
+
+    },
+    informacoes_extra: (context) => {
+        Axios.get(`${apiBaseUrl}/informacoes_extra.json`)
+            .then(({data}) => context.commit('informacoes_extra', data))
+            .catch(() => context.commit('informacoes_extra'))
+    },
+    metadados: (context) => {
+        Axios.get(`${apiBaseUrl}/metadados.json`)
+            .then(async ({data}) => {
+                await context.commit('metadados', data)
+                context.commit('wp_link')
+            })
+            .catch(() => context.commit('metadados'))
+    },
+    loadData: async (context) => {
+        await context.dispatch('metadados')
+        context.dispatch('experiencias')
+        context.dispatch('formacoes')
+        context.dispatch('conhecimentos')
+        context.dispatch('redes_sociais')
+        context.dispatch('projetos')
+        context.dispatch('repositorios')
+        context.dispatch('informacoes_extra')
+    }
+}
 
 export default  {
     state,
