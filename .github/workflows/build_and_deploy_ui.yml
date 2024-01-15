@@ -25,9 +25,9 @@ jobs:
           npm run build
         env:
           NODE_ENV: production
-          VUE_APP_DEV_NAME: ${{ secrets.VUE_APP_DEV_NAME }}
-          VUE_APP_BASE_URL: ${{ secrets.VUE_APP_BASE_URL }}
-          VUE_APP_API_BASE_URL: ${{ secrets.VUE_APP_API_BASE_URL }}
+          VUE_APP_DEV_NAME: ${{ github.VUE_APP_DEV_NAME }}
+          VUE_APP_BASE_URL: ${{ github.VUE_APP_BASE_URL }}
+          VUE_APP_API_BASE_URL: ${{ github.VUE_APP_API_BASE_URL }}
       
       - name: Deploy on messiasdias.github.io/curriculum 🚀
         uses: peaceiris/actions-gh-pages@v3
