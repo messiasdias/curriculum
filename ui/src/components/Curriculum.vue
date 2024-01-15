@@ -22,16 +22,18 @@ import {mapState} from "vuex"
         ...mapState({
             msg: state => state.msg,
             euImage: state => state.euImage,
+            euNome: state => state.metadados.nome_curto,
+            euNomeCompleto: state => state.metadados.nome_completo
         })
     },
     components :{
-         Left,
-         Right,
-         Buttons,
-         Msg,
+        Left,
+        Right,
+        Buttons,
+        Msg,
     },
     metaInfo: {
-        title: 'Messias Dias',
+        title: process.env.VUE_APP_DEV_NAME,
         titleTemplate: '%s | Curriculum Vitae',
         htmlAttrs: {
             lang: 'pt-Br',
@@ -47,8 +49,8 @@ import {mapState} from "vuex"
             {
                 vmid: 'keywords',
                 name: 'keywords',
-                content:  'Messias Dias,messiasdias,messias,dias,curriculum,vitae,web,html,html5,css,css3,Sass,vuejs,vue.js,Vue,vue,Vue.js,desenvolvedor,dev,developer,front-end, back-end,front,back,end,'+
-                'formação,formacao,conhecimentos,pretençõa salarial,objetivo,contatos,social,repositórios,git,github,laravel,NovoSGA,novo sga,sga,likedin',
+                content:  `curriculum,vitae,web,html,html5,css,css3,Sass,vuejs,vue.js,Vue,vue,Vue.js,desenvolvedor,dev,developer,front-end,back-end,front,back,end,`+
+                'formação,formacao,conhecimentos,pretençõa salarial,objetivo,contatos,social,repositórios,git',
             },
             {
                 'name': 'viewport',
@@ -66,15 +68,9 @@ import {mapState} from "vuex"
             {
                 property: 'og:title',
                 content: 'Home',
-                template: chunk => `${chunk} - Messias Dias | Curriculum Vitae'`,
+                template: chunk => `${chunk} - ${process.env.VUE_APP_DEV_NAME} | Curriculum Vitae'`,
                 vmid: 'og:title'
-            },
-            {
-                property: 'og:title',
-                content: 'Home',
-                template: chunk => `${chunk} - Messias Dias | Curriculum Vitae'`,
-                vmid: 'og:title'
-            },
+            }
         ],
         link: [
             { rel: 'manifest', href: 'manifest.webmanifest' },
@@ -82,5 +78,8 @@ import {mapState} from "vuex"
             { rel:"apple-touch-icon", href: 'img/icons/icon-192x192.png' }
          ],
     },
+    mounted(){
+        this.$store.dispatch('loadData')
+    }
  }   
 </script>

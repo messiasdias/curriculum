@@ -1,48 +1,44 @@
 <template>
 <!-- start .btns-->
 <div class="btn btn-fixed-lg">
-
-      <!-- #printbtn-->
+    <!-- #printbtn-->
     <div :v-if="btn" class="" id="print" title="Imprimir" @click="printDoc()" >
-         <!-- fas fa-print -->
         <fontawesome icon="print" />
     </div>
 
-     <!-- #email-->
-    <div :v-if="btn" class="" id="email" title="Email" onclick="window.location.href='mailto:messiasdias.ti@gmail.com';" >
+    <!-- #email-->
+    <div :v-if="metadados.email" class="" id="email" title="Email" @click="mailTo()" >
         <fontawesome icon="envelope" />
     </div>
 
     <!-- #whatsapp-->
-    <a :v-if="btn"  class=""  id="whatsapp" title="Whatsapp" rel="noopener" target="_blank" href="https://api.whatsapp.com/send?phone=5581983538086&text=Ol%C3%A1%20Messias!" >
-        <!-- fab fa-whatsapp -->
+    <a :v-if="metadados.wp_phone"  class=""  id="whatsapp" title="Whatsapp" rel="noopener" 
+        target="_blank" :href="wp_link" >
         <fontawesome :icon="['fab', 'whatsapp']"  />
     </a>
-  
-  
 </div>
 <!-- end .btns-->
 </template>
 <script>
 import {mapState, mapMutations, mapActions} from "vuex"
  export default{
-     name : "Buttons",
+    name : "Buttons",
     computed: {
         ...mapState({
             msg: state => state.msg,
             btn: state => state.btn,
+            metadados: state => state.metadados,
+            wp_link: state => state.wp_link
         })
     },
-
     methods:{
-
         ...mapMutations({
             btnMut: 'btn',
         }),
-
         ...mapActions({
             printDoc: 'printDoc',
-        })
+            mailTo: 'mailTo'
+        }),
     }
  }   
 </script>
