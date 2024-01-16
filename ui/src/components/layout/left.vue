@@ -12,9 +12,9 @@
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="network-wired" /> Social</h3>
-        <sociallink 
+        <social-link 
             v-for="rede in redes_sociais" 
-            :key="`link-${rede.id}`" 
+            :key="`link-social-${rede.id}`" 
             :provider="rede.provider"
             :username="rede.username"
             :descricao="rede.descricao"
@@ -24,9 +24,9 @@
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="code-branch" /> Code Repositórios</h3>
-        <sociallink 
+        <social-link 
             v-for="repositorio in repositorios" 
-            :key="`link-${repositorio.id}`" 
+            :key="`link-repositorio-${repositorio.id}`" 
             :provider="repositorio.provider"
             :username="repositorio.username"
             :descricao="repositorio.descricao"
@@ -51,13 +51,13 @@
 </template>
 <script>
 import {mapState, mapActions} from 'vuex'
-import link from './social/link'
+import socialLink from './social-link'
 
  export default{
     name : "Left",
-    components: {'sociallink': link},
+    components: {'social-link': socialLink},
     computed: {
-       ...mapState({
+        ...mapState({
            euImage: state => state.euImage,
            wp_link: state => state.wp_link,
            metadados: state => state.metadados,
@@ -65,12 +65,12 @@ import link from './social/link'
            repositorios: state => state.repositorios,
            projetos: state => state.projetos,
            informacoes_extra: state => state.informacoes_extra,
-       })
+        })
     },
     methods: {
-       ...mapActions({
+        ...mapActions({
            mailTo: 'mailTo'
-       }),
+        }),
     }
  }   
 </script>

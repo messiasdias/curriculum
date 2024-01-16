@@ -20,31 +20,29 @@
 <script>
 import {mapState, mapActions } from "vuex"
 
- export default{
+export default{
     name : "Msg",
-
     mounted: function(){
-        this.toggleMsg(true)
+        //this.toggleMsg(true)
     },
-
     computed: {
         ...mapState({
             msg: state => state.msg,
             euImage: state => state.euImage,
-            typed: state => state.typed  
+            typed: state => state.metadados.typed  
         })
     },
-
     methods: {
-
         ...mapActions ({
             toggleMsg: 'toggleMsg',
         }),
-
-        
-
     },
-    //end methods
-
+    watch:{
+        typed(){
+            if(this.typed) {
+                //this.toggleMsg(true)
+            }
+        }
+    }
 }   
 </script>

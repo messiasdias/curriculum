@@ -5,34 +5,8 @@ const apiBaseUrl = process.env.VUE_APP_API_BASE_URL
 
 let state = {
     euImage: euImg,
-    msg : false,
+    msg: false,
     cookieMsg: localStorage.getItem('msg') ? true : false,
-    typed: {
-        current: false,
-        position: false,
-        strings: [
-            '' ,
-            'Olá, me chamo <b>Messias Dias</b>.', 
-            'Adorei saber que passou aqui! ', 
-            'Clique nos Botões correspondentes para: ',
-            'Imprimir ou Salvar como PDF',
-            'Contato  via  Wathsapp',
-            'Enviar email para <a href="mailto:messiasdias.ti@gmail.com">messiasdias.ti@gmail.com</a>',
-            'Espero atender os requisitos <br> necessários pra a vaga ou projeto.',
-            'E Mais uma vez...',
-            'Muito <b>Obrigado</b>!',
-        ],
-
-        iconName: false,
-        iconPrefix: false,
-        icons: {
-            4: 'fas:print',
-            5: 'fab:whatsapp',
-            6: 'fas:envelope',
-            7: 'fas:tasks',
-            9: 'fas:heart'
-        }
-    },
     experiencias: [],
     formacoes: [],
     conhecimentos: [],
@@ -45,12 +19,17 @@ let state = {
 }
 
 let mutations = {
-    msg : function (state, open = false ){
-        if( state.msg | (open == false) ) return state.msg = false
+    msg: (state, open = false) => {
+        if(state.msg | (open == false)) {
+            localStorage.removeItem('msg') 
+            return state.msg = false
+        }
         state.msg = true
     },
-    cookieMsg: function(state, msg = true){
-        localStorage.setItem('msg', msg) 
+    cookieMsg: (state, msg = true) => {
+        state.cookieMsg = msg
+        if(msg) return localStorage.setItem('msg', msg) 
+        localStorage.removeItem('msg')
     },
     experiencias: (state, experiencias = []) => {
         state.experiencias = experiencias
@@ -75,40 +54,39 @@ let mutations = {
     },
     metadados: (state, metadados = []) => {
         state.metadados = metadados
-    },
-    wp_link: (state) => {
-        state.wp_link = `https://api.whatsapp.com/send?phone=${state.metadados.wp_phone}&text=${encodeURI(state.metadados.wp_message)}`
+        if(metadados.length) {
+            state.wp_link = `https://api.whatsapp.com/send?
+                phone=${state.metadados.wp_phone}&text=${encodeURI(state.metadados.wp_message)}`
+        }
     }
 }
 
 
 let actions = {
-    toggleMsg: function(context){
-        if( context.state.msg ){
+    toggleMsg: async (context) => {
+        if(context.state.msg){
             context.commit("msg", false)
-            if(!context.state.cookieMsg){
-                context.commit("cookieMsg")
-            }
+            if(!context.state.cookieMsg) context.commit("cookieMsg")
             return
         }
 
         if(!context.state.cookieMsg){
-            context.commit("msg", true)
-            setTimeout( function(){ context.dispatch('typedRun') }, 5000)
+            await context.commit("msg", true)
+            context.dispatch('typedRun')
         }
     },
 
-    printDoc: function(context){
+    printDoc: (context) => {
         context.dispatch('toggleMsg', false)
         window.print();
     },
 
     mailTo: ({state}) => window.location.href = `mailto:${state.metadados.email}`,
 
-    typedRun : function(context) {
+    typedRun : (context) =>  {
         if(context.state.msg){
-            context.state.typed.current =  new Typed('#typed', {
-                strings: context.state.typed.strings,
+            context.state.metadados.typed.current = new Typed('#typed', {
+                strings: context.state.metadados.typed.strings,
                 typeSpeed: 80,
                 backSpeed: 40,
                 loop: true,
@@ -118,30 +96,30 @@ let actions = {
             
             let interval = setInterval( function(){
                 if(context.state.msg){
-                    return context.dispatch('typedSetIcon', context.state.typed.current.arrayPos )
+                    return context.dispatch('typedSetIcon', context.state.metadados.typed.current.arrayPos)
                 }
 
                 clearInterval(interval)
-                context.dispatch('typedSetIcon', false )
+                context.dispatch('typedSetIcon', localStorage.removeItem('msg') )
             }, 100 )
         }
     },
 
-    typedSetIcon(context, position = false ) {
-        if( context.state.typed.icons[position]  ){
-            context.state.typed.position = position
+    typedSetIcon(context, position = false) {
+        if(context.state.metadados.typed.icons[position]){
+            context.state.metadados.typed.position = position
             context.state.iconPrefix = 'fas'
     
-            if( context.state.typed.icons[position].split(':').length === 2 ){
-                context.state.typed.iconPrefix = context.state.typed.icons[position].split(':')[0]
-                context.state.typed.iconName = context.state.typed.icons[position].split(':')[1]
+            if( context.state.metadados.typed.icons[position].split(':').length === 2 ){
+                context.state.metadados.typed.iconPrefix = context.state.metadados.typed.icons[position].split(':')[0]
+                context.state.metadados.typed.iconName = context.state.metadados.typed.icons[position].split(':')[1]
                 return
             }
-            context.state.typed.iconName = context.state.typed.icons[position]
+            context.state.metadados.typed.iconName = context.state.metadados.typed.icons[position]
             return
         }
 
-        context.state.typed.position = false
+        context.state.metadados.typed.position = false
         context.state.iconPrefix = false
         context.state.iconName = false
     },
@@ -175,7 +153,6 @@ let actions = {
         Axios.get(`${apiBaseUrl}/projetos.json`)
             .then(({data}) => context.commit('projetos', data))
             .catch(() => context.commit('projetos'))
-
     },
     informacoes_extra: (context) => {
         Axios.get(`${apiBaseUrl}/informacoes_extra.json`)
@@ -184,10 +161,7 @@ let actions = {
     },
     metadados: (context) => {
         Axios.get(`${apiBaseUrl}/metadados.json`)
-            .then(async ({data}) => {
-                await context.commit('metadados', data)
-                context.commit('wp_link')
-            })
+            .then(({data}) => context.commit('metadados', data))
             .catch(() => context.commit('metadados'))
     },
     loadData: async (context) => {
@@ -199,6 +173,7 @@ let actions = {
         context.dispatch('projetos')
         context.dispatch('repositorios')
         context.dispatch('informacoes_extra')
+        setTimeout(() => context.dispatch('toggleMsg'), 100)
     }
 }
 
