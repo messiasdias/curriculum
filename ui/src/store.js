@@ -52,11 +52,10 @@ let mutations = {
     informacoes_extra: (state, informacoes_extra = []) => {
         state.informacoes_extra = informacoes_extra
     },
-    metadados: (state, metadados = []) => {
+    metadados: (state, metadados = {}) => {
         state.metadados = metadados
-        if(metadados.length) {
-            state.wp_link = `https://api.whatsapp.com/send?
-                phone=${state.metadados.wp_phone}&text=${encodeURI(state.metadados.wp_message)}`
+        if(metadados?.wp_phone) {
+            state.wp_link = `https://api.whatsapp.com/send?phone=${state.metadados.wp_phone}&text=${encodeURI(state.metadados.wp_message)}`
         }
     }
 }
