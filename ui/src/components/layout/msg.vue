@@ -22,9 +22,6 @@ import {mapState, mapActions } from "vuex"
 
 export default{
     name : "Msg",
-    mounted: function(){
-        //this.toggleMsg(true)
-    },
     computed: {
         ...mapState({
             msg: state => state.msg,
@@ -36,13 +33,6 @@ export default{
         ...mapActions ({
             toggleMsg: 'toggleMsg',
         }),
-    },
-    watch:{
-        typed(){
-            if(this.typed) {
-                //this.toggleMsg(true)
-            }
-        }
     }
 }   
 </script>
