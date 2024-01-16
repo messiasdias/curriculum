@@ -173,7 +173,7 @@ let actions = {
         context.dispatch('projetos')
         context.dispatch('repositorios')
         context.dispatch('informacoes_extra')
-        setTimeout(() => context.dispatch('toggleMsg'), 100)
+        setTimeout(() => context.dispatch('toggleMsg'), 3000)
     }
 }
 
