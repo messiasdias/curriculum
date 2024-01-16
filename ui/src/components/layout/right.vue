@@ -53,16 +53,16 @@
 <script>
 import {mapState} from 'vuex'
  export default{
-     name : "Right",
-     computed: {
-        ...mapState({
-            euImage: state => state.euImage,
-            experiencias: state => state.experiencias,
-            formacoes: state => state.formacoes,
-            conhecimentos: state => state.conhecimentos,
-            metadados: state => state.metadados
-        }),
-        baseUrl: () => process.env.VUE_APP_BASE_URL.replace('http://', '').replace('https://', '') || ""
-     }
+    name : "Right",
+    computed: {
+       ...mapState({
+           euImage: state => state.euImage,
+           experiencias: state => state.experiencias,
+           formacoes: state => state.formacoes,
+           conhecimentos: state => state.conhecimentos,
+           metadados: state => state.metadados
+       }),
+       baseUrl: () => process.env.VUE_APP_BASE_URL.replace('http://', '').replace('https://', '') || ""
+    }
  }   
 </script>

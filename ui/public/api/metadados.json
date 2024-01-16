@@ -6,5 +6,30 @@
     "wp_message": "Olá Messias! Vi seu curriculum e gostaria de conversar?",
     "email": "messiasdias.ti@gmail.com",
     "pretencao_salarial": "A combinar, compatível com o Cargo e Mercado.",
-    "objetivo": "Tenho como objetivo desempenhar com o máximo de qualidade, profissionalismo e comprometimento o cargo Desenvolvedor Web."
+    "objetivo": "Tenho como objetivo desempenhar com o máximo de qualidade, profissionalismo e comprometimento o cargo Desenvolvedor Web.",
+    "typed": {
+        "current": false,
+        "position": false,
+        "iconName": false,
+        "iconPrefix": false,
+        "strings": [
+            "",
+            "Olá, me chamo <b>Messias Dias</b>.", 
+            "Adorei saber que passou aqui! ", 
+            "Clique nos Botões correspondentes para: ",
+            "Imprimir ou Salvar como PDF",
+            "Contato  via  Wathsapp",
+            "Enviar email para <a href=\"mailto:messiasdias.ti@gmail.com\">messiasdias.ti@gmail.com</a>",
+            "Espero atender os requisitos <br> necessários pra a vaga ou projeto.",
+            "E Mais uma vez...",
+            "Muito <b>Obrigado</b>!"
+        ],
+        "icons": {
+            "4": "fas:print",
+            "5": "fab:whatsapp",
+            "6": "fas:envelope",
+            "7": "fas:tasks",
+            "9": "fas:heart"
+        }
+    }
 }
