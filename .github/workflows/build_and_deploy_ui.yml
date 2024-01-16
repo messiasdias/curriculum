@@ -21,14 +21,14 @@ jobs:
       - name: Install JS dependencies and Build 🔧
         run: |
           cd ui
-          echo ${{ github.VUE_APP_DEV_NAME }}
-          echo ${{ github.VUE_APP_BASE_URL }}
-          echo ${{ github.VUE_APP_API_BASE_URL }}
+          echo ${{ vars.VUE_APP_DEV_NAME }}
+          echo ${{ vars.VUE_APP_BASE_URL }}
+          echo ${{ vars.VUE_APP_API_BASE_URL }}
           echo -e "\n\n\n\n"
           echo NODE_ENV=production >> .env
-          echo VUE_APP_DEV_NAME="${{ github.VUE_APP_DEV_NAME }}" >> .env
-          echo VUE_APP_BASE_URL="${{ github.VUE_APP_BASE_URL }}" >> .env
-          echo VUE_APP_API_BASE_URL="${{ github.VUE_APP_API_BASE_URL }}" >> .env
+          echo VUE_APP_DEV_NAME="${{ vars.VUE_APP_DEV_NAME }}" >> .env
+          echo VUE_APP_BASE_URL="${{ vars.VUE_APP_BASE_URL }}" >> .env
+          echo VUE_APP_API_BASE_URL="${{ vars.VUE_APP_API_BASE_URL }}" >> .env
           npm install
           npm run build
       
