@@ -970,12 +970,12 @@ body{
         }
 
         #close {
-            display: none;
+            //display: none;
             position: absolute;
             top: 0px;
             right: 0px;
-            color: $black2;
-            border: solid 1px $black2;
+            color: $danger;
+            border: solid 1px $danger;
             width: 14px;
             height: 14px;
             padding: 2px;
@@ -984,8 +984,8 @@ body{
 
             &:hover{
                 cursor: pointer;
-                color: $cor1;
-                border-color: $cor1;
+                color: $danger;
+                border-color: $danger;
             }
 
             @media screen and (max-width: $small ) {
