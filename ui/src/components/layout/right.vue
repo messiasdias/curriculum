@@ -31,7 +31,7 @@
         <ul class="experiencias">
             <li v-for="(xp, i) in experiencias" :key="i" :class="{'no-print': i > 0}" > 
                 <h4>{{xp.empresa.toUpperCase()}}</h4>
-                <h5>{{xp.cargo}} | <small>{{xp.periodo}}</small> </h5>
+                <h5>{{xp.cargo}} | {{xp.periodo_inicio}} - {{xp.periodo_final}}</h5>
                 <p v-for="(descricao, d) in xp.descricao" :key="d">{{descricao}}</p>
             </li>
         </ul>
