@@ -1120,7 +1120,8 @@ body{
      
 }
 
-
-
-
-
+._hj_feedback_container {
+    @media print {
+        display: none !important;
+    }
+}
