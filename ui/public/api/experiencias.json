@@ -1,6 +1,16 @@
 [
     {
       "id": 6,
+      "empresa": "Eras Monitoramento",
+      "cargo": "Desenvolvedor FullStack PL",
+      "periodo_inicio": "Out/2023",
+      "periodo_final": "Junho/2024",
+      "descricao": [
+        "Desenvolvimento de funcionalidades, scripts de automação e Manutenção em aplicações PHP, Python, Javascript com Node.js e React, customização de dashboards Grafana"
+      ]
+    },
+    {
+      "id": 6,
       "empresa": "TI CODER LTDA",
       "cargo": "Desenvolvedor FullStack JR",
       "periodo_inicio": "Mai/2023",
