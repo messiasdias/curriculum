@@ -8,7 +8,7 @@
         
         <div  class="box">
             <fontawesome v-if="typed.position"  :icon="[typed.iconPrefix, typed.iconName]" :id="typed.iconName" />
-            <p id="typed" class=".typed" >...</p>
+            <p id="typed" class="typed" >...</p>
         </div>
         
         <img v-bind:src="euImage" alt="">

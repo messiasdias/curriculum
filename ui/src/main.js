@@ -7,9 +7,9 @@ import Curriculum from "./components/Curriculum.vue"
 import Store from "./store"
 import "./dom/dom"
 
-Vue.component('fontawesome',FontAwesomeIcon)
-Vue.use(VueMeta)
 Vue.use(Vuex)
+Vue.use(VueMeta)
+Vue.component('fontawesome',FontAwesomeIcon)
 
 new Vue({
     store: new Vuex.Store(Store),  
