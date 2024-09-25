@@ -21,7 +21,8 @@
             "Contato  via  Wathsapp",
             "Enviar email para <a href=\"mailto:messiasdias.ti@gmail.com\">messiasdias.ti@gmail.com</a>",
             "Espero atender os requisitos <br> necessários pra a vaga ou projeto.",
-            "E Mais uma vez...",
+            "Ah! Não esqueça de deixar seu <b>Feedback</b> sobre o curriculum e/ou qualificações esperadas.",
+            "E desde já...",
             "Muito <b>Obrigado</b>!"
         ],
         "icons": {
@@ -29,7 +30,8 @@
             "5": "fab:whatsapp",
             "6": "fas:envelope",
             "7": "fas:tasks",
-            "9": "fas:heart"
+            "8": "fas:comment",
+            "10": "fas:heart"
         }
     }
 }
