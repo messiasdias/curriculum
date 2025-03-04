@@ -3,16 +3,16 @@
     @import "../../node_modules/animate-scss/...";
 */
 
-@import "../../node_modules/animate-scss/properties";
-@import "../../node_modules/animate-scss/_zooming-entrances/zoomIn";
-@import "../../node_modules/animate-scss/_zooming-entrances/zoomInUp";
-@import "../../node_modules/animate-scss/_zooming-entrances/zoomInLeft";
-@import "../../node_modules/animate-scss/_zooming-entrances/zoomInRight";
-@import "../../node_modules/animate-scss/_zooming-entrances/zoomInDown";
-@import "../../node_modules/animate-scss/_bouncing-entrances/bounceInLeft";
-@import "../../node_modules/animate-scss/_bouncing-entrances/bounceInRight";
-@import "../../node_modules/animate-scss/_bouncing-entrances/bounceInUp";
-@import "../../node_modules/animate-scss/_fading-entrances/fadeIn";
+// @import "../../node_modules/animate-scss/properties";
+// @import "../../node_modules/animate-scss/_zooming-entrances/zoomIn";
+// @import "../../node_modules/animate-scss/_zooming-entrances/zoomInUp";
+// @import "../../node_modules/animate-scss/_zooming-entrances/zoomInLeft";
+// @import "../../node_modules/animate-scss/_zooming-entrances/zoomInRight";
+// @import "../../node_modules/animate-scss/_zooming-entrances/zoomInDown";
+// @import "../../node_modules/animate-scss/_bouncing-entrances/bounceInLeft";
+// @import "../../node_modules/animate-scss/_bouncing-entrances/bounceInRight";
+// @import "../../node_modules/animate-scss/_bouncing-entrances/bounceInUp";
+// @import "../../node_modules/animate-scss/_fading-entrances/fadeIn";
 
 //variables
 @import "variables";
@@ -104,7 +104,7 @@ body{
 
 .main{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     box-sizing: border-box;
@@ -371,23 +371,25 @@ body{
     $drt: .3s;
 
     .right > .item:nth-child(#{$num}) {
-        @include zoomInRight (
-            $duration:  $drt,
-            $count: 1,
-            $delay: $dly,
-            $function: ease-in-out, 
-            $fill: both
-        );
+        /* remove animate */
+        // @include zoomInRight (
+        //     $duration:  $drt,
+        //     $count: 1,
+        //     $delay: $dly,
+        //     $function: ease-in-out, 
+        //     $fill: both
+        // );
     }
 
     .left > .item:nth-child(#{$num}){
-        @include zoomInLeft (
-            $duration:  $drt,
-            $count: 1,
-            $delay: $dly,
-            $function: ease-in-out, 
-            $fill: both
-        );
+        /* remove animate */
+        // @include zoomInLeft (
+        //     $duration:  $drt,
+        //     $count: 1,
+        //     $delay: $dly,
+        //     $function: ease-in-out, 
+        //     $fill: both
+        // );
     }
 
 
@@ -395,17 +397,16 @@ body{
 
 
 .left,  .right{
-
     display: flex;
     flex-direction: column;
-
-    @include zoomInDown (
-        $duration:  .3s,
-        $count: 1,
-        $delay: .3s,
-        $function: ease-in-out, 
-        $fill: both
-    );
+    /* remove animate */
+    // @include zoomInDown (
+    //     $duration:  .3s,
+    //     $count: 1,
+    //     $delay: .3s,
+    //     $function: ease-in-out, 
+    //     $fill: both
+    // );
 
     @media screen and  (max-width: #{$medium} ) { 
         width: 90%  !important;
@@ -425,6 +426,7 @@ body{
 
 .left{
     align-items: flex-end;
+    justify-content: flex-start !important;
     width: 70%;
 
     @media screen and  (min-width: #{$large + 1px} ) { 
@@ -499,6 +501,32 @@ body{
 
 
 .right{
+
+    .view-all-btn {
+        background-color: rgba(#ddd, 1);
+        color: #000;
+        padding: 3px 5px;
+        border-radius: 5px;
+        font-size: .75rem;
+        margin-left: 0px !important;
+        margin: 20px 0;
+        border: none;
+        cursor: pointer;
+
+        &:hover, &:active {
+            color: white !important;
+            background-color: rgba($cor1, 1);
+        }
+
+        // position: absolute;
+        // right: 300px;
+        // margin-bottom: 40px;
+        // bottom: -20px;
+        // right: 20px;
+        // font-size: .55rem;
+        // padding: 3px 5px;
+        // border-radius: 5px;
+    }
 
     position: relative;
     border-left: solid 2px $cor1;
@@ -580,7 +608,8 @@ body{
     & >  img{
         width: 120px;
         height:  120px;
-        margin-top: -60px;
+        // remove margin-top para que o componente .left se alinhe ao topo do .main 
+        // margin-top: -60px;
         margin-bottom: 50px;
         @media screen and (max-width: #{$medium} ) {
            display: none;
@@ -666,13 +695,14 @@ body{
     }
 
     @media screen {
-        @include zoomInRight(
-            $duration: .6s,
-            $count: 1,
-            $delay: .3s,
-            $function: ease-in-out, 
-            $fill: both
-        );
+        /* remove animate */
+        // @include zoomInRight(
+        //     $duration: .6s,
+        //     $count: 1,
+        //     $delay: .3s,
+        //     $function: ease-in-out, 
+        //     $fill: both
+        // );
     }
 
     @media print { display: none !important;}
@@ -705,13 +735,14 @@ body{
 
 .img-content {
     @media screen {
-        @include zoomIn(
-            $duration: .1s,
-            $count: 1,
-            $delay: .3s,
-            $function: ease-in-out, 
-            $fill: both
-        );
+        /* remove animate */
+        // @include zoomIn(
+        //     $duration: .1s,
+        //     $count: 1,
+        //     $delay: .3s,
+        //     $function: ease-in-out, 
+        //     $fill: both
+        // );
     }
 
     & > img{
@@ -759,14 +790,14 @@ body{
         width: 100vw ;
         box-shadow: 1px -1px 5px $black2;
         max-height: 50px;
-
-        @include zoomInUp(
-            $duration: .1s,
-            $count: 1,
-            $delay: .1s ,
-            $function: ease-in-out, 
-            $fill: both
-        );
+        /* remove animate */
+        // @include zoomInUp(
+        //     $duration: .1s,
+        //     $count: 1,
+        //     $delay: .1s ,
+        //     $function: ease-in-out, 
+        //     $fill: both
+        // );
     }
 
     &-relative{
@@ -820,43 +851,47 @@ body{
     z-index: 12;
     background: $white;
     border: solid 1px transparent !important;
-    @include boderRotateEfect($name, $black2, rgba($clr, .8)  );
+    /* remove animate */
+    // @include boderRotateEfect($name, $black2, rgba($clr, .8)  );
 
 
     & > svg,  & > i{
         color: $clr;
 
         @media screen and (min-width: $medium + 1px  ) {
-            @include bounceInRight (
-                $duration: .3s,
-                $count: 1,
-                $delay: $dly ,
-                $function: ease-in-out, 
-                $fill: both
-            );
+            /* remove animate */
+            // @include bounceInRight (
+            //     $duration: .3s,
+            //     $count: 1,
+            //     $delay: $dly ,
+            //     $function: ease-in-out, 
+            //     $fill: both
+            // );
         }
 
         @media screen and (max-width: $medium  ) {
-            @include bounceInUp(
-                $duration: .3s,
-                $count: 1,
-                $delay: $dly ,
-                $function: ease-in-out, 
-                $fill: both
-            );
+            /* remove animate */
+            // @include bounceInUp(
+            //     $duration: .3s,
+            //     $count: 1,
+            //     $delay: $dly ,
+            //     $function: ease-in-out, 
+            //     $fill: both
+            // );
         }
 
 
         &:hover{
 
             @media screen and (max-width: $small  ) {
-                @include bounceInUp(
-                    $duration: .3s,
-                    $count: 1,
-                    $delay: $dly ,
-                    $function: ease-in-out, 
-                    $fill: both
-                );
+                /* remove animate */
+                // @include bounceInUp(
+                //     $duration: .3s,
+                //     $count: 1,
+                //     $delay: $dly ,
+                //     $function: ease-in-out, 
+                //     $fill: both
+                // );
             }
         }
     }
@@ -886,8 +921,8 @@ body{
         opacity:1;
         transition: all .3s ease-in-out ;    
     }
-
-    @include radialGradientTrasition(#{$name}, rgba($clr, .1), $white );
+    /* remove animate */
+    // @include radialGradientTrasition(#{$name}, rgba($clr, .1), $white );
     box-shadow: -1px 2px  5px $black2 !important;
 
 
@@ -932,14 +967,14 @@ body{
         opacity: .7;
     }
 
-
-    @include fadeIn(
-        $duration: 1.2s,
-        $count: 1,
-        $delay: 2s,
-        $function: ease-in-out, 
-        $fill: both
-    );
+    /* remove animate */
+    // @include fadeIn(
+    //     $duration: 1.2s,
+    //     $count: 1,
+    //     $delay: 2s,
+    //     $function: ease-in-out, 
+    //     $fill: both
+    // );
 
     @media print{
         display: none !important;
@@ -970,7 +1005,6 @@ body{
         }
 
         #close {
-            //display: none;
             position: absolute;
             top: 0px;
             right: 0px;
@@ -1037,14 +1071,14 @@ body{
                 font-size: 28px;
                 border-radius: 100%;
                 color:  $cor1;
-
-                @include zoomInLeft (
-                    $duration: .3s,
-                    $count: 1,
-                    $delay: .3s ,
-                    $function: ease-in-out, 
-                    $fill: both
-                );
+                /* remove animate */
+                // @include zoomInLeft (
+                //     $duration: .3s,
+                //     $count: 1,
+                //     $delay: .3s ,
+                //     $function: ease-in-out, 
+                //     $fill: both
+                // );
 
                 @each $name, $clr, $dly in $butons_map {
                     & #{$name} {
@@ -1075,13 +1109,14 @@ body{
         }
 
         span, .box{
-            @include zoomIn(
-                $duration: .3s,
-                $count: 1,
-                $delay: 2.5s,
-                $function: ease-in-out, 
-                $fill: both
-            );
+            /* remove animate */
+            // @include zoomIn(
+            //     $duration: .3s,
+            //     $count: 1,
+            //     $delay: 2.5s,
+            //     $function: ease-in-out, 
+            //     $fill: both
+            // );
         }
 
         img{ 
@@ -1093,15 +1128,14 @@ body{
             border: solid 2px $cor1;
             background-color: $cor1;
             opacity: 20;
-
-            @include zoomInUp(
-                $duration: .6s,
-                $count: 1,
-                $delay: 2.3s,
-                $function: ease-in-out, 
-                $fill: both
-            );
-    
+            /* remove animate */
+            // @include zoomInUp(
+            //     $duration: .6s,
+            //     $count: 1,
+            //     $delay: 2.3s,
+            //     $function: ease-in-out, 
+            //     $fill: both
+            // );
         }
 
 

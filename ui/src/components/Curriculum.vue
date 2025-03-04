@@ -44,13 +44,13 @@ import {mapState} from "vuex"
             {
                 vmid: 'description',
                 name: 'description',
-                content:  'Meu Curriculum Vitae Versão Web. Construido com Vue.js, Html5 e Css3/Sass.',
+                content:  'Messias Dias - Curriculum versão web, construído com Vue.js.',
             },
             {
                 vmid: 'keywords',
                 name: 'keywords',
                 content:  `curriculum,vitae,web,html,html5,css,css3,Sass,vuejs,vue.js,Vue,vue,Vue.js,desenvolvedor,dev,developer,front-end,back-end,front,back,end,`+
-                'formação,formacao,conhecimentos,pretençõa salarial,objetivo,contatos,social,repositórios,git',
+                'formação,formacao,conhecimentos,pretensao salarial,objetivo,contatos,social,repositórios,git',
             },
             {
                 'name': 'viewport',
