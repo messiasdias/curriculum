@@ -5,7 +5,7 @@
     "cargo": "Desenvolvedor FullStack PL",
     "periodo_inicio": "Out/2024",
     "periodo_final": "Mar/2025",
-    "tipo": "PJ",
+    "modalidade": "PJ Remoto",
     "descricao": [
       "Desenvolvimento de projeto de mobilidade urbana Sigmobi, painel administrativo, font-end com Vue.js, React Js,back-end api rest Laravel."
     ]
@@ -16,7 +16,7 @@
     "cargo": "Desenvolvedor FullStack PL",
     "periodo_inicio": "Out/2023",
     "periodo_final": "Junho/2024",
-    "tipo": "PJ",
+    "modalidade": "PJ Remoto",
     "descricao": [
       "Desenvolvimento de funcionalidades, scripts de automação e Manutenção em aplicações PHP, Python, Javascript com Node.js e React, customização de dashboards Grafana"
     ]
@@ -27,7 +27,7 @@
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Mai/2023",
     "periodo_final": "Out/2023",
-    "tipo": "CLT",
+    "modalidade": "CLT Remoto",
     "descricao": [
       "Desenvolvimento de funcionalidades e Manutenção em aplicações Laravel e Vue.js"
     ]
@@ -38,7 +38,7 @@
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Jan/2023",
     "periodo_final": "Mai/2023",
-    "tipo": "PJ",
+    "modalidade": "PJ Remoto",
     "descricao": [
       "Manutenção de interfaces web com Angular",
       "Manutenção em aplicações híbridas Laravel e Codeigniter"
@@ -50,7 +50,7 @@
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Mai/2021",
     "periodo_final": "Jan/2023",
-    "tipo": "PJ",
+    "modalidade": "PJ Remoto",
     "descricao": [
       "Desenvolvimento de interfaces web com Vue.js",
       "Manutenção em aplicações híbridas Slim Framework e Proprietário",
@@ -63,7 +63,7 @@
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Jan/2021",
     "periodo_final": "Abr/2021",
-    "tipo": "PJ",
+    "modalidade": "PJ Remoto",
     "descricao": [
       "Desenvolvimento de interfaces web com Vue.js",
       "Manutenção em aplicações híbridas Laravel e Slim Framework"
@@ -75,7 +75,7 @@
     "cargo": "Desenvolvedor Front-End JR",
     "periodo_inicio": "Jun/2020",
     "periodo_final": "Jan/2021",
-    "tipo": "PJ",
+    "modalidade": "PJ Híbrido",
     "descricao": [
       "Desenvolvimento de interfaces web com Vue.js e Materialize"
     ]
@@ -86,7 +86,7 @@
     "cargo": "Analista de Suporte JR",
     "periodo_inicio": "Fev/2018",
     "periodo_final": "Set/2019",
-    "tipo": "PJ",
+    "modalidade": "PJ Presencial",
     "descricao": [
       "Administração de Servidores Linux Ubuntu/Debian",
       "NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento",

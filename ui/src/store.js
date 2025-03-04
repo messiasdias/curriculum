@@ -1,6 +1,6 @@
 import Typed from 'typed.js'
 import Axios from 'axios'
-import euImg from './assets/eu.png'
+import euImg from './assets/img/eu.png'
 const apiBaseUrl = process.env.NODE_ENV === "production" ? process.env.VUE_APP_API_BASE_URL : '/api'
 
 let state = {

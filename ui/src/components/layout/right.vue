@@ -29,11 +29,14 @@
     <div class="item" >
         <h3 class="no-print"><fontawesome icon="briefcase" /> Experiências Anteriores</h3>
         <ul class="experiencias">
-            <li v-for="(xp, i) in experiencias" :key="i" :class="{'no-print': i > 0}" > 
-                <h4>{{xp.empresa.toUpperCase()}}</h4>
-                <h5>{{xp.cargo}} | {{xp.periodo_inicio}} - {{xp.periodo_final}}</h5>
-                <p v-for="(descricao, d) in xp.descricao" :key="d">{{descricao}}</p>
-            </li>
+            <div v-for="(xp, i) in experiencias" :key="i" :class="{'no-print': i > 0}" > 
+                <li v-if="(!viewMoreExp && i <= 2)|| viewMoreExp">
+                    <h4>{{xp.empresa.toUpperCase()}}</h4>
+                    <h5>{{xp.cargo}} | {{xp.periodo_inicio}} - {{xp.periodo_final}} | {{xp.modalidade}} </h5>
+                    <p v-for="(descricao, d) in xp.descricao" :key="d">{{descricao}}</p>
+                </li>
+            </div>
+            <button class="view-all-btn no-print" @click.prevent="toggleViewMoreExp()" > {{!viewMoreExp ? 'Ver Mais &plus;' : 'Ver menos &minus;'}}</button>
         </ul>
         <small class="no-screen">Para mais acesse:<br/> <b>{{baseUrl}}</b></small>            
     </div>
@@ -63,6 +66,16 @@ import {mapState} from 'vuex'
            metadados: state => state.metadados
        }),
        baseUrl: () => process.env.VUE_APP_BASE_URL.replace('http://', '').replace('https://', '') || ""
+    },
+    data() {
+        return {
+            viewMoreExp: false
+        }
+    },  
+    methods: {
+        toggleViewMoreExp() {
+            this.viewMoreExp = !this.viewMoreExp
+        }
     }
  }   
 </script>

@@ -1,11 +1,11 @@
-import "./sass/main.scss"
+import "./assets/css/main.scss"
 import Vue from "vue"
 import Vuex from "vuex"
 import VueMeta from 'vue-meta'
-import FontAwesomeIcon  from "./dom/icons"
+import FontAwesomeIcon  from "./assets/js/icons"
 import Curriculum from "./components/Curriculum.vue"
 import Store from "./store"
-import "./dom/dom"
+import "./assets/js/dom"
 
 Vue.use(Vuex)
 Vue.use(VueMeta)
