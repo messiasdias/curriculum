@@ -39,7 +39,7 @@
     </div>
 
     <div class="item" >
-        <h3><fontawesome icon="dollar-sign" />Pretenção Salarial</h3>
+        <h3><fontawesome icon="dollar-sign" />Pretensão Salarial</h3>
         <p>{{metadados.pretencao_salarial}}</p>
     </div> 
 
