@@ -110,7 +110,6 @@ body{
     box-sizing: border-box;
     background: $white !important;
 
-
     @media screen and  (min-height: #{$medium} ) {
         min-height: 1100px;
     }
@@ -414,7 +413,7 @@ body{
 
     @media print {
         padding:  0 !important;
-        margin: 0 !important;
+        margin: 50px 0px 5px 20px !important;
     }
 
     .item{
