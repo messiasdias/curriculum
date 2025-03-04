@@ -6,7 +6,8 @@
                
     <div class="item" >
         <h3><fontawesome class="icon" icon="address-book" /> Contatos</h3>
-        <p class="link" :v-if="metadados.wp_phone" ><a rel="noopener"  target="_blank" :href="wp_link"> {{metadados.wp_phone_text || metadados.wp_phone}} <fontawesome icon="mobile-alt" /> </a></p>
+        <p class="link" :v-if="metadados.wp_phone" ><a rel="noopener"  target="_blank" :href="getWpLink(metadados.wp_phone, metadados.wp_message)"> {{metadados.wp_phone}} <fontawesome :icon="['fab', 'whatsapp']"  /> </a></p>
+        <p class="link" :v-if="metadados.wp_phone2" ><a rel="noopener"  target="_blank" :href="getWpLink(metadados.wp_phone2, metadados.wp_message)"> {{metadados.wp_phone2}} <fontawesome :icon="['fab', 'whatsapp']"  /> </a></p>
         <p class="link" :v-if="metadados.email" ><a rel="noopener"  target="_blank" @click="mailTo()">{{metadados.email}}<fontawesome icon="at" /></a></p>
     </div>
 
@@ -59,7 +60,6 @@ import socialLink from './social-link'
     computed: {
         ...mapState({
            euImage: state => state.euImage,
-           wp_link: state => state.wp_link,
            metadados: state => state.metadados,
            redes_sociais: state => state.redes_sociais,
            repositorios: state => state.repositorios,
@@ -71,6 +71,15 @@ import socialLink from './social-link'
         ...mapActions({
            mailTo: 'mailTo'
         }),
+        getWpLink(phone = "", message = "") {
+            let wp_phone = phone
+                    .replaceAll('(', '')
+                    .replaceAll(')', '')
+                    .replaceAll(' ', '')
+                    .trim()
+
+            return `https://api.whatsapp.com/send?phone=55${wp_phone}&text=${encodeURI(message)}`
+        }
     }
  }   
 </script>
