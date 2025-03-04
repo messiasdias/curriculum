@@ -1,78 +1,96 @@
 [
-    {
-      "id": 6,
-      "empresa": "Eras Monitoramento",
-      "cargo": "Desenvolvedor FullStack PL",
-      "periodo_inicio": "Out/2023",
-      "periodo_final": "Junho/2024",
-      "descricao": [
-        "Desenvolvimento de funcionalidades, scripts de automação e Manutenção em aplicações PHP, Python, Javascript com Node.js e React, customização de dashboards Grafana"
-      ]
-    },
-    {
-      "id": 6,
-      "empresa": "TI CODER LTDA",
-      "cargo": "Desenvolvedor FullStack JR",
-      "periodo_inicio": "Mai/2023",
-      "periodo_final": "Out/2023",
-      "descricao": [
-        "Desenvolvimento de funcionalidades e Manutenção em aplicações Laravel e Vue.js"
-      ]
-    },
-    {
-      "id": 5,
-      "empresa": "CG Profissionais em RH LTDA",
-      "cargo": "Desenvolvedor FullStack JR",
-      "periodo_inicio": "Jan/2023",
-      "periodo_final": "Mai/2023",
-      "descricao": [
-        "Manutenção de interfaces web com Angular",
-        "Manutenção em aplicações híbridas Laravel e Codeigniter"
-      ]
-    },
-    {
-      "id": 4,
-      "empresa": "KEVI | Retenção de Cliente",
-      "cargo": "Desenvolvedor FullStack JR",
-      "periodo_inicio": "Mai/2021",
-      "periodo_final": "Jan/2023",
-      "descricao": [
-        "Desenvolvimento de interfaces web com Vue.js",
-        "Manutenção em aplicações híbridas Slim Framework e Proprietário",
-        "Testes JS com Jest e PHP com Php Unit"
-      ]
-    },
-    {
-      "id": 3,
-      "empresa": "Vértice Digital",
-      "cargo": "Desenvolvedor FullStack JR",
-      "periodo_inicio": "Jan/2021",
-      "periodo_final": "Abr/2021",
-      "descricao": [
-        "Desenvolvimento de interfaces web com Vue.js",
-        "Manutenção em aplicações híbridas Laravel e Slim Framework"
-      ]
-    },
-    {
-      "id": 2,
-      "empresa": "FUTURA DES. DE PROGRAMAS EIRELI",
-      "cargo": "Desenvolvedor Front-End JR",
-      "periodo_inicio": "Jun/2020",
-      "periodo_final": "Jan/2021",
-      "descricao": [
-        "Desenvolvimento de interfaces web com Vue.js e Materialize"
-      ]
-    },
-    {
-      "id": 1,
-      "empresa": "SETEV",
-      "cargo": "Analista de Suporte JR",
-      "periodo_inicio": "Fev/2018",
-      "periodo_final": "Set/2019",
-      "descricao": [
-        "Administração de Servidores Linux Ubuntu/Debian",
-        "NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento",
-        "NovoSGA - Desenvolvimento Front-End de Painel de Atendimento exclusivo"
-      ]
-    }
+  {
+    "id": 7,
+    "empresa": "Gestão Tech/Sigmobi Tecnologia",
+    "cargo": "Desenvolvedor FullStack PL",
+    "periodo_inicio": "Out/2024",
+    "periodo_final": "Mar/2025",
+    "tipo": "PJ",
+    "descricao": [
+      "Desenvolvimento de projeto de mobilidade urbana Sigmobi, painel administrativo, font-end com Vue.js, React Js,back-end api rest Laravel."
+    ]
+  },
+  {
+    "id": 6,
+    "empresa": "Eras Monitoramento",
+    "cargo": "Desenvolvedor FullStack PL",
+    "periodo_inicio": "Out/2023",
+    "periodo_final": "Junho/2024",
+    "tipo": "PJ",
+    "descricao": [
+      "Desenvolvimento de funcionalidades, scripts de automação e Manutenção em aplicações PHP, Python, Javascript com Node.js e React, customização de dashboards Grafana"
+    ]
+  },
+  {
+    "id": 6,
+    "empresa": "TI CODER LTDA",
+    "cargo": "Desenvolvedor FullStack JR",
+    "periodo_inicio": "Mai/2023",
+    "periodo_final": "Out/2023",
+    "tipo": "CLT",
+    "descricao": [
+      "Desenvolvimento de funcionalidades e Manutenção em aplicações Laravel e Vue.js"
+    ]
+  },
+  {
+    "id": 5,
+    "empresa": "CG Profissionais em RH LTDA",
+    "cargo": "Desenvolvedor FullStack JR",
+    "periodo_inicio": "Jan/2023",
+    "periodo_final": "Mai/2023",
+    "tipo": "PJ",
+    "descricao": [
+      "Manutenção de interfaces web com Angular",
+      "Manutenção em aplicações híbridas Laravel e Codeigniter"
+    ]
+  },
+  {
+    "id": 4,
+    "empresa": "KEVI | Retenção de Cliente",
+    "cargo": "Desenvolvedor FullStack JR",
+    "periodo_inicio": "Mai/2021",
+    "periodo_final": "Jan/2023",
+    "tipo": "PJ",
+    "descricao": [
+      "Desenvolvimento de interfaces web com Vue.js",
+      "Manutenção em aplicações híbridas Slim Framework e Proprietário",
+      "Testes JS com Jest e PHP com Php Unit"
+    ]
+  },
+  {
+    "id": 3,
+    "empresa": "Vértice Digital",
+    "cargo": "Desenvolvedor FullStack JR",
+    "periodo_inicio": "Jan/2021",
+    "periodo_final": "Abr/2021",
+    "tipo": "PJ",
+    "descricao": [
+      "Desenvolvimento de interfaces web com Vue.js",
+      "Manutenção em aplicações híbridas Laravel e Slim Framework"
+    ]
+  },
+  {
+    "id": 2,
+    "empresa": "FUTURA DES. DE PROGRAMAS EIRELI",
+    "cargo": "Desenvolvedor Front-End JR",
+    "periodo_inicio": "Jun/2020",
+    "periodo_final": "Jan/2021",
+    "tipo": "PJ",
+    "descricao": [
+      "Desenvolvimento de interfaces web com Vue.js e Materialize"
+    ]
+  },
+  {
+    "id": 1,
+    "empresa": "SETEV",
+    "cargo": "Analista de Suporte JR",
+    "periodo_inicio": "Fev/2018",
+    "periodo_final": "Set/2019",
+    "tipo": "PJ",
+    "descricao": [
+      "Administração de Servidores Linux Ubuntu/Debian",
+      "NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento",
+      "NovoSGA - Desenvolvimento Front-End de Painel de Atendimento exclusivo"
+    ]
+  }
 ]
