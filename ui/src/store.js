@@ -14,8 +14,7 @@ let state = {
     repositorios: [],
     projetos: [],
     informacoes_extra: [],
-    metadados: {},
-    wp_link: null,
+    metadados: {}
 }
 
 let mutations = {
@@ -54,9 +53,6 @@ let mutations = {
     },
     metadados: (state, metadados = {}) => {
         state.metadados = metadados
-        if(metadados?.wp_phone) {
-            state.wp_link = `https://api.whatsapp.com/send?phone=${state.metadados.wp_phone}&text=${encodeURI(state.metadados.wp_message)}`
-        }
     }
 }
 

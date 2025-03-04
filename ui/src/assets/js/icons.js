@@ -21,7 +21,7 @@ import {
     faGraduationCap,
 } from '@fortawesome/free-solid-svg-icons'
 
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fab, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
     fab,
@@ -33,6 +33,7 @@ library.add(
     faHeart,
     faTasks,
     faComment,
+    faWhatsapp,
     faEnvelope,
     faBullseye,
     faMobileAlt,

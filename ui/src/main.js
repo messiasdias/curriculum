@@ -9,7 +9,7 @@ import "./assets/js/dom"
 
 Vue.use(Vuex)
 Vue.use(VueMeta)
-Vue.component('fontawesome',FontAwesomeIcon)
+Vue.component('fontawesome', FontAwesomeIcon)
 
 new Vue({
     store: new Vuex.Store(Store),  
