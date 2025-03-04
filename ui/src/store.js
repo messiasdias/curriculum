@@ -1,7 +1,7 @@
 import Typed from 'typed.js'
 import Axios from 'axios'
 import euImg from './assets/eu.png'
-const apiBaseUrl = process.env.VUE_APP_API_BASE_URL
+const apiBaseUrl = process.env.NODE_ENV === "production" ? process.env.VUE_APP_API_BASE_URL : '/api'
 
 let state = {
     euImage: euImg,
@@ -83,7 +83,7 @@ let actions = {
     mailTo: ({state}) => window.location.href = `mailto:${state.metadados.email}`,
 
     typedRun : (context) =>  {
-        if(context.state.msg){
+        if(context.state.msg && context.state.metadados.typed){
             context.state.metadados.typed.current = new Typed('#typed', {
                 strings: context.state.metadados.typed.strings,
                 typeSpeed: 80,
