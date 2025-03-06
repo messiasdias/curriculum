@@ -1158,3 +1158,9 @@ body{
         display: none !important;
     }
 }
+
+button[id^="hj-survey-toggle"] {
+    @media print {
+        display: none;
+    }
+}

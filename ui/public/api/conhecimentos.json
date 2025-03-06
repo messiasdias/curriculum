@@ -2,7 +2,7 @@
     {
         "id": 4,
         "titulo": "Front-End",
-        "descricao": "HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como VueJs, React, e Next.JS"
+        "descricao": "HTML, CSS com pré compilador Sass e Frameworks Bootstrap e Materialize, JavaScript e Frameworks como Vue.js, React, e Next.JS"
     },
     {
         "id": 3,
@@ -17,6 +17,6 @@
     {
         "id": 1,
         "titulo": "Ferramentas",
-        "descricao": "Git, Npm, Composer, Linux Ubuntu/Debian"
+        "descricao": "Git, Github actions, Gitlab Pipelines, Docker, Linux Ubuntu/Debian"
     }
 ]
