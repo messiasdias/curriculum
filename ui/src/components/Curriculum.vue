@@ -1,6 +1,6 @@
 <template>
 <div id="app" >
-    <div id="avatar" > </div>
+    <div id="avatar" />
     <div class="main">
         <Left/>
         <Right/>

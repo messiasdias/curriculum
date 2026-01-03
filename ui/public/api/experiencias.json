@@ -1,6 +1,6 @@
 [
   {
-    "id": 7,
+    "id": 14,
     "empresa": "Gestão Tech/Sigmobi Tecnologia",
     "cargo": "Desenvolvedor FullStack PL",
     "periodo_inicio": "Out/2024",
@@ -8,10 +8,11 @@
     "modalidade": "PJ Remoto",
     "descricao": [
       "Desenvolvimento de painel administrativo para aplicativo de mobilidade urbana Sigmobi, front-end React Js, back-end api rest Laravel."
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador"]
   },
   {
-    "id": 6,
+    "id": 13,
     "empresa": "Eras Monitoramento",
     "cargo": "Desenvolvedor FullStack PL",
     "periodo_inicio": "Out/2023",
@@ -19,10 +20,11 @@
     "modalidade": "PJ Remoto",
     "descricao": [
       "Desenvolvimento de funcionalidades, scripts de automação e Manutenção em aplicações PHP, Python, Javascript com Node.js e React, customização de dashboards Grafana"
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador"]
   },
   {
-    "id": 6,
+    "id": 12,
     "empresa": "TI CODER LTDA",
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Mai/2023",
@@ -30,10 +32,11 @@
     "modalidade": "CLT Remoto",
     "descricao": [
       "Desenvolvimento de funcionalidades e Manutenção em aplicações Laravel e Vue.js"
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador", "vue"]
   },
   {
-    "id": 5,
+    "id": 11,
     "empresa": "CG Profissionais em RH LTDA",
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Jan/2023",
@@ -42,10 +45,11 @@
     "descricao": [
       "Manutenção de interfaces web com Angular",
       "Manutenção em aplicações híbridas Laravel e Codeigniter"
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador"]
   },
   {
-    "id": 4,
+    "id": 10,
     "empresa": "KEVI | Retenção de Cliente",
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Mai/2021",
@@ -55,10 +59,11 @@
       "Desenvolvimento de interfaces web com Vue.js",
       "Manutenção em aplicações híbridas Slim Framework e Proprietário",
       "Testes JS com Jest e PHP com Php Unit"
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador"]
   },
   {
-    "id": 3,
+    "id": 9,
     "empresa": "Vértice Digital",
     "cargo": "Desenvolvedor FullStack JR",
     "periodo_inicio": "Jan/2021",
@@ -67,10 +72,11 @@
     "descricao": [
       "Desenvolvimento de interfaces web com Vue.js",
       "Manutenção em aplicações híbridas Laravel e Slim Framework"
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador"]
   },
   {
-    "id": 2,
+    "id": 8,
     "empresa": "FUTURA DES. DE PROGRAMAS EIRELI",
     "cargo": "Desenvolvedor Front-End JR",
     "periodo_inicio": "Jun/2020",
@@ -78,19 +84,97 @@
     "modalidade": "PJ Híbrido",
     "descricao": [
       "Desenvolvimento de interfaces web com Vue.js e Materialize"
-    ]
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador"]
+  },
+  {
+    "id": 7,
+    "empresa": "Setev",
+    "cargo": "Analista de Suporte Jr.",
+    "periodo_inicio": "Fev/2018",
+    "periodo_final": "Out/2019",
+    "modalidade": "CLT",
+    "descricao": [
+      "Serviços de instalação e manutenção em Sistemas de controle de Acesso Intelbras e Certificado Trilobit, Centrais telefônicas, Centrais de alarme e CFTV Intelbras.",
+      "Infraestrutura e configuração de rede",
+      "Servidores e desktop Linux e Windows.",
+      "Manutenção em Impressoras lazer,",
+      "Programação web com HTML, CSS, JavaScript e Php, Bootstrap e Laravel."
+    ],
+    "tags": ["dev", "php", "desenvolvedor", "programador", "ti", "redes", "suporte"]
+  },
+  {
+    "id": 6,
+    "empresa": "Portelcom Portões e Comunicação",
+    "cargo": "Técnico de Instalações eletrônicas",
+    "periodo_inicio": "Jan/2017",
+    "periodo_final": "Ago/2017",
+    "modalidade": "CLT",
+    "descricao": [
+      "Instalação e manutenção de Sistemas de Alarme, Controle de Acesso, Cerca Elétrica, PABX e CFTV."
+    ],
+    "tags": ["ti", "redes", "suporte"]
+  },
+  {
+    "id": 5,
+    "empresa": "WPrinter Soluçõs em Impressão ME",
+    "cargo": "Aux Tecnico em Informática",
+    "periodo_inicio": "Out/2015",
+    "periodo_final": "Out/2016",
+    "modalidade": "CLT (Estágio)",
+    "descricao": [
+      "Manutenção de impressoras, computadores, notebooks e equipamentos de informática.",
+      "Suporte técnico remoto e presencial."
+    ],
+    "tags": ["ti", "redes", "suporte"]
+  },
+  {
+    "id": 4,
+    "empresa": "L & M Teleinformática LTDA",
+    "cargo": "Aux Tecnico em Informática",
+    "periodo_inicio": "Nov/2013",
+    "periodo_final": "Ago/2014",
+    "modalidade": "CLT",
+    "descricao": [
+      "Infraestrutura, instalação e configuração de redes de computadores, instalação de equipamentos de rede Cisco e outros, além de Suporte técnico presencial."
+    ],
+    "tags": ["ti", "redes", "suporte"]
+  },
+  {
+    "id": 3,
+    "empresa": "Lider Telecom",
+    "cargo": "Auxliar Administrativo",
+    "periodo_inicio": "Nov/2012",
+    "periodo_final": "Set/2013",
+    "modalidade": "CLT",
+    "descricao": [
+      "Apoio técnico em projeto de habilitação e manutenção em TV por assinatura via satélite.",
+      "Abertura, acompanhamento e baixa de chamados técnicos."
+    ],
+    "tags": ["ti", "redes", "suporte", "auxliar administrativo"]
+  },
+  {
+    "id": 2,
+    "empresa": "Torchia Telecom e eng LTDA",
+    "cargo": "Auxiliar Tecnicco TI ",
+    "periodo_inicio": "Dez/2011",
+    "periodo_final": "Ago/2012",
+    "modalidade": "CLT (Não resgistrado)",
+    "descricao": [
+      "Infraestrutura, instalação e configuração de redes de computadores, instalação de equipamentos de rede Cisco e outros, além de Suporte técnico presencial."
+    ],
+    "tags": ["ti", "redes", "suporte"]
   },
   {
     "id": 1,
-    "empresa": "SETEV",
-    "cargo": "Analista de Suporte JR",
-    "periodo_inicio": "Fev/2018",
-    "periodo_final": "Set/2019",
-    "modalidade": "PJ Presencial",
+    "empresa": "KL Keepers comercio de embalagens e Sev Log",
+    "cargo": "Auxliar de Operações",
+    "periodo_inicio": "Out/2009",
+    "periodo_final": "Nov/2011",
+    "modalidade": "CLT",
     "descricao": [
-      "Administração de Servidores Linux Ubuntu/Debian",
-      "NovoSGA - Implantação do Sistema de Gerenciamento de Atendimento",
-      "NovoSGA - Desenvolvimento Front-End de Painel de Atendimento exclusivo"
-    ]
+      "Serviços de armazenagem e controle de matérias internos.\nPrestador de serviços de logistica à Loja do seguimento de Moda."
+    ],
+    "tags": ["log", "logistiva", "aux de operações"]
   }
 ]
