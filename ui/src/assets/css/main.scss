@@ -18,14 +18,14 @@
 @import "variables";
 @import "efects";
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 
 .custom-shadow {
-    &::before{
+    &::before {
         content: "";
         position: absolute;
         z-index: 8;
@@ -33,40 +33,46 @@
         height: 10px;
         left: 5%;
         top: 105%;
-        background: -webkit-radial-gradient(center, ellipse, rgba(0,0,0,.35) 0%,  rgba(0,0,0,0) 80%  );
-        transition: all .3s ease-in-out ;
+        background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 80%);
+        transition: all .3s ease-in-out;
     }
 }
 
 .no-print {
-    @media print {display: none;}
+    @media print {
+        display: none;
+    }
 }
 
-.no-screen{
-    @media screen {display: none;}
+.no-screen {
+    @media screen {
+        display: none;
+    }
 }
 
-html{
+html {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    transition:  scroll-behavior cubic-bezier(0.6, -0.28, 0.735, 0.045) .8s; 
+    transition: scroll-behavior cubic-bezier(0.6, -0.28, 0.735, 0.045) .8s;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100vw;
-    @include scrollbar( rgba($cor1, .3) , $cor1, $black2, 7px);
+    @include scrollbar(rgba($cor1, .3), $cor1, $black2, 7px);
+
     @media print {
-        font-size: 12pt !important; 
+        font-size: 12pt !important;
     }
 
     @media print {
-        width: 793px; height: 1120px;
-        padding:  0 !important;
+        width: 793px;
+        height: 1120px;
+        padding: 0 !important;
         margin: 0 !important;
-     }
+    }
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,17 +80,19 @@ body{
     min-height: 100vh;
     margin: 0 !important;
     padding: 0 !important;
-    overflow-x: none  !important;
-    
-    @media screen and  (min-width: 781px ) {background: #eee;}
+    overflow-x: none !important;
 
-    @media screen and  (min-width: #{$large} ) {
+    @media screen and (min-width: 781px) {
+        background: #eee;
+    }
+
+    @media screen and (min-width: #{$large}) {
         width: 100vw;
-        overflow-x: none  !important;
+        overflow-x: none !important;
         padding: 40px 0px !important;
     }
 
-    @media screen and  (min-height: #{ $large } ) {
+    @media screen and (min-height: #{ $large }) {
         padding: 40px 0px !important;
         align-items: center !important;
     }
@@ -94,7 +102,7 @@ body{
         margin: 0 !important;
         padding: 0 !important;
     }
-  
+
 }
 
 @page {
@@ -102,7 +110,7 @@ body{
     margin: 0;
 }
 
-.main{
+.main {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -110,57 +118,58 @@ body{
     box-sizing: border-box;
     background: $white !important;
 
-    @media screen and  (min-height: #{$medium} ) {
+    @media screen and (min-height: #{$medium}) {
         min-height: 1100px;
     }
 
 
-    @media screen and  (min-width: #{$medium + 1px} ) {
+    @media screen and (min-width: #{$medium + 1px}) {
         width: 842px !important;
         padding: 40px 0px;
         border: solid 1px rgba($black2, .2);
         box-shadow: -2px 2px 5px $black2;
     }
 
-    @media screen and  (max-width: #{$medium}  ) {
+    @media screen and (max-width: #{$medium}) {
         max-width: 95vw;
         padding: 20px 0px 0px 0px;
     }
-    
-    @media screen and  (max-width: #{$medium} ) {
+
+    @media screen and (max-width: #{$medium}) {
         flex-direction: column-reverse;
     }
 
     @media print {
-       width: 793px; height: 1120px;
-       padding:  0 !important;
-       margin: 0 !important;
+        width: 793px;
+        height: 1120px;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
 
-.item{
+.item {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 100% ;
+    width: 100%;
 
-    &:first-child{
-       margin-top: 10px;
+    &:first-child {
+        margin-top: 10px;
     }
 
     h1 {
-        width: 80% ;
+        width: 80%;
         font-family: $font2;
-        font-size: 22px ;
+        font-size: 22px;
         font-weight: 400;
         letter-spacing: 2px;
         color: $cor1;
-        text-shadow: 1px 1px 1px rgba(0,0,0, .1);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
         opacity: 10;
         margin: 10px 0px;
         text-align: center !important;
-        
-        @media screen and  (max-width: #{$medium} ) { 
+
+        @media screen and (max-width: #{$medium}) {
             font-size: 1.8em;
             text-align: center !important;
         }
@@ -174,14 +183,15 @@ body{
     h2 {
         font-family: $font1;
         font-size: 1.8em;
-        color: rgba(0,0,0, .5);
-        @media screen and  (max-width: #{$medium} ) { 
+        color: rgba(0, 0, 0, .5);
+
+        @media screen and (max-width: #{$medium}) {
             font-size: 1.6em;
         }
     }
 
-   
-    h3{
+
+    h3 {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -189,7 +199,7 @@ body{
         font-size: .8rem;
         letter-spacing: 2px;
         margin-bottom: 10px;
-        color: rgba(0,0,0, .5);
+        color: rgba(0, 0, 0, .5);
         opacity: 10;
 
         svg {
@@ -205,16 +215,16 @@ body{
             z-index: 2;
         }
 
-        &::before{
+        &::before {
             content: '';
             width: 25px;
-            border:solid 1px $cor1;
+            border: solid 1px $cor1;
             z-index: 3;
         }
     }
 
 
-    p{  
+    p {
         color: $black;
         font-family: $font1;
         margin: 2px 0;
@@ -222,48 +232,53 @@ body{
         margin-left: 5px !important;
         max-width: 80%;
         opacity: 10 !important;
-    
 
-        &.link{
-            display: flex; 
+
+        &.link {
+            display: flex;
             justify-content: flex-end;
             align-items: flex-end;
             width: 90%;
             margin: 5px;
-            @media print{
+
+            @media print {
                 margin-right: 0px;
             }
 
-            & > a{
+            &>a {
                 position: relative !important;
-                display: flex; 
+                display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 color: $black;
-                svg{
-                    @media print{  margin-left: 5px; }
+
+                svg {
+                    @media print {
+                        margin-left: 5px;
+                    }
+
                     margin-left: 10px;
                     font-size: 12px;
                 }
             }
 
-            @media screen and  (max-width: #{$medium} ) { 
+            @media screen and (max-width: #{$medium}) {
                 min-height: 48px !important;
                 margin: 5px;
 
-                & > a{
+                &>a {
                     min-width: 48px !important;
                     height: 48px !important;
                     max-height: 50px !important;
 
-                    svg{
+                    svg {
                         margin-left: 5px;
                     }
-    
+
                 }
             }
 
-            small{
+            small {
                 background-color: rgba($cor1, .7);
                 color: white;
                 position: absolute;
@@ -272,61 +287,81 @@ body{
                 font-size: .55rem;
                 padding: 3px 5px;
                 border-radius: 5px;
-                @media screen and  (max-width: #{$medium} ) { bottom: -2px;}
-                @media print{display: none;}
+
+                @media screen and (max-width: #{$medium}) {
+                    bottom: -2px;
+                }
+
+                @media print {
+                    display: none;
+                }
             }
         }
 
-        &.link-print{
+        &.link-print {
             @extend .link;
-            @media screen {display: none;}
-            @media print{
+
+            @media screen {
+                display: none;
+            }
+
+            @media print {
                 display: block !important;
             }
         }
 
-        &.link-noprint{
+        &.link-noprint {
             @extend .link;
-            @media print{display: none;}
+
+            @media print {
+                display: none;
+            }
         }
     }
 
-    a{  
+    a {
         color: $black;
         text-decoration: none;
         transition-delay: .3s !important;
         transition: transform cubic-bezier(0.3, -0.28, 0.335, 0.045) .1s;
         letter-spacing: 1px;
 
-        &:hover{
+        &:hover {
             transition-delay: .0s;
             transition: transform cubic-bezier(0.3, -0.28, 0.335, 0.045) .1s;
             transform: scale(1.1);
             color: $cor1 !important;
             cursor: pointer;
             text-decoration: none !important;
-            letter-spacing: 1.5px;        
+            letter-spacing: 1.5px;
         }
     }
 
-    ul{
+    ul {
         margin-left: 30px;
         list-style: circle;
-        li{
+
+        div{
+           margin-bottom: 10px;
+        }
+
+        li {
             font-family: $font1;
             font-size: .8em;
             margin-top: 5px !important;
             font-weight: normal;
             max-width: 80%;
 
-            & > small{
+            &>small {
                 font-size: .8em;
                 margin-bottom: 10px !important;
             }
-            p{
+
+            p {
                 font-family: $font2;
                 margin: 5px 0px;
-                & > small{
+
+                &>small {
                     font-weight: lighter;
                     float: left;
                 }
@@ -335,26 +370,69 @@ body{
     }
 
 
-    &:hover{
+    &:hover {
 
-        & h3 > svg{
-           @include rotate('ease-in-out .6s');
+        & h3>svg {
+            @include rotate('ease-in-out .6s');
         }
+    }
+
+    .fa-filter {
+        border: none !important;
+        color: rgba($black, .6) !important;
+        cursor: pointer;
+        font-size: .6rem !important;
+    }
+
+    .xps-filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        padding: 2px;
+        margin-left: 10%;
+        overflow-y: none !important;
+        margin-bottom: 20px;
     }
 
 }
 
+.badge {
+    cursor: pointer;
+    border: solid 1px $black;
+    margin: 2px;
+    padding: 3px 8px;
+    border-radius: 7px;
+    color: $black;
+    font-size: .55rem;
 
-.circle{
+    &.selected,
+    &:hover {
+        border-color: transparent;
+        background: $cor1;
+        color: $white;
+    }
+
+    &-btn {
+        @extend .badge;
+        border-color: transparent;
+        background: $black2;
+        color: $white;
+        margin-left: 10px;
+    }
+}
+
+.circle {
     border-radius: 100%;
     user-select: none !important;
     box-shadow: 1px 1px 10px rgba($cor1 , .1);
-    border:solid 2px $cor1;
+    border: solid 2px $cor1;
 }
 
 
-
-.img-content, .item{
+.img-content,
+.item {
     position: relative;
     display: inherit;
     align-items: flex-start;
@@ -366,10 +444,10 @@ body{
 
 @for $num from 2 through 10 {
 
-    $dly: calc( calc(#{$num} - 1) * .2s);
+    $dly: calc(calc(#{$num} - 1) * .2s);
     $drt: .3s;
 
-    .right > .item:nth-child(#{$num}) {
+    .right>.item:nth-child(#{$num}) {
         /* remove animate */
         // @include zoomInRight (
         //     $duration:  $drt,
@@ -380,7 +458,7 @@ body{
         // );
     }
 
-    .left > .item:nth-child(#{$num}){
+    .left>.item:nth-child(#{$num}) {
         /* remove animate */
         // @include zoomInLeft (
         //     $duration:  $drt,
@@ -395,7 +473,8 @@ body{
 }
 
 
-.left,  .right{
+.left,
+.right {
     display: flex;
     flex-direction: column;
     /* remove animate */
@@ -407,59 +486,64 @@ body{
     //     $fill: both
     // );
 
-    @media screen and  (max-width: #{$medium} ) { 
-        width: 90%  !important;
+    @media screen and (max-width: #{$medium}) {
+        width: 90% !important;
     }
 
     @media print {
-        padding:  0 !important;
+        padding: 0 !important;
         margin: 50px 0px 5px 20px !important;
+        -webkit-width: 50% !important;
+        -moz-width: 50% !important;
     }
 
-    .item{
+    .item {
         flex-direction: column;
     }
 }
 
 
 
-.left{
+.left {
     align-items: flex-end;
     justify-content: flex-start !important;
     width: 70%;
 
-    @media screen and  (min-width: #{$large + 1px} ) { 
-        width: 38%;
+    @media screen and (min-width: #{$large + 1px}) {
+        width: 40% !important;
     }
 
-    @media screen and  (max-width: #{$medium} ) { 
+    @media screen and (max-width: #{$medium}) {
         border-right: solid 2px $cor1;
         border-top: solid 1px $cor1;
         border-bottom: solid 2px $cor1 !important;
         border-radius: 0px 20px 20px 0px;
         transform: translateX(8px);
-        &:nth-child(2){
+
+        &:nth-child(2) {
             padding-top: 10px;
         }
     }
 
     @media print {
-        width: 40%;
+        -webkit-width: 44% !important;
+        -moz-width: 44% !important;
     }
 
 
-    &:first-child{
+    &:first-child {
         padding-top: 50px;
+
         @media print {
-            padding-top:0 !important;
+            padding-top: 0 !important;
         }
     }
 
-    .item{
+    .item {
         align-items: flex-end !important;
         text-align: center !important;
 
-        h3{   
+        h3 {
             text-align: right !important;
             flex-direction: row-reverse;
             max-width: 90%;
@@ -467,19 +551,20 @@ body{
             svg {
                 margin-left: 20px;
             }
-            &::before{
+
+            &::before {
                 right: 0;
                 min-width: 20px;
             }
         }
 
-        p{
+        p {
             margin-right: 40px;
         }
     }
 
-    @media screen and  (max-width: #{$medium} ) { 
-        &::before{
+    @media screen and (max-width: #{$medium}) {
+        &::before {
             content: '';
             position: absolute;
             bottom: 0;
@@ -499,7 +584,7 @@ body{
 
 
 
-.right{
+.right {
 
     .view-all-btn {
         background-color: rgba(#ddd, 1);
@@ -512,7 +597,8 @@ body{
         border: none;
         cursor: pointer;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             color: white !important;
             background-color: rgba($cor1, 1);
         }
@@ -530,11 +616,11 @@ body{
     position: relative;
     border-left: solid 2px $cor1;
 
-    @media screen and  (min-width: #{$large + 1px} ) { 
+    @media screen and (min-width: #{$large + 1px}) {
         width: 62%;
     }
 
-    @media screen and  (max-width: #{$medium} ) { 
+    @media screen and (max-width: #{$medium}) {
         padding-bottom: 20px;
         border-top: solid 2px $cor1;
         border-bottom: solid 1px $cor1;
@@ -549,47 +635,53 @@ body{
     }
 
     .item {
-        @media screen and  (max-width: #{$medium} ) { 
+        @media screen and (max-width: #{$medium}) {
             transform: translateY(-90px);
         }
 
-        small.no-screen{
+        small.no-screen {
             font-size: .8rem;
             margin: 30px 0 0 50px;
         }
     }
 
 
-    &:first-child{
+    &:first-child {
         margin-top: 10px !important;
+
         @media print {
-            padding-top:0 !important;
+            padding-top: 0 !important;
         }
     }
 
-    h1{
+    h1 {
         margin-left: 20px;
         margin-top: 20px;
-        @media print { 
+
+        @media print {
             margin-left: 25px !important;
         }
     }
-    
-    h3{
+
+    h3 {
         text-align: left !important;
         flex-direction: row;
+
         svg {
             margin-right: 10px;
         }
-        &::before{
+
+        &::before {
             right: 0;
             min-width: 20px;
         }
     }
-    p{
+
+    p {
         margin-left: 30px !important;
     }
-    ul{
+
+    ul {
         margin-left: 50px !important;
     }
 }
@@ -599,29 +691,35 @@ body{
 
 
 
-.left > .img-content {
+.left>.img-content {
 
-    @media screen and  (max-width: #{$medium} ) { display: none;}
-    @media print {display: flex !important;}
+    @media screen and (max-width: #{$medium}) {
+        display: none;
+    }
 
-    & >  img{
+    @media print {
+        display: flex !important;
+    }
+
+    &>img {
         width: 120px;
-        height:  120px;
+        height: 120px;
         // remove margin-top para que o componente .left se alinhe ao topo do .main 
         // margin-top: -60px;
         margin-bottom: 50px;
-        @media screen and (max-width: #{$medium} ) {
-           display: none;
+
+        @media screen and (max-width: #{$medium}) {
+            display: none;
         }
     }
 
-    &::after{
+    &::after {
         content: '';
         width: 55px !important;
         height: 2px;
         background-color: $cor1 !important;
 
-        @media print{
+        @media print {
             border: solid 1px $cor1 !important;
             height: 0 !important;
         }
@@ -630,33 +728,33 @@ body{
         right: 0 !important;
         top: 60px;
     }
-} 
+}
 
 
 
-.right > .img-content {
-  
-    position: relative ;
+.right>.img-content {
+
+    position: relative;
     height: auto;
 
-    @media screen and  (max-width: #{$medium} ) {
+    @media screen and (max-width: #{$medium}) {
         display: block;
         transform: translateY(-92px);
     }
 
-    & > img{
+    &>img {
 
         display: none;
-        
-        @media screen and (max-width: $medium  ) {
+
+        @media screen and (max-width: $medium ) {
             display: block;
             width: 160px;
-            height:  160px;
+            height: 160px;
             margin-left: $img-before-width;
         }
     }
 
-    &::before{
+    &::before {
         content: '';
         position: absolute;
         width: $img-before-width;
@@ -666,14 +764,19 @@ body{
         right: 10px;
         background: $white;
         transform: translateX(11px);
-        @media screen and (min-width: 920px ){ display: none !important;}
+
+        @media screen and (min-width: 920px) {
+            display: none !important;
+        }
     }
 
-    @media print { display: none !important;}
+    @media print {
+        display: none !important;
+    }
 }
 
-#avatar{
-   
+#avatar {
+
     display: none;
     position: fixed !important;
     top: 20px !important;
@@ -686,11 +789,11 @@ body{
     transform: translateX(10px);
     background-color: $white;
 
-    img{
+    img {
         @extend .circle;
         position: fixed !important;
         right: 0 !important;
-        top:0;
+        top: 0;
     }
 
     @media screen {
@@ -704,9 +807,11 @@ body{
         // );
     }
 
-    @media print { display: none !important;}
+    @media print {
+        display: none !important;
+    }
 
-    &::before{
+    &::before {
         content: '';
         width: 100px;
         height: 20px;
@@ -715,20 +820,20 @@ body{
         border-left: solid 2px $cor1;
         border-radius: 0px 0px 0px 10px;
         position: absolute;
-        bottom:-22px;
+        bottom: -22px;
         left: calc(50%);
     }
 
 
 
-    & > img{
+    &>img {
         @extend .circle;
-        position: relative !important ;
-        width: 40px !important; 
+        position: relative !important;
+        width: 40px !important;
         height: 40px !important;
     }
-    
-   
+
+
 }
 
 
@@ -744,27 +849,32 @@ body{
         // );
     }
 
-    & > img{
+    &>img {
         @extend .circle;
     }
 }
 
 .btn {
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px 0px;
-    @media print { display: none !important; }
+
+    @media print {
+        display: none !important;
+    }
 
 
-    &-fixed-md, &-fixed-lg{
+    &-fixed-md,
+    &-fixed-lg {
         position: fixed !important;
         z-index: 11;
     }
 
 
-    &-fixed-md, &-relative{
+    &-fixed-md,
+    &-relative {
         flex-direction: row-reverse !important;
     }
 
@@ -772,13 +882,13 @@ body{
         flex-direction: column !important;
         justify-content: space-around;
         right: 20px;
-        top: calc( 50% - (225px/2) )  !important;
+        top: calc(50% - (225px/2)) !important;
         max-width: 100px;
         background: transparent;
 
-        @media screen and  (min-height: #{ $large } ) {
+        @media screen and (min-height: #{ $large }) {
             bottom: initial !important;
-            top: calc( 50% - (225px/2) )  !important;
+            top: calc(50% - (225px/2)) !important;
         }
     }
 
@@ -786,7 +896,7 @@ body{
         background: $white;
         right: 0px;
         bottom: 0px;
-        width: 100vw ;
+        width: 100vw;
         box-shadow: 1px -1px 5px $black2;
         max-height: 50px;
         /* remove animate */
@@ -799,7 +909,7 @@ body{
         // );
     }
 
-    &-relative{
+    &-relative {
         position: relative !important;
         min-width: 90%;
         max-width: 90%;
@@ -811,7 +921,7 @@ body{
         border-radius: 20px 0px 0px 20px;
         transform: translateX(-10px) translateY(-1.2px);
         background-color: $white !important;
-    }   
+    }
 
 }
 
@@ -819,7 +929,7 @@ body{
 
 
 
-.btn > * {
+.btn>* {
     position: relative;
     padding: 10px;
     margin: 7px;
@@ -833,11 +943,12 @@ body{
     justify-content: center;
     align-items: center;
 
-    & > svg,  & > i{
+    &>svg,
+    &>i {
         font-size: 20px;
     }
-        
-    @media print{
+
+    @media print {
         display: none !important;
     }
 
@@ -846,43 +957,30 @@ body{
 
 @each $name, $clr, $dly in $butons_map {
 
-.btn > ##{$name} {
-    z-index: 12;
-    background: $white;
-    border: solid 1px transparent !important;
-    /* remove animate */
-    // @include boderRotateEfect($name, $black2, rgba($clr, .8)  );
+    .btn>##{$name} {
+        z-index: 12;
+        background: $white;
+        border: solid 1px transparent !important;
+        /* remove animate */
+        // @include boderRotateEfect($name, $black2, rgba($clr, .8)  );
 
 
-    & > svg,  & > i{
-        color: $clr;
+        &>svg,
+        &>i {
+            color: $clr;
 
-        @media screen and (min-width: $medium + 1px  ) {
-            /* remove animate */
-            // @include bounceInRight (
-            //     $duration: .3s,
-            //     $count: 1,
-            //     $delay: $dly ,
-            //     $function: ease-in-out, 
-            //     $fill: both
-            // );
-        }
+            @media screen and (min-width: $medium + 1px) {
+                /* remove animate */
+                // @include bounceInRight (
+                //     $duration: .3s,
+                //     $count: 1,
+                //     $delay: $dly ,
+                //     $function: ease-in-out, 
+                //     $fill: both
+                // );
+            }
 
-        @media screen and (max-width: $medium  ) {
-            /* remove animate */
-            // @include bounceInUp(
-            //     $duration: .3s,
-            //     $count: 1,
-            //     $delay: $dly ,
-            //     $function: ease-in-out, 
-            //     $fill: both
-            // );
-        }
-
-
-        &:hover{
-
-            @media screen and (max-width: $small  ) {
+            @media screen and (max-width: $medium ) {
                 /* remove animate */
                 // @include bounceInUp(
                 //     $duration: .3s,
@@ -892,53 +990,73 @@ body{
                 //     $fill: both
                 // );
             }
+
+
+            &:hover {
+
+                @media screen and (max-width: $small ) {
+                    /* remove animate */
+                    // @include bounceInUp(
+                    //     $duration: .3s,
+                    //     $count: 1,
+                    //     $delay: $dly ,
+                    //     $function: ease-in-out, 
+                    //     $fill: both
+                    // );
+                }
+            }
+        }
+
+        @extend .custom-shadow;
+
+        &::before {
+            opacity: 0;
+        }
+
+    }
+
+
+    .btn>##{$name}:hover,
+    .btn>##{$name}.active {
+        cursor: pointer;
+        opacity: 10;
+
+        &>svg,
+        &>i {
+            color: $clr;
         }
     }
 
-    @extend .custom-shadow;
-    &::before{
-        opacity: 0;
+    .btn>##{$name}:hover,
+    .btn>##{$name}.active {
+
+
+        &::before {
+            transform: scale(0.8);
+            opacity: 1;
+            transition: all .3s ease-in-out;
+        }
+
+        /* remove animate */
+        // @include radialGradientTrasition(#{$name}, rgba($clr, .1), $white );
+        box-shadow: -1px 2px 5px $black2 !important;
+
+
+        &>svg,
+        &>i {
+            color: $clr ;
+        }
+    }
+
+
+    .btn>##{$name}.active {
+        background: rgba($clr, .2);
     }
 
 }
 
 
-.btn > ##{$name}:hover, .btn > ##{$name}.active{
-    cursor: pointer;
-    opacity: 10;
-
-    & > svg,  & > i  {
-        color: $clr;
-    }
-}
-
-.btn > ##{$name}:hover,  .btn > ##{$name}.active {
-    
-
-    &::before{
-        transform: scale(0.8);
-        opacity:1;
-        transition: all .3s ease-in-out ;    
-    }
-    /* remove animate */
-    // @include radialGradientTrasition(#{$name}, rgba($clr, .1), $white );
-    box-shadow: -1px 2px  5px $black2 !important;
-
-
-    & > svg,  & > i  {
-        color: $clr ;
-    }
-}
-
-
-.btn > ##{$name}.active {
-    background: rgba($clr, .2) ;
-}
-
-}
-
-
-.msg{
+.msg {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -951,7 +1069,10 @@ body{
     justify-content: center;
     background-color: $white2;
     padding: 20px;
-    @media print { display: none !important; }
+
+    @media print {
+        display: none !important;
+    }
 
     &::after {
         content: '';
@@ -975,7 +1096,7 @@ body{
     //     $fill: both
     // );
 
-    @media print{
+    @media print {
         display: none !important;
     }
 
@@ -988,7 +1109,7 @@ body{
     }
 
 
-    .content{
+    .content {
         position: relative;
         display: flex;
         z-index: 10;
@@ -998,9 +1119,9 @@ body{
         flex-direction: row-reverse;
 
         @media screen and (max-width: $medium ) {
-         flex-direction: column;
-         box-sizing: border-box !important;
-         max-width: 80% !important;
+            flex-direction: column;
+            box-sizing: border-box !important;
+            max-width: 80% !important;
         }
 
         #close {
@@ -1015,7 +1136,7 @@ body{
             border-radius: 100%;
             z-index: 11;
 
-            &:hover{
+            &:hover {
                 cursor: pointer;
                 color: $danger;
                 border-color: $danger;
@@ -1048,8 +1169,8 @@ body{
             opacity: 10;
             background-color: $white;
 
-            p{  
-                color: rgba(0,0,0, .7);
+            p {
+                color: rgba(0, 0, 0, .7);
                 font-family: $font3;
                 opacity: 10;
                 font-weight: bold;
@@ -1059,17 +1180,19 @@ body{
                 text-align: center;
             }
 
-            b, a {
+            b,
+            a {
                 color: $cor1;
                 text-decoration: none;
             }
 
-            svg, i {
+            svg,
+            i {
                 margin: 10px auto;
                 padding: 5px;
                 font-size: 28px;
                 border-radius: 100%;
-                color:  $cor1;
+                color: $cor1;
                 /* remove animate */
                 // @include zoomInLeft (
                 //     $duration: .3s,
@@ -1082,7 +1205,7 @@ body{
                 @each $name, $clr, $dly in $butons_map {
                     & #{$name} {
                         transition-delay: $dly;
-                        color: $clr !important;  
+                        color: $clr !important;
                     }
                 }
             }
@@ -1099,7 +1222,7 @@ body{
             top: 45%;
             left: 75px;
             transform: rotateZ(135deg);
-    
+
             @media screen and (max-width: $small ) {
                 top: 130px;
                 left: calc(50% - 10px);
@@ -1107,7 +1230,8 @@ body{
 
         }
 
-        span, .box{
+        span,
+        .box {
             /* remove animate */
             // @include zoomIn(
             //     $duration: .3s,
@@ -1118,7 +1242,7 @@ body{
             // );
         }
 
-        img{ 
+        img {
             position: relative;
             width: 60px;
             height: 60px;
@@ -1138,19 +1262,19 @@ body{
         }
 
 
-        &:hover{
+        &:hover {
             cursor: pointer;
-    
-            & > #close{
+
+            &>#close {
                 display: block;
             }
         }
 
-        
+
     }
 
 
-     
+
 }
 
 ._hj_feedback_container {

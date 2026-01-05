@@ -34,12 +34,34 @@
     <div class="item">
       <h3 class="no-print">
         <fontawesome icon="briefcase" /> Experiências Anteriores
+        <fontawesome 
+          title="Filtrar áreas das experiências anteriores"
+          @click="toggleXpsFilter" 
+          class="no-print filter" 
+          icon="filter" 
+        />
       </h3>
-      <ul class="experiencias">
+
+      <div 
+        v-if="showXpsFilter" 
+        class="xps-filter"
+      >
+        <span 
+          v-for="(tag, i) in allTags"
+          @click="selectTag(tag)"
+          :key="`tag-${i}`" 
+          :class="`badge ${selectedTags.includes(tag) ? 'selected' : ''}`"
+        >{{ tag }} </span>
+
+        <button class="badge-btn" @click="parseTagsToUrl" >Filtrar</button>
+      </div>
+
+      <ul class="experiencias" id="exp">
         <div
           v-for="(xp, i) in experiencias?.filter(xp => filterTags(xp.tags))"
           :key="i"
           :class="{ 'no-print': i > 0 }"
+         
         >
           <li
             v-if="
@@ -53,6 +75,15 @@
             </h5>
             <p v-for="(descricao, d) in xp.descricao" :key="d">
               {{ descricao }}
+            </p>
+            <p class="no-print">
+              <b 
+                v-for="(tag, i) in xp.tags"
+                @click="selectTag(tag)"
+                :key="`tag-${i}-xp-${xp.id}`" 
+                :class="`badge selecte`"
+                style="font-size: .55rem; margin-right: 2px;"
+              >#{{ tag }}</b>
             </p>
           </li>
         </div>
@@ -97,22 +128,37 @@ export default {
       metadados: (state) => state.metadados,
     }),
     baseUrl: () => process.env.VUE_APP_BASE_URL.replace("http://", "").replace("https://", "") || "",
+    allTags(){
+      let tags = []
+      this.experiencias?.map(xp => xp.tags)
+        ?.forEach(tag => {tag.forEach(t => {if(!tags.includes(t)){tags.push(t)}})})
+      return tags
+    }
   },
   data() {
     return {
       viewCount: 2,
       viewMoreExp: false,
+      showXpsFilter: false,
+      selectedTags: JSON.parse(localStorage.getItem('selectedTags')) || [],
     }
   },
   methods: {
-    toggleViewMoreExp() {
-      this.viewMoreExp = !this.viewMoreExp;
+    toggleViewMoreExp() {this.viewMoreExp = !this.viewMoreExp;},
+    toggleXpsFilter(){this.showXpsFilter = !this.showXpsFilter},
+    selectTag(tag){
+      if (!this.selectedTags?.includes(tag)) {this.selectedTags.push(tag)} 
+      else {this.selectedTags = this.selectedTags.filter(t => tag != t)}
+      localStorage.setItem('selectedTags', JSON.stringify(this.selectedTags))
     },
+    parseTagsToUrl() {
+      let href = `${window.location.pathname}`
+      if(this.selectedTags?.length) {href += `?tags=${this.selectedTags.join(',')}`}
+      window.location.href = href
+      this.showXpsFilter = false
+    }, 
     filterTags: (tgs) => tgs?.length && query?.tags?.map(tg => tgs?.includes(tg))?.includes(true) || !query?.tags?.length,
-    filterXps: (xps = []) => xps?.filter(xp => this.filterTags(xp.tags)) || []
-  },
-  mounted() {
-    console.log("mounted here", this.filterXps(this.experiencias));
-  },
+    filterXps: (xps = []) => xps?.filter(xp => this.filterTags(xp.tags)) || [],
+  }
 };
 </script>

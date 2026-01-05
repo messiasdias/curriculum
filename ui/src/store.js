@@ -6,7 +6,7 @@ const apiBaseUrl = process.env.NODE_ENV === "production" ? process.env.VUE_APP_A
 let state = {
     euImage: euImg,
     msg: false,
-    cookieMsg: localStorage.getItem('msg') ? true : false,
+    cookieMsg: JSON.parse(localStorage.getItem('msg')) || true ,
     experiencias: [],
     formacoes: [],
     conhecimentos: [],
@@ -19,15 +19,15 @@ let state = {
 
 let mutations = {
     msg: (state, open = false) => {
-        if(state.msg | (open == false)) {
-            localStorage.removeItem('msg') 
+        if (!open) {
+            localStorage.removeItem('msg')
             return state.msg = false
         }
         state.msg = true
     },
     cookieMsg: (state, msg = true) => {
         state.cookieMsg = msg
-        if(msg) return localStorage.setItem('msg', msg) 
+        if (msg) return localStorage.setItem('msg', msg)
         localStorage.removeItem('msg')
     },
     experiencias: (state, experiencias = []) => {
@@ -59,13 +59,13 @@ let mutations = {
 
 let actions = {
     toggleMsg: async (context) => {
-        if(context.state.msg){
+        if (context.state.msg) {
             context.commit("msg", false)
-            if(!context.state.cookieMsg) context.commit("cookieMsg")
+            if (!context.state.cookieMsg) context.commit("cookieMsg")
             return
         }
 
-        if(!context.state.cookieMsg){
+        if (!context.state.cookieMsg) {
             await context.commit("msg", true)
             context.dispatch('typedRun')
         }
@@ -76,10 +76,10 @@ let actions = {
         window.print();
     },
 
-    mailTo: ({state}) => window.location.href = `mailto:${state.metadados.email}`,
+    mailTo: ({ state }) => window.location.href = `mailto:${state.metadados.email}`,
 
-    typedRun : (context) =>  {
-        if(context.state.msg && context.state.metadados.typed){
+    typedRun: (context) => {
+        if (context.state.msg && context.state.metadados.typed) {
             context.state.metadados.typed.current = new Typed('#typed', {
                 strings: context.state.metadados.typed.strings,
                 typeSpeed: 80,
@@ -88,24 +88,24 @@ let actions = {
                 showCursor: false,
                 contentType: 'html'
             })
-            
-            let interval = setInterval( function(){
-                if(context.state.msg){
+
+            let interval = setInterval(function () {
+                if (context.state.msg) {
                     return context.dispatch('typedSetIcon', context.state.metadados.typed.current.arrayPos)
                 }
 
                 clearInterval(interval)
-                context.dispatch('typedSetIcon', localStorage.removeItem('msg') )
-            }, 100 )
+                context.dispatch('typedSetIcon', localStorage.removeItem('msg'))
+            }, 100)
         }
     },
 
     typedSetIcon(context, position = false) {
-        if(context.state.metadados.typed.icons[position]){
+        if (context.state.metadados.typed.icons[position]) {
             context.state.metadados.typed.position = position
             context.state.iconPrefix = 'fas'
-    
-            if( context.state.metadados.typed.icons[position].split(':').length === 2 ){
+
+            if (context.state.metadados.typed.icons[position].split(':').length === 2) {
                 context.state.metadados.typed.iconPrefix = context.state.metadados.typed.icons[position].split(':')[0]
                 context.state.metadados.typed.iconName = context.state.metadados.typed.icons[position].split(':')[1]
                 return
@@ -121,42 +121,42 @@ let actions = {
 
     experiencias: (context) => {
         Axios.get(`${apiBaseUrl}/experiencias.json`)
-            .then(({data}) => context.commit('experiencias', data))
+            .then(({ data }) => context.commit('experiencias', data))
             .catch(() => context.commit('experiencias'))
     },
     formacoes: (context) => {
         Axios.get(`${apiBaseUrl}/formacoes.json`)
-            .then(({data}) => context.commit('formacoes', data))
+            .then(({ data }) => context.commit('formacoes', data))
             .catch(() => context.commit('formacoes'))
     },
     conhecimentos: (context) => {
         Axios.get(`${apiBaseUrl}/conhecimentos.json`)
-            .then(({data}) => context.commit('conhecimentos', data))
+            .then(({ data }) => context.commit('conhecimentos', data))
             .catch(() => context.commit('conhecimentos'))
     },
     redes_sociais: (context) => {
         Axios.get(`${apiBaseUrl}/redes_sociais.json`)
-            .then(({data}) => context.commit('redes_sociais', data))
+            .then(({ data }) => context.commit('redes_sociais', data))
             .catch(() => context.commit('redes_sociais'))
     },
     repositorios: (context) => {
         Axios.get(`${apiBaseUrl}/repositorios.json`)
-            .then(({data}) => context.commit('repositorios', data))
+            .then(({ data }) => context.commit('repositorios', data))
             .catch(() => context.commit('repositorios'))
     },
     projetos: (context) => {
         Axios.get(`${apiBaseUrl}/projetos.json`)
-            .then(({data}) => context.commit('projetos', data))
+            .then(({ data }) => context.commit('projetos', data))
             .catch(() => context.commit('projetos'))
     },
     informacoes_extra: (context) => {
         Axios.get(`${apiBaseUrl}/informacoes_extra.json`)
-            .then(({data}) => context.commit('informacoes_extra', data))
+            .then(({ data }) => context.commit('informacoes_extra', data))
             .catch(() => context.commit('informacoes_extra'))
     },
     metadados: (context) => {
         Axios.get(`${apiBaseUrl}/metadados.json`)
-            .then(({data}) => context.commit('metadados', data))
+            .then(({ data }) => context.commit('metadados', data))
             .catch(() => context.commit('metadados'))
     },
     loadData: async (context) => {
@@ -172,7 +172,7 @@ let actions = {
     }
 }
 
-export default  {
+export default {
     state,
     mutations,
     actions
