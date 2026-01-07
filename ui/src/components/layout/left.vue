@@ -2,7 +2,7 @@
 <!-- start .left-->
 <div class="left">
     
-    <div class="img-content"><img alt="Foto Messias"  :src="euImage"></div>
+    <div class="img-content"><img :src="euImage"></div>
                
     <div class="item" >
         <h3><fontawesome class="icon" icon="address-book" /> Contatos</h3>
