@@ -1092,6 +1092,16 @@ body {
 
 }
 
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    & > b:hover {
+        background: transparent;
+        color: $cor1;
+        border-color: $cor1;
+    }
+}
+
 ._hj_feedback_container {
     @media print {
         display: none !important;

@@ -76,12 +76,15 @@
             <p v-for="(descricao, d) in xp.descricao" :key="d">
               {{ descricao }}
             </p>
-            <p class="no-print">
+            <p class="no-print exp-tags">
               <b 
                 v-for="(tag, i) in xp.tags"
-                @click="selectTag(tag)"
+                @click="() => {
+                  selectTag(tag)
+                  toggleXpsFilter(true)
+                }"
                 :key="`tag-${i}-xp-${xp.id}`" 
-                :class="`badge selecte`"
+                :class="`no-print badge  ${selectedTags.includes(tag) ? 'selected' : ''}`"
                 style="font-size: .55rem; margin-right: 2px;"
               >#{{ tag }}</b>
             </p>
@@ -145,7 +148,7 @@ export default {
   },
   methods: {
     toggleViewMoreExp() {this.viewMoreExp = !this.viewMoreExp;},
-    toggleXpsFilter(){this.showXpsFilter = !this.showXpsFilter},
+    toggleXpsFilter(open=null){this.showXpsFilter = open !== null ? open : !this.showXpsFilter},
     selectTag(tag){
       if (!this.selectedTags?.includes(tag)) {this.selectedTags.push(tag)} 
       else {this.selectedTags = this.selectedTags.filter(t => tag != t)}
