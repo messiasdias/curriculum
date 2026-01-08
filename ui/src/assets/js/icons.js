@@ -20,6 +20,8 @@ import {
     faAddressBook,
     faNetworkWired,
     faGraduationCap,
+    faLocationArrow,
+    faSearchLocation
 } from '@fortawesome/free-solid-svg-icons'
 
 import { fab, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
@@ -45,6 +47,8 @@ library.add(
     faAddressBook,
     faNetworkWired,
     faGraduationCap,
+    faLocationArrow,
+    faSearchLocation
 )
 
 export default FontAwesomeIcon

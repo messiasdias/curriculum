@@ -6,10 +6,15 @@
                
     <div class="item" >
         <h3><fontawesome class="icon" icon="address-book" /> Contatos</h3>
-        <p class="link" :v-if="metadados.wp_phone" ><a rel="noopener"  target="_blank" :href="getWpLink(metadados.wp_phone, metadados.wp_message)"> {{metadados.wp_phone}} <fontawesome :icon="['fab', 'whatsapp']"  /> </a></p>
-        <p class="link" :v-if="metadados.wp_phone2" ><a rel="noopener"  target="_blank" :href="getWpLink(metadados.wp_phone2, metadados.wp_message)"> {{metadados.wp_phone2}} <fontawesome :icon="['fab', 'whatsapp']"  /> </a></p>
-        <p class="link" :v-if="metadados.email" ><a rel="noopener"  target="_blank" @click="mailTo()">{{metadados.email}}<fontawesome icon="at" /></a></p>
+        <p class="link" v-if="metadados.wp_phone" ><a rel="noopener"  target="_blank" :href="getWpLink(metadados.wp_phone, metadados.wp_message)"> {{metadados.wp_phone}} <fontawesome :icon="['fab', 'whatsapp']"  /> </a></p>
+        <p class="link" v-if="metadados.wp_phone2" ><a rel="noopener"  target="_blank" :href="getWpLink(metadados.wp_phone2, metadados.wp_message)"> {{metadados.wp_phone2}} <fontawesome :icon="['fab', 'whatsapp']"  /> </a></p>
+        <p class="link" v-if="metadados.email" ><a rel="noopener"  target="_blank" @click="mailTo()">{{metadados.email}}<fontawesome icon="at" /></a></p>
     </div>
+
+     <div class="item" v-if="metadados?.endereco" >
+        <h3><fontawesome class="icon" icon="location-arrow" /> Endereço</h3>
+        <p class="link" ><a rel="noopener"  target="_blank" @click="() => {}">{{metadados.endereco}}<fontawesome icon="search-location" /></a></p>
+     </div>
 
     <div class="item" >
         <h3><fontawesome class="icon" icon="network-wired" /> Social</h3>
