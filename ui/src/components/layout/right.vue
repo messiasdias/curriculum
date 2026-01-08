@@ -100,7 +100,7 @@
       </ul>
       <small class="no-screen"
         >Para mais acesse:<br />
-        <b>{{ baseUrl }}</b></small
+        <a :src="baseUrl" target="_blank">{{ baseUrl }}</a></small
       >
     </div>
 

@@ -327,8 +327,8 @@ body {
         margin-left: 30px;
         list-style: circle;
 
-        div{
-           margin-bottom: 10px;
+        div {
+            margin-bottom: 10px;
         }
 
         li {
@@ -757,29 +757,31 @@ body {
 
 
 @keyframes img-content-loading {
-  0% {
-    background: linear-gradient(0deg, rgba($cor1 , .1), #fff);
-  }
+    0% {
+        background: linear-gradient(0deg, rgba($cor1 , .1), #fff);
+    }
 
-  25% {
-    background: linear-gradient(90deg, rgba($cor1 , .1), #fff);
-  }
+    25% {
+        background: linear-gradient(90deg, rgba($cor1 , .1), #fff);
+    }
 
 
-  50% {
-    background: linear-gradient(180deg, rgba($cor1 , .1), #fff);
-  }
+    50% {
+        background: linear-gradient(180deg, rgba($cor1 , .1), #fff);
+    }
 
-  75% {
-    background: linear-gradient(270deg, rgba($cor1 , .1), #fff);
-  }
+    75% {
+        background: linear-gradient(270deg, rgba($cor1 , .1), #fff);
+    }
 }
 
 .img-content {
     &>img {
         @extend .circle;
-        background: linear-gradient(360deg, rgba($cor1 , .1), #fff);
-        animation: img-content-loading 2s ease-in-out infinite;
+        @media screen {
+            background: linear-gradient(360deg, rgba($cor1 , .1), #fff);
+            animation: img-content-loading 2s ease-in-out infinite;
+        }
     }
 }
 
@@ -1117,7 +1119,8 @@ body {
 .exp-tags {
     display: flex;
     flex-wrap: wrap;
-    & > b:hover {
+
+    &>b:hover {
         background: transparent;
         color: $cor1;
         border-color: $cor1;
