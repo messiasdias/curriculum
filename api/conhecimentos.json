@@ -18,5 +18,10 @@
         "id": 1,
         "titulo": "Ferramentas",
         "descricao": "Git, Github actions, Gitlab Pipelines, Docker, Linux Ubuntu/Debian"
+    },
+    {
+        "id": 5,
+        "titulo": "Ifraetrutura e Suporte",
+        "descricao": "Cabeamento estruturado, instalaçao e configuração de rede de computadores e suporte técnico"
     }
-]
+ ]  
